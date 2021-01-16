@@ -1,0 +1,33 @@
+Design a Restaurant booking system
+	
+	Restaurant
+		name
+		location 
+		hours of operation
+		Table[]
+			capacity
+		
+	Reservation
+		party size
+		Reservation
+		Customer (fk)
+	
+	Customer
+		id
+		name
+		address
+	
+	Relationships
+		Reservation (*) Vs (1) Customer
+		Restaurant (1) Vs (*) Reservations
+		
+Table
+	Reservation and Restaurant
+	
+	
+Interfaces
+	ReservationService
+		List<Availability> getAvailability(Location, date, partySize);
+		Reservation makeReservation(Restaurant, Date, Customer, PartySize)
+		void cancelReservation(Reservation)
+

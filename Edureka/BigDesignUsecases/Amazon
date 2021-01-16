@@ -1,0 +1,56 @@
+Use cases
+	User profile
+		Create
+		Update
+	List Products
+	Add Products to Cart
+	Purchase Products from cart
+	Track Orders
+	
+HLD
+	User - Api - <X Manager> - DB
+	
+	Different Managers
+		User Manager
+		Listing Manager
+		Cart Manager
+		Order Manager
+		
+	UserManager
+		CreateUser
+		updateUser
+		
+	ListingManager
+		List<Product> getProducts
+		reduceQuantity (ProductId, quantityToReduce)
+	CartManager
+		addProduct
+		
+	ect..
+	
+Database Model
+
+	User
+		long id,
+		String name;
+		String emailId;
+		String phonel;
+		//other details
+	
+	Product
+		long id,
+		String name,
+		double price,
+		int quantityToReduce
+		
+	Order
+		long id
+		login userid
+		List<Product> products
+		Date placedOn
+		List<TrackingDetail> trackingDetail
+		
+	Concurrency
+		If two users trying to order the same item?
+			Take lock in ListingManager while updating details.
+			

@@ -1,0 +1,1266 @@
+
+Learning Session 1
+	Exploring Web
+	-------------
+		Decoding Website
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			How a website functions
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				https://www.youtube.com/watch?v=hJHvdBlSxug
+				https://academind.com/tutorials/how-the-web-works/
+				
+				Let’s start with the most obvious way of using the internet: You visit a website like google.com.
+
+			Enter the address google.com in your browser and you hit ENTER
+				what happens?
+					The URL gets resolved
+					A Request is sent to the server of the website
+					The response of the server is parsed
+					The page is rendered and displayed
+					
+					A server receives a request by the browser and 
+					Responds with data - 
+						typically an HTML file 
+						can be parsed by the browser.
+
+			Step 1 - How URL Gets Resolved
+			------------------------------
+			Website code needs to be fetched from another computer 
+				called a “server”. 
+				Can be written in multiple languages
+					Java
+						jsp
+						servlet
+						spring mvc
+						struts
+						etc
+					asp.net
+					react
+					laravel
+					angular
+				
+			You enter “google.com” 
+				called “a domain”
+			server which hosts the source code of a website is identified via IP 
+				(IP = Internet Protocol) addresses. 
+				Draw image
+				The browser sends a “request”  to the server with the IP address you entered 
+				(indirectly - you of course entered “google.com”).
+
+			In reality, you also often enter something like "google.com/index.jsp" 
+			"google.com/index.jsp": “URL” (“Uniform Resource Locator”).
+			"www": subdomain 
+				most websites simply redirect traffic to "www" to the main page.
+			www.google.com: domain name
+				Resolve to an IP address from DNS
+			index.jsp: Resove to (directly/indirectly) Folders and files 
+			IP address
+				Traced from a DNS server
+				can be 
+					IPv4: like 192.168.1.2
+					IPv6: like 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+				
+			“DNS server”	
+			Special type of server in the internet - 
+			Multiple servers of that type. 
+			Also called “name server” or  (where DNS = “Domain Name System”).
+			Translate domains to IP addresses. 
+			Huge dictionaries that store translation tables: Domain => IP address.
+			Like phone books
+
+			When you enter “google.com”, 
+				the browser therefore first fetches the IP address from such a DNS server.
+				DNS server address is known based on OS
+				For e.g. for RHEL - identified by /etc/resolv.conf
+
+			Once the IP address is known, we advanced to step 2.
+
+			Step 2 - Request Is Sent
+			------------------------
+			With the IP address resolved, 
+				browser goes ahead and makes a request to the server with that IP address.
+
+			“A request” 
+				technical thing that happens behind the scenes.
+				The browser bundles up a bunch of information (What’s the exact URL? Which kind of request should be made? Should metadata be attached) and sends that data package to the IP address.
+
+			A request is a bunch of information sent to a server.
+
+			The data is sent via the “HyperText Transfer Protocol” (known as “HTTP”) - 
+				standardized protocol 
+				defines what a request (and response) has to look like
+				which data may be included 
+				how the request will be submitted. 
+				
+			Complete URL: http://google.com. 
+				auto-completes may auto-complete.
+
+			And there also is HTTPS - 
+				encrypted HTTP
+				Default port: 463
+
+			Request may take hops to reach to the server
+			Listens on a port: 
+			There could be 
+				load balancers, 
+				DMZ
+				
+			Server sends a “response”. 
+				“response” similar to a “request”.
+
+			Request and response can contain 
+				data
+				metadata
+				Mostly according to the HTML standard.
+			
+			What happens on the server?
+			----------------------------
+			Defined by web developers. 
+			Response has to be sent. 
+				Generally html code. 
+				Alternatively - it can be 
+					files or 
+					images
+					etc.
+
+			Most servers are programmed to generate websites dynamically 
+			
+			Step 3 - Response Is Parsed
+			---------------------------
+			Browser 
+				receives the response sent by the server. 
+				knows how to parse HTML 
+				parses the response. 
+					Similar to server which parsed the request. 
+					according to the HTTP standard.
+				checks the data and metadata 
+					decides what to do.
+				If Content-Type text/html
+					renders the response on the browser
+
+
+			A browser sends a  if it wants HTML content.
+
+			HTML: “Hyper Text Markup Language” 
+				Describes the structure of a webpage.
+				Not a language
+				Can't include logic etc.
+			
+			Step 4 - Page Is Displayed
+			---------------------------
+			HTML: does't say what the site should look like 
+				(i.e. how it should be styled). 
+			Only defines the 
+				structure 
+				Defines which content is a 
+					heading
+					image
+					paragraph etc. 
+				Especially important for accessibility - 
+					screen readers get all the useful information out of the HTML structure.
+
+			A page that only includes HTML would look like this though:
+
+			Styling is added through	
+				CSS (“Cascading Style Sheets”).
+					Defines “CSS rules”:
+			e.g.
+			h1 {
+			  color: blue;
+			}
+				color all <h1> tags blue.
+			
+			N.B: 
+				CSS Rules can be added to html as well.
+				Typically, they’re part of separate .css files.
+			
+			Websites fetch a lot of additional data 
+				make additional requests and responses
+					kicked off as the browser parses response.
+
+			How does that work?
+			-------------------
+			An example of data to get
+				<link rel="stylesheet" href="/page-styles.css" />
+				<img src="abc.jpeg"/>
+			A browser sends multiple requests to fetch all external resources.
+
+
+			An html page may include a programming language: JavaScript.
+
+			
+			# Server-side vs Browser-side
+				Two core “sides” in web: 
+					Server-side and 
+					Client-side
+
+				Server-side
+					server-side programming languages - 
+
+				Examples would be:
+					Node.js
+					PHP
+					Python
+				N.B: Most of these programming languages for other purposes than web development.
+				But some like php are tailor made for web
+
+				
+				
+				Browser-side
+				In the browser, there are exactly three languages/technologies 
+				
+					HTML (for the structure)
+					CSS (for the styling)
+					JavaScript (for dynamic content)
+
+				# “Behind the Scenes” Internet
+				Homework:
+					What are various HTTP Request and Response types and how are they consumed?
+					show a diagram and ask to explain?
+						https://docs.oracle.com/middleware/1213/soasuite/SOEDG/edg_anatomy.htm#SOEDG2128
+
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to frontend and backend components
+		-----------------------------------------------
+			https://www.youtube.com/watch?v=pkdgVYehiTE
+			Users/Programs makes web request
+			
+			Browser: Frontend
+			|
+				|
+			Server: Backend
+	
+			
+			Frontend development
+				Technologies (Advanced knowledge)
+					HTML
+					CSS
+						Sass, Stylus etc.
+					JavaScript
+						Libraries 
+							lodash
+						Frameworks
+							Angular
+							React
+							Vue
+					Know (some) build tools
+						npm
+						Webpack
+				
+				Develop what?
+					JS-driven user interfaces
+					Re-usable UI Components with JS logic and CSS stylin
+					Forms and Input Validation
+					Backend communication channels
+						ajax
+						forms - post/get/put
+					Advanced UX strategies
+						Offline capabilities
+						Progressive web apps (PWA) featuers
+							Live updates
+							Work with Websockets
+							
+				Less Relevant Technologies
+					Server side language 
+						Node
+						PHP
+						Java
+					Database - SQL
+					No-SQL
+					Server Configurations
+				Not develop
+					Server side business logic.
+						Authentication
+						Authorization
+						Order handling
+					
+			
+					
+					
+			Backend
+				Technologies/Languages
+					Server-side languages like 
+						Node
+						PHP
+					Frameworks
+						Express 
+						Laravel
+					Database - SQL
+					Basic HTML, CSS, JavaScript
+				Develop
+					Server-side business logic
+						auth
+						logic
+					Automatations/Offline Business logic
+						Automatic notification
+					Data Validation
+					Data Storage
+					Scheduled Processes
+					
+				Less Relevant Technologies
+					Advanced JavaScript & CSS
+					JavaScript Libraries & Frameworks
+						Angular
+						React
+					Build tools 
+						npm
+						Webpack
+				Not develop
+					Client side validations
+					Complex UI 
+					Advanced UX strategies
+						Offline capabilities
+			
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Exploring programming languages
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		What is a programming language 
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Machine level language: Lowest level language.
+			Assembly level language: wrapper over machine level language
+			System level language: C, C++
+			Application Level language/High level: Java, Python, Ruby, PHP, C#
+			
+			Difference between system level and application level
+				System Level: Program how the system behaves: O/S etc.
+				Application level: Used for what we generally work with. browser etc.
+				
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			
+			
+			Introduction to different types of programming languages
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			https://www.watelectronics.com/types-of-programming-languages-with-differences/
+			
+			List of instructions (like language)
+			Control the behavious of a machine
+			
+			Types of language
+				High level
+					many ways
+					1. 
+						Object oriented 
+						Procedural
+					2. 
+						Interpretted
+						Compiled
+					3. 
+						System level
+						Application level
+				Low level
+					Assembly language
+						Mov A1, A4
+						JMP, CMP, ADD 
+						e.g. MIPS, nasm, x86
+					Machine language
+						0's and 1's
+						CPU understands
+						not portable
+						Humans can't understand
+						All languages should be converted to this for it to work.
+						
+						
+				Assignment: Read - https://en.wikipedia.org/wiki/List_of_programming_languages_by_type
+					Disclaimer: I don't know all the categories.
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to programming paradigms
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Imperative
+				Define step by step instructions
+			Declarative
+				Declare end result. Language can figure out how to achieve it.
+				e.g. SQL, XPATH, regx
+			
+			
+		https://en.wikipedia.org/wiki/Programming_paradigm
+		
+		way to classify programming languages based on their features. 
+		
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+	Exploring Fundamentals
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Protocols, Load balancer, Network Hops, Proxy and Reverse Proxy
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Protocols
+		---------
+			https://en.wikipedia.org/wiki/Lists_of_network_protocols
+			https://www.cloudflare.com/learning/network-layer/what-is-a-protocol/
+			https://www.manageengine.com/network-monitoring/network-protocols.html
+			https://ecomputernotes.com/computernetworkingnotes/computer-network/protocol
+			Major part of protocols are Network protocols
+			
+			Protocol Definition: 
+				Digital language through which we communicate with others on the Internet. 
+				Set of mutually accepted and implemented rules at both ends of the communications channel for the proper exchange of information. 
+				There are two or more parties
+				All of them understand protocol.
+				Hence they can communicate.
+				Message travel from sender to receiver via a medium (The medium is the physical path over which a message travels) using a protocol.
+
+				Protocols determines
+					What is communicated?
+					How is it Communicated?
+					When is it Communicated
+				
+				Elements of Application Protocols (Indicative of what a protocol needs to do)
+					Message encoding
+					Message formatting and encapsulation
+						Source (sender) and Receiver is added.
+					Message timing
+						Flow control
+						Response timeout
+					Message size
+						e.g. based on the network capacity change the message size.
+					Message delivery options
+						Unicast
+							single destn.
+						Multicast
+							
+						Broadcast
+
+
+				Developed by industry wide organizations. 
+				All data of protocols are stored in binary information. 
+				
+				Generally discussed in terms of which OSI model layer they belong to.
+				
+				OSI Image from : https://www.cloudflare.com/learning/network-layer/what-is-a-protocol/
+				
+				
+				Layer 7: Application layer network protocols	
+					Provides standard services such as 
+						virtual terminal, 
+						file, and 
+						job transfer and 
+						operations.
+				Layer 6: Presentation layer network protocols	
+					Masks the differences in data formats between dissimilar systems.
+					Encodes and decodes data, encrypts and decrypts data, and compresses and decompresses data.
+				Layer 5: Session layer network protocols	
+					Manages user sessions and dialogues.
+					Establishes and terminates sessions between users.
+				Layer 4: Transport layer network protocols	
+					Manages end-to-end message delivery in networks.
+					Renders reliable and sequential packet delivery through error recovery and flow control mechanisms.
+				Layer 3: Network layer protocols	
+					Routes packets according to unique network device addresses.
+					Renders flow and congestion control to prevent network resource depletion.
+				Layer 2: Data link layer network protocols	
+					Frames packets.
+					Detects and corrects packet transmit errors.
+				Layer 1: Physical layer network protocols	
+					Interfaces between network medium and devices.
+					Defines optical, electrical, and mechanical characteristics.
+
+				
+				
+				Few important network protocols
+					1. DHCP: Dynamic Host Configuration Protocol
+						Enables network administrators to automate the assignment of IP addresses in a network. 
+						In an IP network, 
+							every device requires a unique IP. 
+						DHCP lets network admins 
+							distribute IP addresses from a central point 
+							automatically send a new IP address when a device is plugged in 
+						Works on a client-server model.
+
+					Advantages of using DHCP
+					------------------------
+					Centralized management of IP addresses.
+					Seamless addition of new clients into a network.
+					Reuse of IP addresses, reducing the total number of IP addresses required.
+					
+					Disadvantages of using DHCP
+					---------------------------
+					Tracking internet activity becomes tedious
+						device can have multiple IP addresses over a period of time.
+						Same IP can belong to different machines over time.
+						Computers with DHCP cannot be used as servers, as their IPs change over time.
+						
+					
+					2. DNS: Domain Name System protocol
+					-----------------------------------
+					Helps in translating or mapping host names to IP addresses. 
+					Works on a client-server model
+					Uses a distributed database over a hierarchy of name servers.
+					
+					Why DNS
+						Hosts are identified based on their IP addresses
+						Memorizing an IP address is difficult due to its complexity. 
+						IPs are also dynamic
+						
+					Advantages
+					----------
+					DNS facilitates internet access.
+					Eliminates the need to memorize IP addresses.
+					
+					Disadvantages
+					-------------
+					DNS queries don't carry information pertaining to the client who initiated it. 
+					This is because the DNS server only sees the IP from where the query came from
+						making the server susceptible to manipulation from hackers.
+					DNS root servers, if compromised, could enable hackers to redirect to other pages for phishing data.
+					
+					3. FTP: File Transfer Protocol
+					------------------------------
+					File Transfer Protocol enables file sharing between hosts, both local and remote, and runs on top of TCP. For file transfer, FTP creates two TCP connections: control and data connection. The control connection is used to transfer control information like passwords, commands to retrieve and store files, etc., and the data connection is used to transfer the actual file. Both of these connections run in parallel during the entire file transfer process.
+
+					Advantages
+					----------
+					Enables sharing large files and multiple directories at the same time.
+					Lets you resume file sharing if it was interrupted.
+					Lets you recover lost data, and schedule a file transfer.
+					
+					Disadvantages
+					-------------
+					FTP lacks security. Data, usernames, and passwords are transferred in plain text, making them vulnerable to malicious actors.
+					FTP lacks encryption capabilities, making it non-compliant with industry standards.
+					
+					4. HTTP: Hyper Text Transfer Protocol
+					-------------------------------------
+					Application layer protocol 
+					Used for 
+						distributed, 
+						collaborative, and 
+						hypermedia information systems. 
+					It works on a client-server model
+						web browser acts as the client. 
+					
+					As a request and response type protocol, the client sends a request to the server, which is then processed by the server before sending a response back to the client.
+					HTTP is a stateless protocol
+
+					Advantages
+					----------
+					Memory usage and CPU usage are low because of lesser concurrent connections.
+					Errors can be reported without closing connections.
+					Owing to lesser TCP connections, network congestion is reduced.
+					
+					Disadvantages
+					-------------
+					HTTP lacks encryption capabilities, making it less secure.
+					HTTP requires more power to establish communication and transfer data.
+					
+					
+					5. IMAP and IMAP4: Internet Message Access Protocol (version 4)
+						IMAP is an email protocol 
+						Lets end users access and manipulate messages stored 
+							on a mail server 
+							from their email client 
+							as if they were present locally on their remote device. 
+						IMAP follows a client-server model
+						lets multiple clients access messages on a common mail server concurrently. 
+						IMAP includes operations for 
+							creating, 
+							deleting, and 
+							renaming mailboxes; 
+							checking for new messages; 
+							permanently removing messages; 
+							setting and removing flags
+							etc. 
+
+					Advantages
+					----------
+					As the emails are stored on the mail server
+						local storage utilization is minimal.
+					In case of accidental deletion of emails or data, 
+						it is always possible to retrieve them as they are stored on the mail server.
+						
+					Disadvantages
+					-------------
+					Emails won't work without an active internet connection.
+					High utilization of emails by end users requires more mailbox storage
+					
+					6. POP and POP3: Post Office Protocol (version 3)
+					-------------------------------------------------
+					The Post Office Protocol is an email protocol. 
+					Using this protocol, the end user can download emails from the mail server to their own email client. 
+					Once the emails are downloaded locally, they can be read without an internet connection. Also, once the emails are moved locally, they get deleted from the mail server, freeing up space. POP3 is not designed to perform extensive manipulations with the messages on the mail server, unlike IMAP4. POP3 is the latest version of the Post Office Protocol.
+
+					Advantages
+
+					Read emails on local devices without internet connection.
+					The mail server need not have high storage capacity, as the emails get deleted when they're moved locally.
+					Disadvantages
+
+					If the local device on which the emails were downloaded crashes or gets stolen, the emails are lost.
+					7. SMTP: Simple Mail Transfer Protocol
+					SMTP is a protocol designed to transfer electronic mail reliably and efficiently. SMTP is a push protocol and is used to send the email, whereas POP and IMAP are used to retrieve emails on the end user's side. SMTP transfers emails between systems, and notifies on incoming emails. Using SMTP, a client can transfer an email to another client on the same network or another network through a relay or gateway access available to both networks.
+
+					Advantages
+
+					Ease of installation.
+					Connects to any system without any restriction.
+					It doesn't need any development from your side.
+					Disadvantages
+
+					Back and forth conversations between servers can delay sending a message, and also increases the chance of the message not being delivered.
+					Certain firewalls can block the ports used with SMTP.
+					8. Telnet: Terminal emulation protocol
+					Telnet is an application layer protocol that enables a user to communicate with a remote device. A Telnet client is installed on the user's machine, which accesses the command line interface of another remote machine that runs a Telnet server program.
+
+					Telnet is mostly used by network administrators to access and manage remote devices. To access a remote device, a network admin needs to enter the IP or host name of the remote device, after which they will be presented with a virtual terminal that can interact with the host.
+
+					Advantages
+
+					Compatible with multiple operating systems.
+					Saves a lot of time due to its swift connectivity with remote devices.
+					Disadvantages
+
+					Telnet lacks encryption capabilities and sends across critical information in clear text, making it easier for malicious actors.
+					Expensive due to slow typing speeds.
+					9. SNMP: Simple Network Management Protocol
+					SNMP is an application layer protocol used to manage nodes, like servers, workstations, routers, switches, etc., on an IP network. SNMP enables network admins to monitor network performance, identify network glitches, and troubleshoot them. SNMP protocol is comprised of three components: a managed device, an SNMP agent, and an SNMP manager.
+
+					The SNMP agent resides on the managed device. The agent is a software module that has local knowledge of management information, and translates that information into a form compatible with the SNMP manager. The SNMP manager presents the data obtained from the SNMP agent, helping network admins manage nodes effectively.
+
+					Currently, there are three versions of SNMP: SNMP v1, SNMP v2, and SNMP v3. Both versions 1 and 2 have many features in common, but SNMP v2 offers enhancements such as additional protocol operations. SNMP version 3 (SNMP v3) adds security and remote configuration capabilities to the previous versions.
+
+					Presentation layer network protocols
+					LPP: Lightweight Presentation Protocol
+					The Lightweight Presentation Protocol helps provide streamlined support for OSI application services in networks running on TCP/IP protocols for some constrained environments. LPP is designed for a particular class of OSI applications, namely those entities whose application context contains only an Association Control Service Element (ACSE) and a Remote Operations Service Element (ROSE). LPP is not applicable to entities whose application context is more extensive, i.e., contains a Reliable Transfer Service Element.
+
+					Session layer network protocols
+					RPC: Remote Procedure Call protocol
+					RPC is a protocol for requesting a service from a program in a remote computer through a network, and can be used without having to understand the underlying network technologies. RPC uses TCP or UDP for carrying the messages between communicating programs. RPC also works on client-server model. The requesting program is the client, and the service providing program is the server.
+
+					Advantages
+
+					RPC omits many protocol layers to improve performance.
+					With RPC, code rewriting or redeveloping efforts are minimized.
+					Disadvantages
+
+					Not yet proven to work effectively over wide-area networks.
+					Apart from TCP/IP, RPC does not support other transport protocols.
+					Transport layer network protocols
+					1. TCP: Transmission Control Protocol
+					TCP is a transport layer protocol that provides a reliable stream delivery and virtual connection service to applications through the use of sequenced acknowledgement. TCP is a connection-oriented protocol, as it requires a connection to be established between applications before data transfer. Through flow control and acknowledgement of data, TCP provides extensive error checking. TCP ensures sequencing of data, meaning the data packets arrive in order at the receiving end. Retransmission of lost data packets is also feasible with TCP.
+
+					Advantages
+
+					TCP ensures three things: data reaches the destination, reaches it on time, and reaches it without duplication.
+					TCP automatically breaks data into packets before transmission.
+					Disadvantages
+
+					TCP cannot be used for broadcast and multicast connections.
+					2. UDP: User Datagram Protocol
+					UDP is a connection-less transport layer protocol that provides a simple but unreliable message service. Unlike TCP, UDP adds no reliability, flow control, or error recovery functions. UDP is useful in situations where the reliability mechanisms of TCP are not necessary. Retransmission of lost data packets isn't possible with UDP.
+
+					Advantages
+
+					Broadcast and multicast connections are possible with UDP.
+					UDP is faster than TCP.
+					Disadvantages
+
+					In UDP, it's possible that a packet may not be delivered, be delivered twice, or not be delivered at all.
+					Manual disintegration of data packets is needed.
+					Network layer protocols
+					1. IP: Internet Protocol (IPv4)
+					IPv4 is a network layer protocol that contains addressing and control information, which helps packets be routed in a network. IP works in tandem with TCP to deliver data packets across the network. Under IP, each host is assigned a 32-bit address comprised of two major parts: the network number and host number. The network number identifies a network and is assigned by the internet, while the host number identifies a host on the network and is assigned by a network admin. The IP is only responsible for delivering the packets, and TCP helps puts them back in the right order.
+
+					Advantages
+
+					IPv4 encrypts data to ensure privacy and security.
+					With IP, routing data becomes more scalable and economical.
+					Disadvantages
+
+					IPv4 is labor intensive, complex, and prone to errors.
+					2. IPv6: Internet Protocol version 6
+					IPv6 is the latest version of the Internet Protocol, a network layer protocol that possesses addressing and control information for enabling packets to be routed in the network. IPv6 was created to deal with IPv4 exhaustion. It increases the IP address size from 32 bits to 128 bits to support more levels of addressing.
+
+					Advantages
+
+					More efficient routing and packet processing compared to IPv4.
+					Better security compared to IPv4.
+					Disadvantages
+
+					IPv6 is not compatible with machines that run on IPv4.
+					Challenge in upgrading the devices to IPv6.
+					3. ICMP: Internet Control Message Protocol
+					ICMP is a network layer supporting protocol used by network devices to send error messages and operational information. ICMP messages delivered in IP packets are used for out-of-band messages related to network operation or misoperation. ICMP is used to announce network errors, congestion, and timeouts, as well assist in troubleshooting.
+
+					Advantages
+
+					ICMP is used to diagnose network issues.
+					Disadvantages
+
+					Sending a lot of ICMP messages increases network traffic.
+					End users are affected if malicious users send many ICMP destination unreachable packets.
+					Data link layer network protocols
+					1. ARP: Address Resolution Protocol
+					The Address Resolution Protocol helps map IP addresses to physical machine addresses (or a MAC address for Ethernet) recognized in the local network. A table called an ARP cache is used to maintain a correlation between each IP address and its corresponding MAC address. ARP offers the rules to make these correlations, and helps convert addresses in both directions.
+
+					Advantages
+					-----------																			MAC addresses need not be known or memorized, as the ARP cache contains all the MAC addresses and maps them automatically with IPs.
+					Disadvantages
+
+					ARP is susceptible to security attacks called ARP spoofing attacks.
+					When using ARP, sometimes a hacker might be able to stop the traffic altogether. This is also known as ARP denial-of-services.
+					2. SLIP: Serial Line IP
+					SLIP is used for point-to-point serial connections using TCP/IP. SLIP is used on dedicated serial links, and sometimes for dial-up purposes. SLIP is useful for allowing mixes of hosts and routers to communicate with one another; for example, host-host, host-router, and router-router are all common SLIP network configurations. SLIP is merely a packet framing protocol: It defines a sequence of characters that frame IP packets on a serial line. It does not provide addressing, packet type identification, error detection or correction, or compression mechanisms.
+
+					Advantages
+
+					Since it has a small overhead, it is suitable for usage in microcontrollers.
+					It reuses existing dial-up connections and telephone lines.
+					It's easy to deploy since it's based on the Internet Protocol.
+					DIsadvantages
+
+					SLIP doesn't support automatic setup of network connections in multiple OSI layers at the same time.
+					SLIP does not support synchronous connections, such as a connection created through the internet from a modem to an internet service provider (ISP).
+					
+					layer  wise Protocol
+					---------------------
+					Application and Presentation Layer
+						HTTP, HTTPS, SSL, FTP, Telenet, SMTP, POP, IMAP
+					
+					Session and Transport
+						TCP, UDP
+					
+					Network
+						IP
+					Data link and physical
+						Ethernet, PPP
+					
+					
+			Load Balancer
+			--------------			
+				Distribute incoming traffic to the network by efficiently distributing traffic across multiple servers
+				
+				Keep a track of servers which are available.
+					Provide HA and reliability
+				Helps adding or removing servers
+				
+				3 most used algorithms
+					1. Round Robin
+					2. Least connections
+						or least load
+						may need additional computation
+					3. IP Hash
+						Server identified based on Client IP.
+						Helps in session stickiness
+						
+				Session Stickiness
+					Browser maintains session id. This is used to identify the server.
+					
+			Proxy
+				Secures client machines.
+				Our parents were proxy to us
+				Proxy
+				
+				
+				Features of proxy
+					Firewall
+					Better Management
+					Security
+					Caching
+					Encrypt/Decrypt.
+
+			Reverse proxy
+				Secures request from outside our network.
+				Secures 
+				Compresses
+				Caching
+				Zipping/Reduce size
+				Can (act as) load balance
+
+			
+			Network Hops
+			https://en.wikipedia.org/wiki/Hop_(networking)
+			https://www.youtube.com/watch?v=KEQcWP6bXds
+				Data packets pass through routers as they travel between source and destination.
+				Hop is an event 
+					occurs when a data packet pass from one network segment to the other through a router.
+			Hop count: number of intermediate devices through which data must pass between source and destination.
+			
+			In windows: tracert google.com
+			
+			On a layer 3 network e.g. Internet Protocol (IP), 
+				each router along the data path constitutes a hop. 
+			Just one of the metric which affects network speed. Other properties include
+				speed, 
+				load, 
+				reliability, or 
+				latency 
+					of any particular hop
+			N.B: A path with more hops can sometimes be faster.		
+
+			Each time a router receives a packet, 
+				discards any packets received with a zero TTL value
+				decrements time to live (TTL) by 1 
+					remove a packet caught in loop.
+					
+			Hop limit or Time to live
+				IPv4: time to live (TTL) 
+				IPv6: hop limit 
+					specifies a limit on the number of hops a packet is allowed before being discarded. 
+					
+			
+			Next hop
+
+			Next hop is the next router to which packets should be forwarded 
+
+			A routing table 
+				usually contains the 
+					IP address of a destination network 
+					IP address of the next gateway 
+				doesn't contain
+					IP address of each pat
+			
+			Load balancer, Network Hops, Proxy and Reverse Proxy
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to Databases and processors
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		https://www.javatpoint.com/dbms-tutorial
+		What is Database
+			Database: 
+				collection of inter-related data 
+				Used to do the following with data efficiently
+					get, 
+					insert/update and 
+					delete . 
+				Organize the data as 
+					table, 
+					schema, 
+					views, and 
+					reports.
+
+			For example: The college Database organizes the data about the admin, staff, students and faculty etc.
+
+			DBMS
+			----
+			Database management system 
+				software used to manage the database. 
+				For example: 
+					MySQL, 
+					Oracle
+				DBMS provides 
+					interface to perform various operations like 
+						database creation, 
+						storing data in it, 
+						updating data, 
+						creating a table in the database 
+						etc.
+					Provides protection and security to the database. 
+					Maintains data consistency across users.
+				DBMS allows users the following tasks:
+					Data Definition: 
+						Used for 
+							creation, 
+							modification, 
+							removal of 
+								definition that defines the organization of data in the database.
+						e.g. CREATE, ALTER, DROP are DDL statements
+					Data Manupulation Language: 
+						Used for the 
+							insertion, 
+							modification
+							deletion 
+								of the actual data in the database.
+							
+							DML: SELECT, INSERT, UPDATE, DELETE
+
+					User Administration: 
+						Used for 
+							registering and monitoring users, 
+							maintain data integrity, 
+							enforcing data security, 
+							dealing with concurrency control, 
+							monitoring performance and 
+							recovering information corrupted by unexpected failure.
+					
+					
+			Characteristics of DBMS
+				Uses a digital repository established on a server to store and manage the information.
+				Can provide a clear and logical view of the process that manipulates data.
+				DBMS contains automatic backup and recovery procedures.
+				Contains ACID properties which maintain data in a healthy state in case of failure.
+				Can reduce the complex relationship between data.
+				Used to support manipulation and processing of data.
+				Used to provide security of data.
+				Can view the database from different viewpoints according to the requirements of the user.
+			
+			Advantages of DBMS
+				Controls database redundancy: 
+					Can control data redundancy 
+						it stores all the data in one single database file 
+							recorded data is placed in the database.
+				Data sharing: 
+					Authorized users of an organization can share the data among multiple users.
+				Easily Maintenance: 
+					easily maintainable due to the centralized nature of the database system.
+				Reduce time: 
+					Reduces development time and maintenance need.
+				Backup: 
+					It provides backup and recovery subsystems which create automatic backup of data from hardware and software failures and restores the data if required.
+				multiple user interface: 
+					It provides different types of user interfaces like graphical user interfaces, application program interfaces
+				
+				
+			Disadvantages of DBMS
+				Cost of Hardware and Software: It requires a high speed of data processor and large memory size to run DBMS software.
+				Size: It occupies a large space of disks and large memory to run them efficiently.
+				Complexity: Database system creates additional complexity and requirements.
+				Higher impact of failure: Failure is highly impacted the database because in most of the organization, all the data stored in a single database and if the database is damaged due to electric failure or database corruption then the data may be lost forever.
+
+
+		Types of Database
+		-----------------
+			1. Centralized database
+				Stores data at a centralized database system. 
+				It comforts the users to access the stored data from different locations through several applications. These applications contain the authentication process to let users access data securely. An example of a Centralized database can be Central Library that carries a central database of each library in a college/university.
+
+				Advantages of Centralized Database
+					It has decreased the risk of data management, i.e., manipulation of data will not affect the core data.
+					Data consistency is maintained as it manages data in a central repository.
+					It provides better data quality, which enables organizations to establish data standards.
+					It is less costly because fewer vendors are required to handle the data sets.
+					Disadvantages of Centralized Database
+					The size of the centralized database is large, which increases the response time for fetching the data.
+					It is not easy to update such an extensive database system.
+					If any server failure occurs, entire data will be lost, which could be a huge loss.
+			2) Distributed Database
+				Unlike a centralized database system, in distributed systems, data is distributed among different database systems of an organization. These database systems are connected via communication links. Such links help the end-users to access the data easily. Examples of the Distributed database are Apache Cassandra, HBase, Ignite, etc.
+				
+				Can be of two types
+					Homogeneous DDB: 
+						Those database systems which execute on the same operating system and use the same application process and carry the same hardware devices.
+					Heterogeneous DDB: 
+						Those database systems which execute on different operating systems under different application procedures, and carries different hardware devices.
+					
+					Advantages of Distributed Database
+						Modular development is possible in a distributed database, i.e., the system can be expanded by including new computers and connecting them to the distributed system.
+						One server failure will not affect the entire data set.
+				
+				3) Relational Database
+					This database is based on the relational data model, which stores data in the form of rows(tuple) and columns(attributes), and together forms a table(relation). A relational database uses SQL for storing, manipulating, as well as maintaining the data. E.F. Codd invented the database in 1970. Each table in the database carries a key that makes the data unique from others. Examples of Relational databases are MySQL, Microsoft SQL Server, Oracle, etc.
+
+					Properties of Relational Database
+					There are following four commonly known properties of a relational model known as ACID properties, where:
+
+					A means Atomicity: 
+						This ensures the data operation will be either 
+							successful (commit)
+						or 
+							will failure (abort/rollback)
+
+					C means Consistency: 
+						If we perform any operation over the data, 
+							its value before and after the operation should be preserved. 
+						For example, the account balance before and after the transaction should be correct, i.e., it should remain conserved.
+
+					I means Isolation: 
+						There can be concurrent users for accessing data at the same time. Thus, isolation between the data should remain isolated. 
+						For example, when multiple transactions occur at the same time, one transaction effects should not be visible to the other transactions in the database.
+
+					D means Durability: 
+						It ensures that once it completes the operation and commits the data, data changes should remain permanent.
+
+			4) NoSQL Database
+				Non-SQL/Not Only SQL 
+				type of database that is used for storing a wide range of data sets. 
+				Not a relational database
+					stores data not only in tabular form but in several different ways. 
+					It came into existence when the demand for building modern applications increased. Thus, NoSQL presented a wide variety of database technologies in response to the demands. 
+					We can further divide a NoSQL database into the following four types:
+	
+					Key-value storage: It is the simplest type of database storage where it stores every single item as a key (or attribute name) holding its value, together.
+					
+					Document-oriented Database: A type of database used to store data as JSON-like document. It helps developers in storing data by using the same document-model format as used in the application code.
+				
+					Graph Databases: It is used for storing vast amounts of data in a graph-like structure. Most commonly, social networking websites use the graph database.
+				
+					Wide-column stores: It is similar to the data represented in relational databases. Here, data is stored in large columns together, instead of storing in rows.
+
+		Advantages of NoSQL Database
+			It enables good productivity in the application development as it is not required to store data in a structured format.
+			It is a better option for managing and handling large data sets.
+			It provides high scalability.
+			Users can quickly access data from the database through key-value.
+		
+		
+		5) Cloud Database
+			A type of database where data is stored in a virtual environment and executes over the cloud computing platform. It provides users with various cloud computing services (SaaS, PaaS, IaaS, etc.) for accessing the database. There are numerous cloud platforms, but the best options are:
+
+			Amazon Web Services(AWS)
+			Microsoft Azure
+			Kamatera
+			PhonixNAP
+			ScienceSoft
+			Google Cloud SQL, etc
+
+		
+		6) Object-oriented Databases
+			The type of database that uses the object-based data model approach for storing data in the database system. The data is represented and stored as objects which are similar to the objects used in the object-oriented programming language.
+
+		7) Hierarchical Databases
+			It is the type of database that stores data in the form of parent-child relationship nodes. Here, it organizes data in a tree-like structure.
+
+			Data get stored in the form of records that are connected via links. Each child record in the tree will contain only one parent. On the other hand, each parent record can have multiple child records.
+
+		8) Network Databases
+			It is the database that typically follows the network data model. Here, the representation of data is in the form of nodes connected via links between them. Unlike the hierarchical database, it allows each record to have multiple children and parent nodes to form a generalized graph structure.
+
+		9) Personal Database
+			Collecting and storing data on the user's system defines a Personal Database. This database is basically designed for a single user.
+
+			Advantage of Personal Database
+			It is simple and easy to handle.
+			It occupies less storage space as it is small in size.
+		10) Operational Database
+			The type of database which creates and updates the database in real-time. It is basically designed for executing and handling the daily data operations in several businesses. For example, An organization uses operational databases for managing per day transactions.
+
+		11) Enterprise Database
+			Large organizations or enterprises use this database for managing a massive amount of data. It helps organizations to increase and improve their efficiency. Such a database allows simultaneous access to users.
+
+		Advantages of Enterprise Database:
+			Multi processes are supportable over the Enterprise database.
+			It allows executing parallel queries on the system.
+
+
+		https://www.techpowerup.com/cpu-specs/
+		
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to parallelism, concurency etc.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+		Parallel And Distributed Computing
+		----------------------------------
+		What is serial computing. 
+			Advantages and disadavantages
+		People standing in a queue
+			Serial Computing
+				One cashier one queue
+				One cashier two queue
+				Multiple cashier - multiple queue
+				Multiple cashier - single queue
+				
+		So, in short Serial Computing is following:
+
+		Problem statement is broken into discrete instructions.
+		Then the instructions are executed one by one.
+		Only one instruction is executed at any moment of time.
+
+		Parallel Computing
+		------------------
+		Problems are broken down into instructions 
+		Instruction solved concurrently 
+			Multiple workers are working at the same time.
+
+		Advantages of Parallel Computing over Serial Computing are as follows:
+		---------------------------------------------------------------------
+		Saves time and money 
+			many resources working together will reduce 
+				time 
+				costs.
+		Impractical to solve all problems on Serial Computing.
+			e.g. generate numbers simultaneously
+		Better utilization of resources.
+		
+		
+		Types of Parallelism at CPU level:
+		----------------------------------
+		Bit-level parallelism: 
+			Form of parallel computing which is based on the increasing processor’s size. 
+			Reduces the number of instructions that the system must execute in order to perform a task on large-sized data.
+			Example: an 8-bit processor must compute the sum of two 16-bit integers. 
+			It must first sum up the 8 lower-order bits, 
+				then add the 8 higher-order bits, 
+				
+		Instruction-level parallelism: 
+			A processor can only address less than one instruction for each clock cycle phase. 
+			These instructions can be 
+				re-ordered and 
+				grouped 
+				later on executed concurrently without affecting the result of the program. 
+				This is called instruction-level parallelism.
+		
+		Task Parallelism: 
+			Task parallelism employs the decomposition of a task into subtasks and then allocating each of the subtasks for execution. The processors perform execution of sub tasks concurrently.
+				
+		Why parallel computing?
+		-----------------------
+		The whole real world runs in dynamic nature 
+			i.e. many things happen at a certain time but at different places concurrently. This data is extensively huge to manage.
+		Real world data needs more dynamic simulation and modeling, and for achieving the same, parallel computing is the key.
+		Parallel computing provides concurrency and saves time and money.
+		Complex, large datasets, and their management can be organized only and only using parallel computing’s approach.
+		Ensures the effective utilization of the resources. The hardware is guaranteed to be used effectively whereas in serial computation only some part of hardware was used and the rest rendered idle.
+		Also, it is impractical to implement real-time systems using serial computing.
+		Applications of Parallel Computing:
+
+		Data bases and Data mining.
+		Real time simulation of systems.
+		Science and Engineering.
+		Advanced graphics, augmented reality and virtual reality.
+		
+		Limitations of Parallel Computing:
+		----------------------------------
+		It addresses such as communication and synchronization between multiple sub-tasks and processes which is difficult to achieve.
+		The algorithms must be managed in such a way that they can be handled in the parallel mechanism.
+		The algorithms or program must have low coupling and high cohesion. But it’s difficult to create such programs.
+		More technically skilled and expert programmers can code a parallelism based program well.
+
+
+		
+		
+		-----------------------------------------------------
+		Big data and simultaneous users 
+			places particular pressure on 
+			the need to carry out computing tasks 
+				“in parallel,” 
+				
+		Almost every software can be written to use Parallel processing and distributed computing 
+			e.g. 
+				algorithms, 
+				computer architecture, 
+				networks, 
+				operating systems
+				software engineering. 
+		Parallel and distributed computing builds on fundamental systems concepts, such as 
+			concurrency, 
+			mutual exclusion, 
+			consistency in state/memory manipulation, 
+			message-passing, and 
+			shared-memory models.
+
+		Creating a multiprocessor from a number of single CPUs requires 
+			physical links and 
+			a mechanism for communication among the processors 
+				so that they may operate in parallel. 
+		Tight Vs loosd coupling
+		Tightly coupled multiprocessors share memory 
+			Hence may communicate by storing information in memory
+				accessible by all processors. 
+		Loosely coupled multiprocessors, 
+			e.g. computer networks, 
+				Computer scientists have investigated various multiprocessor architectures. 
+				communicate by sending messages to each other across the physical links. 
+				For example, the possible configurations in which hundreds or even thousands of processors may be linked together are examined to find the geometry that supports the most efficient system throughput. A much-studied topology is the hypercube, in which each processor is connected directly to some fixed number of neighbours: two for the two-dimensional square, three for the three-dimensional cube, and similarly for the higher-dimensional hypercubes. Computer scientists also investigate methods for carrying out computations on such multiprocessor machines (e.g., algorithms to make optimal use of the architecture and techniques to avoid conflicts in data transmission). The machine-resident software that makes possible the use of a particular machine, in particular its operating system, is an integral part of this investigation.
+
+		Concurrency refers to the execution of more than one procedure at the same time (perhaps with the access of shared data), either truly simultaneously (as on a multiprocessor) or in an unpredictably interleaved order. Modern programming languages such as Java include both encapsulation and features called “threads” that allow the programmer to define the synchronization that occurs among concurrent procedures or tasks.
+
+		Two important issues in concurrency control are known as deadlocks and race conditions. Deadlock occurs when a resource held indefinitely by one process is requested by two or more other processes simultaneously. As a result, none of the processes that call for the resource can continue; they are deadlocked, waiting for the resource to be freed. An operating system can handle this situation with various prevention or detection and recovery techniques. A race condition, on the other hand, occurs when two or more concurrent processes assign a different value to a variable, and the result depends on which process assigns the variable first (or last).
+
+		Preventing deadlocks and race conditions is fundamentally important, since it ensures the integrity of the underlying application. A general prevention strategy is called process synchronization. Synchronization requires that one process wait for another to complete some operation before proceeding. For example, one process (a writer) may be writing data to a certain main memory area, while another process (a reader) may want to read data from that area. The reader and writer must be synchronized so that the writer does not overwrite existing data until the reader has processed it. Similarly, the reader should not start to read until data has been written in the area.
+
+		With the advent of networks, distributed computing became feasible. A distributed computation is one that is carried out by a group of linked computers working cooperatively. Such computing usually requires a distributed operating system to manage the distributed resources. Important concerns are workload sharing, which attempts to take advantage of access to multiple computers to complete jobs faster; task migration, which supports workload sharing by efficiently distributing jobs among machines; and automatic task replication, which occurs at different sites for greater reliability.
+		
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+Learning Session 2
+	Fundamentals of Algorithm, DBMS, SQL
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Understand space and time complexity
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to basic data structures
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			basic sorting algorithms
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Hash table
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			HashMap
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			
+			Set
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			List etc. (Provide working examples)
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to databases and SQL
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Problem Solving
+		Defining problems and how to get started on the same.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Identify similarities of problems to solve new problems (design algorithms)
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Working backwards from a solution to derive starting conditions
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		General problem solving strategies - top down design, bottom up.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Understanding of brute force/Hash Table and Naive solution
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Understand how to move towards an optimized solution.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+Learning Session 3
+	Fundamentals of Core Java
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction to Java, Syntaxes, looping, basic constructs, collections and java.util package
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Basic Concepts: 
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Classes
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Encapsulation, Constructors, Pointers (Live examples)
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Write simple code and able to compile and run java programs using and IDE.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Fundamentals of advanced Java
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Overview of program syntax using live examples
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+		Lambdas, generics, functional interaces and knowledge on JVM.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		How to effectively debug a Java application - 
+			usage of debuggers, 
+			various debug techniques, 
+			using break points, 
+			analyzing heap dumps.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Learning Session 4
+	Deep dive into code
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Understanding of coding structure
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Exposing to real world code and develop ability to read the code.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Introduction into Git + GitHub ( source control system)
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Learn how to commit a change in another person's code base 
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Raise a pull request
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Basic concepts of IOC and DI
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Fundamentals of Spring/Spring Boot/Micronaut
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Fundamentals of NoSQL, Introduction to cloud (compute, persistence and storage)
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Introduction to Containers, Container Orchestration etc.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Real life collaboration and walk through of building new system
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,59 @@
+There are various types of relationships in this world.
+
+Parents - children
+Friends
+Enemies
+Competitors
+
+Similarly in computer world also we have relationships.
+
+For e.g. when I want to heat something
+I use a stove
+I depend on stove
+But various stoves differ.
+So I need to learn how to use different stoves.
+
+That is a bad practice 
+
+Instead if you can define and standardize the way these operate, then you don't need to learn
+
+e.g. when you use refrigerator.
+
+
+But you still depend on that and that relationship is tightly bound.
+So you cannot replace a fridge with cold storage and expect that it would work.
+
+
+DI
+--
+
+The other option is if you can inject a dependency
+
+For e.g. you have car
+For travelling you depend on car
+
+Car to driver relationship.
+You can inject a driver into it.
+
+This is becuase the properties of driver is clearly defined and car has an option to inject a driver.
+What are the benefits.
+
+	Huge benefits
+		We don't need to learn to drive different vehicles.
+		Vehicles can take any driver.
+
+
+In reality this relationship is very common.
+What is inside a computer, car, mobile, ect.... lot of things have got injected.
+
+
+IOC
+---
+When i want a dependency to be injected, I can have a method to create it.
+For e.g. I want food, I can do farming and prepare food.
+Instead of that I can buy it from a farmer too.
+So the control to create food is inverted outside.
+
+Car - what if car was creating the driver itself.
+It would have been less flexibile.
+

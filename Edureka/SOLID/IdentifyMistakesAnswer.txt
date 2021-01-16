@@ -1,0 +1,158 @@
+https://blog.scottlogic.com/2018/06/26/solid-principles.html
+
+1. 
+class Customer
+{
+    void Add(Database db)
+    {
+        try
+        {
+            db.Add();
+        }
+        catch (Exception ex)
+        {
+            File.WriteAllText(@"C:\Error.txt", ex.ToString());
+        }
+    }
+}
+
+2. 
+class Customer
+{
+    int Type;
+
+    void Add(Database db)
+    {
+        if (Type == 0)
+        {
+            db.Add();
+        }
+        else
+        {
+            db.AddExistingCustomer();
+        }
+    }
+}
+
+
+3. 
+
+class Enquiry : Customer
+{
+    override int Discount(int sales)
+    {
+        return sales * 5;
+    }
+
+    override void Add(Database db)
+    {
+        throw new Exception("Not allowed");
+    }
+}
+
+class BetterGoldCustomer : Customer
+{
+    override int Discount(int sales)
+    {
+        return sales - 100;
+    }
+}
+
+class BetterSilverCustomer : Customer
+{
+    override int Discount(int sales)
+    {
+        return sales - 50;
+    }
+}
+
+// e.g. to show how this is bad:
+class ViolatingLiskovs
+{
+    void ParseCustomers()
+    {
+        var database = new Database();
+        var customers = new List<Customer>
+        {
+            new GoldCustomer(),
+            new SilverCustomer(),
+            new Enquiry() // This is valid, but...
+        };
+
+        foreach (Customer c in customers)
+        {
+            // Enquiry.Add() will throw an exception here!
+            c.Add(database);
+        }
+    }
+}
+
+
+4. 
+class FileLogger
+{
+    void Handle(string error)
+    {
+        File.WriteAllText(@"C:\Error.txt", error);
+    }
+}
+
+internal class Customer
+{
+    FileLogger logger = new FileLogger(); // Bad
+
+    public void Add(Database db)
+    {
+        try
+        {
+            db.Add();
+        }
+        catch (Exception error)
+        {
+            logger.Handle(error.ToString());
+        }
+    }
+}
+
+
+5. class BetterCustomer
+{
+    ILogger logger;
+    BetterCustomer(ILogger logger)
+    {
+        this.logger = logger;
+    }
+
+    void Add(Database db)
+    {
+        try
+        {
+            db.Add();
+        }
+        catch (Exception error)
+        {
+            logger.Handle(error.ToString());
+        }
+    }
+}
+class EmailLogger : ILogger
+{
+    void Handle(string error)
+    {
+        File.WriteAllText(@"C:\Error.txt", error);
+    }
+}
+
+interface ILogger
+{
+    void Handle(string error);
+}
+
+// e.g. when it is used:
+void UseDependencyInjectionForLogger()
+{
+    var customer = new BetterCustomer(new EmailLogger());
+    customer.Add(new Database());
+}
+
+

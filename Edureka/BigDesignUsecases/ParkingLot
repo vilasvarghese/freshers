@@ -1,0 +1,36 @@
+ParkingLot
+
+Design Problems
+1. System design
+2. Scale
+3. API's
+4. Concurrency
+5. Distributed
+
+
+More details
+1. Allocation of parking to two and four wheelers
+2. Can have different types of parts
+3. Heavy veichle in lower floors and lighter upper
+
+4. Premium parking lots: Different charging price
+
+Scale
+	Estimate the number of parking lots 
+		in number of parking lots per floor
+		10 * 200
+		
+	ParkingLot
+		how many parking lot are present
+		What is the size per slot.
+		200 * 1 car
+		
+	Ticketing per day
+		Number of Tickets issued per day.
+		24 * 200
+		
+		
+		
+----------------------------------------------------------------https://www.youtube.com/watch?v=DSGsa0pu8-k
+
+		

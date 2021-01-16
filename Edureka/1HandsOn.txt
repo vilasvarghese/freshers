@@ -1,0 +1,72 @@
+Bank
+	I want to open an account
+	I want deposit money
+	I want to withdraw money
+	
+class Bank
+	openAnAccount
+	depositMoney
+	withdrawMoney
+	
+class BankAccount
+	accountNumber
+	name
+	balance
+	
+--------------------------------------
+What is the landing page?
+Landing page
+	login page
+	user id
+	pwd
+	pin? like hdfc bank?
+	or sms - two way authentication?
+	
+	once you click on login - how will it work?
+	what else should be there on landing page?
+		Create Account link?
+	
+What are the various listing pages?
+	
+What is the first page after login?
+What will you show there?
+	UserName? Should that be a link? Click on that to reach profile?
+	Should we give an option to update profile?
+	Display 
+		Account Number? Should that be a link?
+		Account Name
+		Balance
+	
+	How would you display last 'n' transactions?
+	How would you Transfer money in?
+	How would you transfer money out?
+	
+Page showing 'n' transaction
+	What all will you show?
+	Will you give an option to download x months reports here?
+	What format will it get downloaded in?
+	
+What are the various transaction pages?
+	
+Transfer in page?
+	How would you transfer in? like sbi or hdfc?
+	
+
+Transfer out page?
+	How would you transfer out? like sbi or hdfc?
+	
+What are the reports available for the admin?
+Non functional requirements?
+
+
+-------------------------------------------------------------------------
+Simple restaurant which serve food.
+	Always be extra cautious when you hear "simple"...
+	
+	Start with asking questions?
+	What all questions will you ask..
+	e.g. of some questions
+	Is that a restaurant chain or a single restaurant?
+	who will manage it?
+	Can customers create account?
+	ect.. ect..

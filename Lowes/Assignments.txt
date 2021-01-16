@@ -1,0 +1,15 @@
+1. What are various HTTP Request and Response types and how are they consumed?
+2. Explain
+	https://docs.oracle.com/middleware/1213/soasuite/SOEDG/edg_anatomy.htm#SOEDG2128
+3. Read - https://en.wikipedia.org/wiki/List_of_programming_languages_by_type
+	a. Identify capaibilities common between 90% languages 
+	b. Identify the language you like the most and explain why?
+4. Identify protocols for as many layers as possible?
+5. Refer my note for set of important protocols.
+6. Identify the challenges with services becoming stateless
+7. Identify the different networking objects and define them.
+8. Differentiate between the top three most used db
+9. Identify one job in real life and explain how is done in parallel and concurrently
+	
+	
+	

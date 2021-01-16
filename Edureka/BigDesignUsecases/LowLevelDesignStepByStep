@@ -1,0 +1,68 @@
+System Design
+-------------
+
+A: Ask good questions
+B: Minimize buzz words
+C: Clear and Organized thinking
+D: Drive discussions
+
+
+Identify the MVP
+----------------
+	Features
+	Define APIs
+	Availability
+	Latency Performance
+		caching
+		low level performance
+	Scalability
+	Durability
+	Class Diagram
+	Security and Privacy
+	Cost Effectiveness
+	
+Understanding the basics
+------------------------
+Vertical Vs Horizonta Scaling
+CAP theorem
+ACID Vs BASE
+Paritioning / Sharding data
+	Consisten Hashing
+Optimistic Vs Pesimistic Locking
+Strong Vs Eventual consistency
+Relational DB Vs NoSQL
+Types of NoSQL
+	Key Value
+	Wide Column
+	Document based
+	Graph based
+Caching
+Data center/ Racks /hosts
+CPU/Memory/Hard drive /Network badwidth
+Random Vs Sequential read/write on disk
+http Vs https
+TCP/IP model
+IPv4 Vs IPv6
+DNS lookup
+https Vs TLS
+Public key infrastructure & Certificate Authority
+Symmetric Vs Assymetric Key
+Load balancer - L4 Vs L7
+CDNS and Edge
+Bloom Filters and Countomin Sketch
+Paxos - Consensus over distributed hosts
+	- leader election
+Design Patterns & Object oriented design
+Virtual machines & Containers
+Publish - subscribe or Queue 
+Map reduce
+Multi-threading, concurrency, locks, synchronization
+
+
+There had been an effort to read bible completely from within Jacobite community. Here are the things happening in the group.
+1. Encourage people to read bible completely
+2. Share the audio recording of daily reading 5 to 6 chapters
+3. Daily Quiz on the chapters for which audio is shared.
+4. Prizes for the winners of the Quiz
+5. Now we are starting Quiz in English as well.
+Join the below link if you are interested to participate int this.
