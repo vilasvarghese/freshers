@@ -1,0 +1,8 @@
+{
+    int z = a + b + c;
+    return(z);
+}
+
+int takes - 4 bytes
+Hence 4*4 + 4 = 20 bytes
+O(1) complex

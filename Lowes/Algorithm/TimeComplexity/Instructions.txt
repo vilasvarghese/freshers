@@ -1,0 +1,7 @@
+OOne
+ON
+ONSquare
+O2PowerN
+ODropConstant
+ODropConstant1
+ODropLessSignificant

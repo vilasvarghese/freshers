@@ -1,0 +1,10 @@
+	Following size is indicative and would differ based on language
+	
+	1 byte
+		bool, char, unsigned char, signed char, __int8
+	2 bytes
+		__int16, short, unsigned short, wchar_t, __wchar_t	
+	4 bytes
+		float, __int32, int, unsigned int, long, unsigned long	
+	8 bytes
+		double, __int64, long double, long long	

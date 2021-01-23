@@ -12,4 +12,22 @@
 9. Identify one job in real life and explain how is done in parallel and concurrently
 	
 	
+10. Go through the collection tutorial
+	https://www.youtube.com/watch?v=mQ9uxTWZCXA&list=PLFGoYjJG_fqooGAq7UKpkXb8l4xjyEQUr
+	Refer my tutorial
+	https://github.com/vilasvarghese/algorithms/tree/master/AlgoAndProbSolving/src
 	
+11. Go through the following github repo.
+	https://github.com/vilasvarghese/java-collections-examples
+	
+12. Try to cover as many examples as possible from the following github tutorial
+	https://github.com/vilasvarghese/mysql-tutorial
+	
+13. Identify the various sorting algorithm and findout the time and memory complexities for the same.	
+
+14. Go through the tutorials
+	https://www.youtube.com/watch?v=L73hY1pBcQI&list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi
+	
+	https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb
+	
+15. Identify as many collection classes in java and define their difference. When would you use what?	

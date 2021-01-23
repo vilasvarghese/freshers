@@ -1024,7 +1024,7 @@ Learning Session 1
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Introduction to parallelism, concurency etc.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		
+		https://www.youtube.com/watch?v=FChZP09Ba4E
 		Parallel And Distributed Computing
 		----------------------------------
 		What is serial computing. 
@@ -1147,54 +1147,793 @@ Learning Session 1
 
 		With the advent of networks, distributed computing became feasible. A distributed computation is one that is carried out by a group of linked computers working cooperatively. Such computing usually requires a distributed operating system to manage the distributed resources. Important concerns are workload sharing, which attempts to take advantage of access to multiple computers to complete jobs faster; task migration, which supports workload sharing by efficiently distributing jobs among machines; and automatic task replication, which occurs at different sites for greater reliability.
 		
+		
+		https://medium.com/@itIsMadhavan/concurrency-vs-parallelism-a-brief-review-b337c8dac350#
+		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
 Learning Session 2
 	Fundamentals of Algorithm, DBMS, SQL
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Understand space and time complexity
-		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			How to measure algorithm
+			1. Time complexity
+			2. Space complexity
+			
+			Doesn't mean how complex or difficult the algorithm is.
+			
+			The Big O notation defines an upper bound of an algorithm.
+				for e.g. maximum time taken by the algorithm
+				
+			
+		Step wise procedure for Big-O runtime analysis:
+
+			Figure out what the input is and what n represents.
+			Express the maximum number of operations, the algorithm performs in terms of n.
+			Eliminate all excluding the highest order terms.
+			Remove all the constant factors.
+			
+			Refer Algorithm folder.
+			Order of time taken.
+			-------------------
+			O(1) < O(log n) < O(n) < O(n^2) < O(n^3) < O(2^n)
+		Space complexity
+		----------------
+		Instruction Space
+			Amount of memory used to save the compiled version of instructions.
+
+		Environmental Stack
+			An algorithm(function) may be called inside another algorithm(function). 
+				current variables are pushed onto the system stack, 
+				they wait for further execution
+				call to the inside algorithm(function) is made.
+			Environmental stack is the such a stack of variables formed from the calling function/algorithm
+			
+
+		Data Space
+			Amount of space used by the variables and constants.
+
+				
+		While calculating space complexity we consider only the Data Space.
+		
+		
+		Refer algorithm/SpaceComplexity
+			
+
+		
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Introduction to basic data structures
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			basic sorting algorithms
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				What is sorting?
+					Hotels.com
+					Can be based on 
+						increase/decrease order of number.
+						alphabetic order 
+						date wise etc
+					arranging elements in increasing or decreasing order of some (one or more) properties.
+				Why sort
+					Voters data if sorted - how can it help?
+				What is a best algorithm - Depends on 
+					Size of data
+					Randomness of data
+					Time and space complexity of algorithm
+					Stability
+						If relative ordering is imp.
+						i.e. if two elements are same, 
+							if in original list's order should be preserved.
+				Simple algorithm
+					Selection 
+						Identify the smallest element in an array and move it to 0th position in same or another array
+						Repeat this step in a loop
+					Bubble 
+						Compare between consecutive fields from one end and sort it.
+						
+					Insertion
+						Keep moving each element in an array to the right position in another array.
+						https://www.youtube.com/watch?v=i-SKeOcBwko&list=PL2_aWCzGMAwKedT2KfDMB9YA5DgASZb3U&index=4
+						
+				Efficient algorithm
+					Quick
+						O(n log n) 
+						It can only get better
+						Most of the language impementation are quick sort
+						https://www.youtube.com/watch?v=COk73cpQbFQ&list=PL2_aWCzGMAwKedT2KfDMB9YA5DgASZb3U&index=7
+
+		
+			Types of algorithm
+				1. Stable
+					Relative order is maintained.
+				2. Internal Vs External
+					from RAM	from HD
+				3. Recursive Vs Non recursive
+					e.g. Quick and Merge Vs  Insertion and Selection
+	
+			1. D:\code\AlgoAndProbSolving\src\common\Prob15SelectionSort.java
+			2. D:\code\AlgoAndProbSolving\src\common\array\Prob10BubbleSort.java
+			3. D:\PraiseTheLord\HSBGInfotech\Others\vilas\algorithms\AlgoAndProbSolving\src\common\array\Prob11QuickSortArray.java
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Collection in java
+	
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+			Collection of the objects
+				group of individual objects represented as a single unit 
+			In Java, a separate framework named 
+				“Collection Framework” has been defined in JDK 1.2 
+				holds all the collection classes and interface in it.
+
+			Two main interfaces
+				Collection interface (java.util.Collection) 
+				Map interface (java.util.Map) 
+
+			What is a Framework?
+
+			Advantages of the Collection Framework: 
+			---------------------------------------
+				
+			Consistent API: 
+				The API has a basic set of interfaces like 
+					Collection, 
+					Set, 
+					List, or 
+					Map, 
+				classes implementing these interfaces have some common set of methods.
+				So?
+				
+			Reduces programming effort: 
+				A programmer 
+					doesn’t have to worry about the design of the Collection 
+					rather he can focus on its best use in his program. 
+					
+			Increases program speed and quality: 
+				Increases performance by providing high-performance implementations 
+					of useful data structures and algorithms 
+				He can simply use the best implementation to drastically boost the performance of his algorithm/program.
+
+			Collection framework provides 
+				group of objects that all to
+					store 
+					search
+					get
+					remove elements
+				Further there are objects which can help us to 
+					sort
+					store sorted
+					Unique element
+					maintain insertion order
+					etc.
+					
+			Interfaces
+				Collection
+				List
+				Set
+				Queue
+					etc
+			
+			Classes
+				ArrayList
+				Vector
+				LinkedList
+				HashSet
+				TreeSet
+				
+				
+			Hierarchy Diagram	
+			Iterable
+				Collection
+					List
+						ArrayList
+						LinkedList
+						Vector
+							Stack
+					Queue
+						PriorityQueue
+						Dequeue(I)
+							ArrayDequeue
+							LinkedList
+					Set
+						HashSet
+						LinkedHashSet
+						SortedSet(I)
+							TreeSet
+
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Hash table
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			In a hash table, data is stored in an arrays.
+			Each value in the array are Key value pairs.
+			Access of data becomes very fast.
+				Access of data is O(1) complex 
+					while access of data in array is O(n) complex
+				Insertion is also O(1) complex.
+			Hash Table uses an array as a storage medium 
+			Uses hash technique to generate the index where element is inserted.
+			
+			Here Hashing is used to convert a range of key values 
+				into a range of indexes of an array. 
+			
+
+			For e.g. if there are 50 buckets.
+			index = hash of the key % 50.
+			This way each element would fall into some bucket.
+
+
+			Further details: https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
+			
+			
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			HashMap
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			
+			HashMap<K, V> is a part of Java’s collection since Java 1.2. 
+			Class is in java.util package. 
+			Provides the basic implementation of the Map interface of Java. 
+			It stores the data in (Key, Value) pairs, 
+			We can access them by an index of another type (e.g. an Integer). 
+			ssOne object is used as a key (index) to another object (value). 
+			If you try to insert the duplicate key, 
+				it will replace the element of the corresponding key.
+
+
+			HashMap is similar to the HashTable, 
+				but it is unsynchronized. 
+			It allows to store the null keys as well, 
+				but there should be only one null key object and there can be any number of null values
+				
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Set
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Java Set 
+				collection of elements (Or objects) 
+				contains no duplicate elements. 
+				An interface that extends Collection interface. 
+				Unlike List, 
+					Java Set is NOT an ordered collection, 
+					it’s elements does NOT have a particular order. 
+						For ordering we can use SortedSet.
+						TreeSet implements SortedSet.
+					does NOT provide a control over the position where you can insert an element. 
+					You cannot access elements by their index and also search elements in the list.
+					cannot convert a Java Set into an array directly 
+					NOT implemented using an Array.
+					To convert an array into Set
+						convert an array into List using Arrays.asList() 
+						Convert list to Set. 
+						
+			
+				Set allows you to add at most one null element only.
+				Unlike List and arrays, 
+					Set does NOT support indexes or positions of it’s elements.
+				We can use Set interface implementations to maintain unique elements.
+
+					int size(): 
+						to get the number of elements in the Set.
+					boolean isEmpty(): 
+						to check if Set is empty or not.
+					boolean contains(Object o): 
+						Returns true if this Set contains the specified element.
+					Iterator iterator(): 
+						Returns an iterator over the elements in this set. The elements are returned in no particular order.
+					Object[] toArray(): 
+						Returns an array containing all of the elements in this set. If this set makes any guarantees as to what order its elements are returned by its iterator, this method must return the elements in the same order.
+					boolean add(E e): 
+						Adds the specified element to this set if it is not already present (optional operation).
+					boolean remove(Object o): 
+						Removes the specified element from this set if it is present (optional operation).
+					boolean removeAll(Collection c): 
+						Removes from this set all of its elements that are contained in the specified collection (optional operation).
+					boolean retainAll(Collection c): 
+						Retains only the elements in this set that are contained in the specified collection (optional operation).
+					void clear(): 
+						Removes all the elements from the set.
+					Iterator iterator(): 
+						Returns an iterator over the elements in this set.
+
+
+				The set interface 
+					java.util package 
+					extends the Collection interface 
+					unordered collection of objects 
+					duplicate values cannot be stored. 
+					Interface representing mathematical set. 
+					contains the methods inherited from Collection interface 
+					Adds a feature which restricts the insertion of the duplicate elements. 
+					Two interfaces extend set implementation 
+						SortedSet and 
+						NavigableSet.
+						
+					i.e
+						Set
+							SortedSet (I)
+								NavigableSet (I)
+									TreeSet
+					D:\PraiseTheLord\HSBGInfotech\Others\vilas\java-collections-examples\java-hashset-examples\src\HashSetSimpleOperationsExample1.java
+
+			
+			Creating Set Objects
+			--------------------
+				Set is an interface
+
+				// Obj is the type of the object to be stored in Set
+				Set<Obj> set = new HashSet<Obj> ();
+
+				Operations on the Set Interface
+				The set interface allows the users to perform the basic mathematical operation
+					set1 = [1, 3, 2, 4, 8, 9, 0] 
+					set2 = [1, 3, 7, 5, 4, 0, 7, 5]. 
+				Then the possible operations on the sets are:
+
+				1. Intersection: 
+					set1 intersection set2:
+				Intersection = [0, 1, 3, 4]
+
+				2. Union: 
+					set1 union set2:
+				Union = [0, 1, 2, 3, 4, 5, 7, 8, 9]
+
+				3. Difference: 
+					Removes values present in one set from the other set. 
+					set1 difference set2:
+				Difference = [2, 8, 9]
+				
+				
+			
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			List etc. (Provide working examples)
+			List
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Maintain the ordered collection. 
+			Index-based methods to 
+				insert, 
+				update, 
+				delete and 
+				search the elements. 
+			Can have the duplicate elements also. 
+			We can also store the null elements in the list.
+
+			Has ListIterator interface. 
+				we can iterate the list in forward and backward directions. 
+			The implementation classes of List interface are 
+				ArrayList, 
+				LinkedList, 
+				Stack and 
+				Vector.
+			The ArrayList and LinkedList are widely used in Java programming. 
+			The Vector class is deprecated since Java 5.
+
+
+
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Introduction to databases and SQL
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		What is Database
+			Database: 
+				collection of inter-related data 
+				Used to do the following with data efficiently
+					get, 
+					insert/update and 
+					delete . 
+				Organize the data as 
+					table, 
+					schema, 
+					views, and 
+					reports.
+
+			For example: The college Database organizes the data about the admin, staff, students and faculty etc.
+
+			DBMS
+			----
+			Database management system 
+				software used to manage the database. 
+				For example: 
+					MySQL, 
+					Oracle
+				DBMS provides 
+					interface to perform various operations like 
+						database creation, 
+						storing data in it, 
+						updating data, 
+						creating a table in the database 
+						etc.
+					Provides protection and security to the database. 
+					Maintains data consistency across users.
+				DBMS allows users the following tasks:
+					Data Definition: 
+						Used for 
+							creation, 
+							modification, 
+							removal of 
+								definition that defines the organization of data in the database.
+						e.g. CREATE, ALTER, DROP are DDL statements
+					Data Manupulation Language: 
+						Used for the 
+							insertion, 
+							modification
+							deletion 
+								of the actual data in the database.
+							
+							DML: SELECT, INSERT, UPDATE, DELETE
+
+					User Administration: 
+						Used for 
+							registering and monitoring users, 
+							maintain data integrity, 
+							enforcing data security, 
+							dealing with concurrency control, 
+							monitoring performance and 
+							recovering information corrupted by unexpected failure.
+					
+					
+			Characteristics of DBMS
+				Uses a digital repository established on a server to store and manage the information.
+				Can provide a clear and logical view of the process that manipulates data.
+				DBMS contains automatic backup and recovery procedures.
+				Contains ACID properties which maintain data in a healthy state in case of failure.
+				Can reduce the complex relationship between data.
+				Used to support manipulation and processing of data.
+				Used to provide security of data.
+				Can view the database from different viewpoints according to the requirements of the user.
+			
+			Advantages of DBMS
+				Controls database redundancy: 
+					Can control data redundancy 
+						it stores all the data in one single database file 
+							recorded data is placed in the database.
+				Data sharing: 
+					Authorized users of an organization can share the data among multiple users.
+				Easily Maintenance: 
+					easily maintainable due to the centralized nature of the database system.
+				Reduce time: 
+					Reduces development time and maintenance need.
+				Backup: 
+					It provides backup and recovery subsystems which create automatic backup of data from hardware and software failures and restores the data if required.
+				multiple user interface: 
+					It provides different types of user interfaces like graphical user interfaces, application program interfaces
+				
+				
+			Disadvantages of DBMS
+				Cost of Hardware and Software: It requires a high speed of data processor and large memory size to run DBMS software.
+				Size: It occupies a large space of disks and large memory to run them efficiently.
+				Complexity: Database system creates additional complexity and requirements.
+				Higher impact of failure: Failure is highly impacted the database because in most of the organization, all the data stored in a single database and if the database is damaged due to electric failure or database corruption then the data may be lost forever.
+
+
+			https://github.com/vilasvarghese/mysql-tutorial
+			https://gist.github.com/amelieykw/c1650cbc4ccbdd49894990a679e334cf
+				
+			Advanced tutorials of Mysql
+			https://www.mysqltutorial.org/
+			https://www.mysqltutorial.org/advanced-mysql/
+			
+			
+
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Problem Solving
 		Defining problems and how to get started on the same.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		 An algorithmic problem is specified by 
+			describing the complete set of instances it must work on 
+			what properties the output must have as a result of running on one of these instances. 
+			
+		The following steps are involved in solving computational problems.
+
+			1. Problem definition
+				Read the problem (multiple) times.
+				Define the input and output of the problem
+				Define constraints if any
+			
+			Problem definitions should state
+				what problem or problems needs to be solved.
+				Should have a clean problem statement.
+					Define project scope.
+					Keep the team focused.
+					Keep the project on track.
+					Validate the desired outcome was achieved.
+			
+		
+			E.g. 
+				find all numbers such that given "n" you calculate n * (n-1) * ... * 1.
+				
+				or 
+				
+				calculate n factorial.
+				
+				Output: Statement.
+			
+			2. Representation
+				Represent constraints
+					e.g. where 'n'
+					find all prime numbers from 1 - 1000
+				Output: i/p, o/p and constraints
+				
+			3. Approach / Strategy
+				The strategy to solve a problem.
+				There can be different solutions to a problem.
+					e.g. 
+						recursively
+						iteratively.
+						
+			4. Pick up the algorithm
+				Identify given the constraints what is the best algorithm to solve.
+				
+				o/p: equations or psedocode.
+			5. Experiment
+				Time and Space complexity analysis. Verification that it works.
+				output:	Confirm that your algorithm is the best solution. If not, repeat it.
+			
+---------------------------------------------------------				
+			Development of a model
+			Specification of an Algorithm
+			Designing an Algorithm
+			Checking the correctness of an Algorithm
+			Analysis of an Algorithm
+			Implementation of an Algorithm
+			Program testing
+			Documentation
+---------------------------------------------------------			
+			
+			Order of time taken.
+			-------------------
+			O(1) < O(log n) < O(n) < O(n^2) < O(n^3) < O(2^n)
+			
+			
+	Some common types of algorithms include:
+		sorting algorithms
+		search algorithms
+		compression algorithms.
+
+		Classes of algorithms include
+			Graph
+			Dynamic Programming
+			Sorting
+			Searching
+			Strings
+			Math
+			Computational Geometry
+			Optimization
+			Miscellaneous.
+
+		Although technically not a class of algorithms, Data Structures are often grouped with them.
+
+		Efficiency
+			Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task.
+
+			A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today have to operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time.
+
+		Sorting Algorithms
+			Sorting algorithms come in various flavors depending on your necessity. 		
+			
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Identify similarities of problems to solve new problems (design algorithms)
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
+			Peak finder
+				array of numbers.
+				Identify peak
+					position 2 is a peak if and b >= a and b <= c. Edges look only to one side.
+					
+		D:\PraiseTheLord\HSBGInfotech\Others\vilas\algorithms\AlgoAndProbSolving\src\hackerrank\SumOfDiagonals.txt
+		
+		Question : Find two Strings are anagrams. If all characters are present in another.
+			Answer : Anagrams.java
+
+		Question : Prime. Number divisible by itself and 1
+			Answer : CountNumberDivisibleBy.java
+			
+		Question : Print all distinct elements in a given array
+			Answer : DistinctElementsInGivenArray.java
+	
+		Improved logic example
+		Question : Find first non-repeating character in a String
+			Answer : FirstNonRepeatingCharacter.java
+
+		Question : Remove vowels from a String
+			Answer : RemoveVowels.java
+
+		Question : Reverse a String
+			Answer : Prob4ReverseAnArray.java
+
+		Question : Find first repeating character
+			Answer : Prob13FirstRepeatingCharacter.java
+
+		Question : Find common character between two arrays
+			Answer : Prob14FindCommonCharacter.java
+
+		
+
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Working backwards from a solution to derive starting conditions
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		S.o.p
+		Debug mode
+		Understand the source code
+		Call for a meeting and explain what you understand.
+		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		General problem solving strategies - top down design, bottom up.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Problem solving strategies
+		https://www.youtube.com/watch?v=XKu_SEDAykw
+		
+		Top-Down Design Model: 
+			In the top-down model, an overview of the system is formulated without going into detail for any part of it. Each part of it then refined into more details, defining it in yet more details until the entire specification is detailed enough to validate the model. if we glance at a haul as a full, it’s going to appear not possible as a result of it’s so complicated For example: Writing a University system program, writing a word processor. Complicated issues may be resolved victimization high down style, conjointly referred to as Stepwise refinement where, 
+
+			We break the problem into parts,
+			Then break the parts into parts soon and now each of parts will be easy to do. 
+ 
+			Advantages: 
+
+				Breaking problems into parts help us to identify what needs to be done.
+				At each step of refinement, new parts will become less complex and therefore easier to solve.
+				Parts of the solution may turn out to be reusable.
+				Breaking problems into parts allows more than one person to solve the problem. 
+
+		Bottom-Up Design Model: 
+			In this design, individual parts of the system are specified in detail. The parts are linked to form larger components, which are in turn linked until a complete system is formed. Object-oriented language such as C++ or java uses a bottom-up approach where each object is identified first. 
+
+			Advantage: 
+
+				Make decisions about reusable low-level utilities then decide how there will be put together to create high-level construct. ,
+				The contrast between Top-down design and bottom-up design. 
+ 
+		
+		Dynamic Programming Approaches
+			1. Bottom-Up approach
+			2. Top-Down approach
+
+		Bottom Up Approach
+			Start computing result for the subproblem. Using the subproblem result solve another subproblem and finally solve the whole problem.
+
+			Example
+			Let's find the nth member of a Fibonacci series.
+				Fibonacci(0) = 0
+				Fibonacci(1) = 1
+				Fibonacci(2) = 1 (Fibonacci(0) + Fibonacci(1))
+				Fibonacci(3) = 2 (Fibonacci(1) + Fibonacci(2))
+
+			We can solve the problem step by step.
+
+				1. Find Oth member
+				2. Find 1st member
+				3. Calculate the 2nd member using 0th and 1st member
+				4. Calculate the 3rd member using 1st and 2nd member
+				5. By doing this we can easily find the nth member.
+
+-------------------------------------------------------------------------------
+Example code for 
+/*
+ * Program  : Nth Fibonacci using bottom-up approach
+ * Language : C
+ */
+
+#include<stdio.h>
+
+int Fibonacci(int N)
+{
+    //if N = 2, we need to store 3 fibonacci members(0,1,1)
+    //if N = 3, we need to store 4 fibonacci members(0,1,1,2)
+    //In general to compute Fib(N), we need N+1 size array.
+    int Fib[N+1],i;
+
+    //we know Fib[0] = 0, Fib[1]=1
+    Fib[0] = 0;
+    Fib[1] = 1;
+
+    for(i = 2; i <= N; i++)
+        Fib[i] = Fib[i-1]+Fib[i-2];
+
+    //last index will have the result
+    return Fib[N];
+}
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    //if n == 0 or n == 1 the result is n
+    if(n <= 1)
+        printf("Fib(%d) = %d\n",n,n);
+    else
+        printf("Fib(%d) = %d\n",n,Fibonacci(n));
+
+    return 0;
+}
+-------------------------------------------------------------------------------
+
+		Top-Down approach
+			Top-Down breaks the large problem into multiple subproblems.
+			if the subproblem solved already just reuse the answer.
+			Top-Down uses memoization to avoid recomputing the same subproblem again.
+
+			Let's solve the same Fibonacci problem using the top-down approach.
+			Top-Down starts breaking the problem unlike bottom-up.
+			Like,
+			If we want to compute Fibonacci(4), the top-down approach will do the following
+			Fibonacci(4) -> Go and compute Fibonacci(3) and Fibonacci(2) and return the results.
+			Fibonacci(3) -> Go and compute Fibonacci(2) and Fibonacci(1) and return the results.
+			Fibonacci(2) -> Go and compute Fibonacci(1) and Fibonacci(0) and return the results.
+			Finally, Fibonacci(1) will return 1 and Fibonacci(0) will return 0.
+
+-------------------------------------------------------------------------------
+/*
+ * Program  : Nth Fibonacci using top-down approach
+ * Language : C
+ */
+
+#include<stdio.h>
+
+int Fibonacci(int N)
+{
+    if(N <= 1)
+        return N;
+    return Fibonacci(N-1) + Fibonacci(N-2);
+}
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    printf("Fib(%d) = %d\n",n,Fibonacci(n));
+
+    return 0;
+}
+-------------------------------------------------------------------------------
+
+
+		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Understanding of brute force/Hash Table and Naive solution
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Brute Force Algorithms  
+		----------------------
+			straightforward methods of solving a problem 
+			rely on sheer computing power and trying every possibility rather than advanced techniques to improve efficiency.
+	
+			For example, 
+				we have a small padlock with 4 digits, 
+				each from 0-9. 
+				You forgot your combination, 
+					but you don't want to buy another padlock. 
+					Since you can't remember any of the digits, 
+						you have to use a brute force method to open the lock.
+
+			
+			Traveling salesman problem (TSP). 
+			A salesman needs to visit 10 cities across the country. 
+			How does one determine the order in which those cities should be visited 
+				such that the total distance traveled is minimized?
+
+			The brute force solution is simply to calculate the total distance for every possible route 
+				and then select the shortest one. 
+				This may not be the most efficient in reality as you add constraints.
+	
+			Hashing gives us constant time access O(1) to insert and get an element. So many solutions can be worked upon using "Hash" objects.
+			
+		
+		
+		A naive algorithm 
+		-----------------
+			Algorithm that behaves in a very simple way. Say like a child would.
+			For example, a naive algorithm for sorting numbers scans all numbers to find the smallest one, puts it aside, and so on. It will sort the numbers alright but there are more efficient algorithms for this.
+			Very often naive algorithms work, but in a suboptimal way - slower or producing imperfect results.
+		
+		Consider the problem of randomly permuting an array A. 
+			Create a new array B 
+				for i=1 to n 
+					repeat: 
+						Generate a random number j uniformly distributed 1..n 
+					until there is no element at B[j] 
+					Put element A[i] at B[j] 
+				Copy B back to A. 
+		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Understand how to move towards an optimized solution.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		
 Learning Session 3
