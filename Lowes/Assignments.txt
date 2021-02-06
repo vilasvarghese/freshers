@@ -11,6 +11,9 @@
 8. Differentiate between the top three most used db
 9. Identify one job in real life and explain how is done in parallel and concurrently
 	
+
+Day2
+
 	
 10. Go through the collection tutorial
 	https://www.youtube.com/watch?v=mQ9uxTWZCXA&list=PLFGoYjJG_fqooGAq7UKpkXb8l4xjyEQUr

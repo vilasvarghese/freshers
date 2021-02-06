@@ -1747,10 +1747,36 @@ Learning Session 2
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Working backwards from a solution to derive starting conditions
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		S.o.p
-		Debug mode
-		Understand the source code
-		Call for a meeting and explain what you understand.
+Understand product from Code.
+	1. Functional documentation
+	2. Test cases
+	3. Design documents
+	4. Any other documentation done by engineers.
+
+		Play with application. Try to use it as a customer.
+		Try to understand the 
+			functionality  
+			corner cases
+			complexities
+		Mentally create a model of how you would have coded.
+		Compare it with what you read till now.
+		
+
+	5. KT from an expert
+	6. Read the comments in the code.
+	7. Reverse engineer 
+		Class diagram
+		Sequence diagram
+		ER diagram ect.
+		
+			E.g. of tool: Enterprise Architect from Sparx
+			
+	8. Debug techniques and running in debug mode.
+		logging 
+		line by line debug 
+	9. Document what you understand
+	10. Present your understanding to a wider audience.
+
 		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		General problem solving strategies - top down design, bottom up.
@@ -1759,7 +1785,18 @@ Learning Session 2
 		https://www.youtube.com/watch?v=XKu_SEDAykw
 		
 		Top-Down Design Model: 
-			In the top-down model, an overview of the system is formulated without going into detail for any part of it. Each part of it then refined into more details, defining it in yet more details until the entire specification is detailed enough to validate the model. if we glance at a haul as a full, it’s going to appear not possible as a result of it’s so complicated For example: Writing a University system program, writing a word processor. Complicated issues may be resolved victimization high down style, conjointly referred to as Stepwise refinement where, 
+			In the top-down model, 
+				an overview of the system is formulated 
+					without going into detail for any part of it. 
+				Each part of it then refined into more details, 
+				Defining it in yet more details 
+					until the entire specification is detailed enough to validate the model.
+				if we glance at a haul as a full, 
+					it looks impossible.
+				For example: 
+					Writing a University system program, 
+					writing a word processor. 
+					Complicated issues may be resolved victimization high down style, conjointly referred to as Stepwise refinement where, 
 
 			We break the problem into parts,
 			Then break the parts into parts soon and now each of parts will be easy to do. 
@@ -1767,12 +1804,18 @@ Learning Session 2
 			Advantages: 
 
 				Breaking problems into parts help us to identify what needs to be done.
-				At each step of refinement, new parts will become less complex and therefore easier to solve.
+				At each step of refinement, 
+					new parts will become less complex and 
+						therefore easier to solve.
 				Parts of the solution may turn out to be reusable.
 				Breaking problems into parts allows more than one person to solve the problem. 
 
 		Bottom-Up Design Model: 
-			In this design, individual parts of the system are specified in detail. The parts are linked to form larger components, which are in turn linked until a complete system is formed. Object-oriented language such as C++ or java uses a bottom-up approach where each object is identified first. 
+			Individual parts of the system are specified in detail. 
+			The parts are linked to form larger components, 
+				which are in turn linked until a complete system is formed. 
+			Object-oriented language such as C++ or java uses a bottom-up approach 
+				where each object is identified first. 
 
 			Advantage: 
 
@@ -1933,7 +1976,11 @@ int main()
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Understand how to move towards an optimized solution.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		
+			Based on the complexity, constraints, identify the right strategy.
+			Based on the constraints try implementing/analysing the solution to derive the way forward.
+			Take iterations 
+			Keep measuring the results 
+			Arrive at the best solution in a data oriented way.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		
 Learning Session 3

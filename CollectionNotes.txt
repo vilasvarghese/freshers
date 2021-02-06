@@ -1,0 +1,540 @@
+Interfaces: 
+	Java Collections Framework interfaces 
+		provides the abstract data type to represent collection. 
+		java.util.Collection 
+			root interface  
+				Contains some important methods such as size(), 
+				iterator(), 
+				add(), 
+				remove(), 
+				clear() 
+			Every Collection class must implement.
+		3.1) Collection Interface
+			Collection<E>. 
+				The <E> syntax is for Generics 
+				reduce run-time errors by type-checking the Objects at compile-time.
+
+				keep the number of core collection interfaces manageable
+				Java platform doesn’t provide 
+					separate interfaces for each variant of each collection type. 
+				If an unsupported operation is invoked, 
+					a collection implementation throws an UnsupportedOperationException.
+			Root of the collection hierarchy. 
+			collection : group of objects known as its elements. 
+			No direct implementations of this interface.
+
+			Has common methods like 
+				size, 
+				isEmpty
+				contains
+				add remove
+				iterator.
+
+			Collection interface also provides bulk operations methods 
+				containsAll
+				addAll
+				removeAll
+				retainAll
+				clear.
+				toArray: bridge between collections arrays.
+
+
+
+		Other important interfaces java.util.X
+			List
+			Set
+			Queue 
+			Map.
+		
+		Map 
+			only interface 
+				doesn’t inherit from Collection interface 
+				part of the Collections framework. 
+		All the collections framework interfaces are present in java.util package.
+		
+		
+		-----------
+	Implementation Classes: 
+		Java Collections framework 
+			provides core implementation classes for collections. 
+		
+		Important collection classes are 
+			ArrayList, 
+			LinkedList, 
+			HashMap, 
+			TreeMap, 
+			HashSet, 
+			TreeSet.
+		Solve most of our programming needs 
+		Java 1.5 came up 
+			thread-safe collection classes 
+			allowed to modify Collections while iterating over it. 
+		Some of them are 
+			CopyOnWriteArrayList, 
+			ConcurrentHashMap, 
+			CopyOnWriteArraySet.
+		These classes are in java.util.concurrent package. 
+		All the collection classes are present in 
+			java.util 
+		and 
+			java.util.concurrent 
+		package.
+-----------------------------------------------
+Algorithms: 
+	Algorithms are useful methods to provide some common functionalities, 
+	for example 
+		searching, 
+		sorting and 
+		shuffling.
+
+Collections in Java, java Collections Framework
+
+
+2. Benefits of Java Collections Framework
+-----------------------------------------
+Java Collections framework have following benefits:
+	Reduced Development Effort – 
+		Almost all collections and useful methods 
+			to iterate and manipulate the data. 
+		We can concentrate more on business logic.
+Increased Quality – 
+	Using core collection classes
+		well tested 
+		increases our program quality 
+	Reusability and Interoperability
+	Reduce effort
+		to learn any new API if we use core collection API classes.
+
+3. Java Collections API Interfaces
+----------------------------------
+
+
+
+
+3.2) Iterator Interface
+Iterator interface 
+	methods to iterate 
+	iterator method: returns Iterator
+	
+	Iterators 
+		allow the caller to remove elements 
+			during the iteration. 
+	Implement Iterator Design Pattern.
+
+
+3.3) Set Interface
+	Cannot contain duplicate elements. 
+	Mathematical set abstraction 
+	e.g. deck of cards.
+
+	The Java platform contains three general implementations: 
+		HashSet, 
+		TreeSet
+		LinkedHashSet. 
+	Accessing element by index is not supported.	
+	use iterator or foreach loop to traverse the elements of a Set.
+
+
+3.4) List Interface
+	Ordered collection 
+	Allows duplicate elements. 
+	Access any element from its index. 
+	Internally stores in array with dynamic length. 
+	One of the most used Collection type. 
+		ArrayList  
+		LinkedList
+			implementation classes of List interface.
+
+	List interface 
+		provides useful methods to 
+			add/Remove/replace at a specific index 
+			 element based on the index and to get a sub-list using the index.
+
+	List strList = new ArrayList<>();
+		//add at last
+		strList.add(0, "0");
+		//add at specified index
+		strList.add(1, "1");
+		//replace
+		strList.set(1, "2");
+		//remove
+		strList.remove("1");
+	Collections class provide some useful algorithm for List – 
+		sort, 
+		shuffle, 
+		reverse, 
+		binarySearch etc.
+
+
+3.5) Queue Interface
+	Queue is a collection 
+	Used to hold multiple elements prior to processing. 
+	Additionally Queue provides 
+		insertion, 
+		extraction
+		inspection 
+	operations.
+
+Queues typically [not necessarily]
+	order elements in a FIFO (first-in-first-out) manner. 
+	Exceptions are 
+		priority queues
+			order elements according to supplied comparator 
+		or 
+			elements’ natural ordering. 
+		Whatever the ordering used, 
+			head of the queue is 
+				element that would be removed by a call to remove or poll. 
+			In a FIFO queue, all new elements are inserted at the tail of the queue.
+
+
+3.6) Dequeue Interface
+A linear collection 
+	supports element insertion and removal at both ends. 
+	deque: short for “double-ended queue” 
+	Most Deque implementations 
+		supports capacity-restricted deques and
+		deque with no fixed size limit.
+			
+	e.g. Storing web browsers history.
+	Voting : People above 75 may be given priority.
+	Hospital: emergency cases may be given priority.
+	
+
+3.7) Map Interface
+Java Map 
+	maps keys to values. 
+	A map cannot contain duplicate keys: 
+		Each key can map to at most one value.
+
+	Three general-purpose Map implementations: 
+		HashMap, 
+		TreeMap, and 
+		LinkedHashMap.
+
+	Basic operations of Map 
+		put, 
+		get, 
+		containsKey, 
+		containsValue, 
+		size
+		isEmpty.
+
+	Data of people in a country
+	
+
+3.8) ListIterator Interface
+
+	An iterator for lists 
+	Allows the programmer to traverse the list 
+		in either direction, 
+		modify the list during iteration
+		obtain the iterator’s current position in the list.
+		has no current element; 
+			its cursor position always lies between the 
+				element that would be returned by a call to 
+					previous() 
+					next().
+
+
+3.9) SortedSet Interface
+SortedSet 
+	Set that maintains its elements in ascending order. 
+	Additional operations: take advantage of the ordering. 
+	Sorted sets are used for naturally ordered sets
+		such as word lists and membership rolls.
+
+
+3.10) SortedMap Interface
+Map 
+	maintains its mappings in ascending key order. 
+	Map analog of SortedSet. 
+	e.g. dictionaries and telephone directories.
+
+
+4. Java Collections Classes
+Most common implementations 
+	ArrayList, 
+	HashMap 
+	HashSet. 
+	
+	Java 1.5 included 
+		Concurrent implementations; 
+			ConcurrentHashMap 
+			CopyOnWriteArrayList. 
+		Usually Collection classes are not thread-safe and their iterator is fail-fast. 
+
+
+4.1) HashSet Class
+Java HashSet 
+	basic implementation of Set interface 
+	backed by a HashMap. 
+	No guarantees for iteration order 
+	permits the null element.
+
+	constant time performance for basic operations 
+		add, 
+		remove, 
+		contains 
+		size, 
+	assuming the hash function disperses the elements properly among the buckets. 
+	
+	We can set the 
+		initial capacity 
+		load factor 
+			how full the hash map is allowed to get 
+			before its capacity is automatically increased.
+
+
+4.2) TreeSet Class
+	A NavigableSet 
+		implementation based on a TreeMap. 
+		The elements are ordered using their 
+			natural ordering, 
+			or by a Comparator provided at set creation time, 
+				depending on which constructor is used.
+	Use this when you need a Sorted Set.
+
+Refer: Java Comparable Comparator
+
+This implementation provides guaranteed log(n) time cost for the basic operations (add, remove, and contains).
+
+	Note that the ordering maintained by a set (whether or not an explicit comparator is provided) must be consistent with equals if it is to correctly implement the Set interface. (See Comparable or Comparator for a precise definition of consistent with equals.) This is so because the Set interface is defined in terms of the equals operation, but a TreeSet instance performs all element comparisons using its compareTo (or compare) method, so two elements that are deemed equal by this method are, from the standpoint of the set, equal.
+
+4.3) ArrayList Class
+Java ArrayList 
+	resizable-array implementation of the List interface. 
+	Implements all optional list operations
+	permits all elements
+		including null. 
+	Internal implementation
+	
+	constant time operations
+		size, 
+		isEmpty, 
+		get, 
+		set, 
+		iterator
+	The add operation runs in amortized constant time
+		O(n) when the size needs to increase. 
+	All of the other operations run in linear time 
+	
+	Students in a class: Number is fixed.
+	Use this when the size is relatively fixed.
+
+4.4) LinkedList Class
+Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).
+
+All of the operations perform as expected for a doubly-linked list. Operations that index into the list will traverse the list from the start or the end, whichever is closer to the specified index.
+
+
+4.5) HashMap Class
+Hash table based implementation of the Map interface. This implementation provides all of the optional map operations and permits null values and the null key. HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits null. This class makes no guarantees for the order of the map.
+
+This implementation provides constant-time performance for the basic operations (get and put). It provides constructors to set initial capacity and load factor for the collection.
+
+Further Read: HashMap vs ConcurrentHashMap
+
+
+4.6) TreeMap Class
+A Red-Black tree based NavigableMap implementation. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.
+
+This implementation provides guaranteed log(n) time cost for the containsKey, get, put, and remove operations. Algorithms are adaptations of those in Cormen, Leiserson, and Rivest’s Introduction to Algorithms.
+
+Note that the ordering maintained by a TreeMap, like any sorted map, and whether or not an explicit comparator is provided, must be consistent with equals if this sorted map is to correctly implement the Map interface. (See Comparable or Comparator for a precise definition of consistent with equals.) This is so because the Map interface is defined in terms of the equals operation, but a sorted map performs all key comparisons using its compareTo (or compare) method, so two keys that are deemed equal by this method are, from the standpoint of the sorted map, equal. The behavior of a sorted map is well-defined even if its ordering is inconsistent with equals; it just fails to obey the general contract of the Map interface.
+
+
+4.7) PriorityQueue Class
+Queue processes its elements in FIFO order but sometimes we want elements to be processed based on their priority. We can use PriorityQueue in this case and we need to provide a Comparator implementation while instantiation the PriorityQueue. PriorityQueue doesn’t allow null values and it’s unbounded. For more details about this, please head over to Java Priority Queue where you can check its usage with a sample program.
+
+
+5. Collections class
+Java Collections class consists exclusively of static methods that operate on or return collections. It contains polymorphic algorithms that operate on collections, “wrappers”, which return a new collection backed by a specified collection, and a few other odds and ends.
+
+This class contains methods for collection framework algorithms, such as binary search, sorting, shuffling, reverse etc.
+
+
+6. Synchronized Wrappers
+The synchronization wrappers add automatic synchronization (thread-safety) to an arbitrary collection. Each of the six core collection interfaces — Collection, Set, List, Map, SortedSet, and SortedMap — has one static factory method.
+
+public static  Collection synchronizedCollection(Collection c);
+public static  Set synchronizedSet(Set s);
+public static  List synchronizedList(List list);
+public static <K,V> Map<K,V> synchronizedMap(Map<K,V> m);
+public static  SortedSet synchronizedSortedSet(SortedSet s);
+public static <K,V> SortedMap<K,V> synchronizedSortedMap(SortedMap<K,V> m);
+Each of these methods returns a synchronized (thread-safe) Collection backed up by the specified collection.
+
+7. Unmodifiable wrappers
+Unmodifiable wrappers take away the ability to modify the collection by intercepting all the operations that would modify the collection and throwing an UnsupportedOperationException. Its main usage are;
+
+To make a collection immutable once it has been built. In this case, it’s good practice not to maintain a reference to the backing collection. This absolutely guarantees immutability.
+To allow certain clients read-only access to your data structures. You keep a reference to the backing collection but hand out a reference to the wrapper. In this way, clients can look but not modify, while you maintain full access.
+These methods are;
+
+public static  Collection unmodifiableCollection(Collection<? extends T> c);
+public static  Set unmodifiableSet(Set<? extends T> s);
+public static  List unmodifiableList(List<? extends T> list);
+public static <K,V> Map<K, V> unmodifiableMap(Map<? extends K, ? extends V> m);
+public static  SortedSet unmodifiableSortedSet(SortedSet<? extends T> s);
+public static <K,V> SortedMap<K, V> unmodifiableSortedMap(SortedMap<K, ? extends V> m);
+
+8. Thread Safe Collections
+Java 1.5 Concurrent package (java.util.concurrent) contains thread-safe collection classes that allow collections to be modified while iterating. By design iterator is fail-fast and throws ConcurrentModificationException. Some of these classes are CopyOnWriteArrayList, ConcurrentHashMap, CopyOnWriteArraySet.
+
+Read these posts to learn about them in more detail.
+
+Avoid ConcurrentModificationException
+CopyOnWriteArrayList Example
+HashMap vs ConcurrentHashMap
+
+9. Collections API Algorithms
+Java Collections Framework provides algorithm implementations that are commonly used such as sorting and searching. Collections class contain these method implementations. Most of these algorithms work on List but some of them are applicable for all kinds of collections.
+
+
+9.1) Sorting
+The sort algorithm reorders a List so that its elements are in ascending order according to an ordering relationship. Two forms of the operation are provided. The simple form takes a List and sorts it according to its elements’ natural ordering. The second form of the sort takes a Comparator in addition to a List and sorts the elements with the Comparator.
+
+
+9.2) Shuffling
+The shuffle algorithm destroys any trace of order that may have been present in a List. That is, this algorithm reorders the List based on input from a source of randomness such that all possible permutations occur with equal likelihood, assuming a fair source of randomness. This algorithm is useful in implementing games of chance.
+
+
+9.3) Searching
+The binarySearch algorithm searches for a specified element in a sorted list. This algorithm has two forms. The first takes a List and an element to search for (the “search key”).
+
+This form assumes that the list is sorted in ascending order according to the natural ordering of its elements.
+
+The second form takes a Comparator in addition to the List and the search key and assumes that the list is sorted into ascending order according to the specified Comparator.
+
+The sort algorithm can be used to sort the List prior to calling binarySearch.
+
+
+9.4) Composition
+The frequency and disjoint algorithms test some aspect of the composition of one or more Collections.
+
+frequency: counts the number of times the specified element occurs in the specified collection
+disjoint: determines whether two Collections are disjoint; that is, whether they contain no elements in common
+
+9.5) Min and Max values
+The min and the max algorithms return, respectively, the minimum and maximum element contained in a specified Collection. Both of these operations come in two forms. The simple form takes only a Collection and returns the minimum (or maximum) element according to the elements’ natural ordering.
+The second form takes a Comparator in addition to the Collection and returns the minimum (or maximum) element according to the specified Comparator.
+
+10. Java 8 Collections API Features
+Java 8 biggest changes are related to Collection APIs. Some of the important changes and improvements are:
+
+Introduction of Stream API for sequential as well as parallel processing, you should read Java Stream API Tutorial for more details.
+Iterable interface has been extended with forEach() default method for iterating over a collection.
+Lambda Expression and Functional interfaces are mostly beneficial with Collection API classes.
+
+11. Java 10 Collections API Changes
+List.copyOf, Set.copyOf, and Map.copyOf methods to create unmodifiable collections.
+Collectors class gets various methods for collecting unmodifiable collections (Set, List, Map). These method names are toUnmodifiableList, toUnmodifiableSet, and toUnmodifiableMap.
+Let’s look at an example of these new Java 10 Collections API methods usage.
+
+package com.journaldev.collections;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class JDK10CollectionFunctions {
+
+	public static void main(String[] args) {
+
+		// 1. List, Set, Map copyOf(Collection) method
+		List<String> actors = new ArrayList<>();
+
+		actors.add("Jack Nicholson");
+		actors.add("Marlon Brando");
+
+		System.out.println(actors);
+		// prints [Jack Nicholson, Marlon Brando]
+
+		// New API added - Creates an UnModifiable List from a List.
+		List<String> copyOfActors = List.copyOf(actors);
+
+		System.out.println(copyOfActors);
+		// prints [Jack Nicholson, Marlon Brando]
+
+		// copyOfActors.add("Robert De Niro"); Will generate
+		// UnsupportedOperationException
+
+		actors.add("Robert De Niro");
+
+		System.out.println(actors);
+		// prints [Jack Nicholson, Marlon Brando, Robert De Niro]
+
+		System.out.println(copyOfActors);
+		// prints [Jack Nicholson, Marlon Brando]
+
+		// 2. Collectors class toUnmodifiableList, toUnmodifiableSet, and
+		// toUnmodifiableMap methods
+		List<String> collect = actors.stream().collect(Collectors.toUnmodifiableList());
+		System.out.println(collect);
+	}
+
+}
+
+12. Java 11 Collections API Changes
+A new default method toArray(IntFunction<T[]> generator) added in the Collection interface. This method returns an array containing all of the elements in this collection, using the provided generator function to allocate the returned array.
+
+package com.journaldev.collections;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class JDK11CollectionFunctions {
+
+	public static void main(String[] args) {
+
+		/*
+		 * JDK 11 New Method in Collection interface 
+		 * default <T> T[] toArray(IntFunction<T[]> generator) {
+		 * return toArray(generator.apply(0)); }
+		 */
+
+		List<String> strList = new ArrayList<>();
+		strList.add("Java");
+		strList.add("Python");
+		strList.add("Android");
+
+		String[] strArray = strList.toArray(size -> new String[size]);
+		System.out.println(Arrays.toString(strArray));
+
+		strArray = strList.toArray(size -> new String[size + 5]);
+		System.out.println(Arrays.toString(strArray));
+
+		strArray = strList.toArray(size -> new String[size * 3]);
+		System.out.println(Arrays.toString(strArray));
+	}
+
+}
+Output:
+
+[Java, Python, Android]
+[Java, Python, Android, null, null]
+[Java, Python, Android]
+
+13. Collection classes in a Nutshell
+Below table provides basic details of commonly used collection classes.
+
+Download URL: Java Collection Classes
+
+Collection	Ordering	Random Access	Key-Value	Duplicate Elements	Null Element	Thread Safety
+ArrayList	✅	✅	❌	✅	✅	❌
+LinkedList	✅	❌	❌	✅	✅	❌
+HashSet	❌	❌	❌	❌	✅	❌
+TreeSet	✅	❌	❌	❌	❌	❌
+HashMap	❌	✅	✅	❌	✅	❌
+TreeMap	✅	✅	✅	❌	❌	❌
+Vector	✅	✅	❌	✅	✅	✅
+Hashtable	❌	✅	✅	❌	❌	✅
+Properties	❌	✅	✅	❌	❌	✅
+Stack	✅	❌	❌	✅	✅	✅
+CopyOnWriteArrayList	✅	✅	❌	✅	✅	✅
+ConcurrentHashMap	❌	✅	✅	❌	❌	✅
+CopyOnWriteArraySet	❌	❌	❌	❌	✅	✅
+I hope this tutorial explains most of the topics in java collections framework, please share your opinion with comments.
+
