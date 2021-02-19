@@ -1784,43 +1784,43 @@ Understand product from Code.
 		Problem solving strategies
 		https://www.youtube.com/watch?v=XKu_SEDAykw
 		
-		Top-Down Design Model: 
-			In the top-down model, 
-				an overview of the system is formulated 
-					without going into detail for any part of it. 
-				Each part of it then refined into more details, 
-				Defining it in yet more details 
-					until the entire specification is detailed enough to validate the model.
-				if we glance at a haul as a full, 
-					it looks impossible.
-				For example: 
-					Writing a University system program, 
-					writing a word processor. 
-					Complicated issues may be resolved victimization high down style, conjointly referred to as Stepwise refinement where, 
+Top-Down Design Model: 
+	In the top-down model, 
+		an overview of the system is formulated 
+			without going into detail for any part of it. 
+		Each part of it then refined into more details, 
+		Defining it in yet more details 
+			until the entire specification is detailed enough to validate the model.
+		if we glance at a haul as a full, 
+			it looks impossible.
+		For example: 
+			Writing a University system program, 
+			writing a word processor. 
+			Complicated issues may be resolved victimization high down style, conjointly referred to as Stepwise refinement where, 
 
-			We break the problem into parts,
-			Then break the parts into parts soon and now each of parts will be easy to do. 
- 
-			Advantages: 
+	We break the problem into parts,
+	Then break the parts into parts soon and now each of parts will be easy to do. 
 
-				Breaking problems into parts help us to identify what needs to be done.
-				At each step of refinement, 
-					new parts will become less complex and 
-						therefore easier to solve.
-				Parts of the solution may turn out to be reusable.
-				Breaking problems into parts allows more than one person to solve the problem. 
+	Advantages: 
+
+		Breaking problems into parts help us to identify what needs to be done.
+		At each step of refinement, 
+			new parts will become less complex and 
+				therefore easier to solve.
+		Parts of the solution may turn out to be reusable.
+		Breaking problems into parts allows more than one person to solve the problem. 
 
 		Bottom-Up Design Model: 
-			Individual parts of the system are specified in detail. 
-			The parts are linked to form larger components, 
-				which are in turn linked until a complete system is formed. 
-			Object-oriented language such as C++ or java uses a bottom-up approach 
-				where each object is identified first. 
+	Individual parts of the system are specified in detail. 
+	The parts are linked to form larger components, 
+		which are in turn linked until a complete system is formed. 
+	Object-oriented language such as C++ or java uses a bottom-up approach 
+		where each object is identified first. 
 
-			Advantage: 
+	Advantage: 
 
-				Make decisions about reusable low-level utilities then decide how there will be put together to create high-level construct. ,
-				The contrast between Top-down design and bottom-up design. 
+		Make decisions about reusable low-level utilities then decide how there will be put together to create high-level construct. ,
+		The contrast between Top-down design and bottom-up design. 
  
 		
 		Dynamic Programming Approaches
@@ -1933,28 +1933,28 @@ int main()
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Brute Force Algorithms  
 		----------------------
-			straightforward methods of solving a problem 
-			rely on sheer computing power and trying every possibility rather than advanced techniques to improve efficiency.
-	
-			For example, 
-				we have a small padlock with 4 digits, 
-				each from 0-9. 
-				You forgot your combination, 
-					but you don't want to buy another padlock. 
-					Since you can't remember any of the digits, 
-						you have to use a brute force method to open the lock.
+		straightforward methods of solving a problem 
+		rely on sheer computing power and trying every possibility rather than advanced techniques to improve efficiency.
 
-			
-			Traveling salesman problem (TSP). 
-			A salesman needs to visit 10 cities across the country. 
-			How does one determine the order in which those cities should be visited 
-				such that the total distance traveled is minimized?
+		For example, 
+			we have a small padlock with 4 digits, 
+			each from 0-9. 
+			You forgot your combination, 
+				but you don't want to buy another padlock. 
+				Since you can't remember any of the digits, 
+					you have to use a brute force method to open the lock.
 
-			The brute force solution is simply to calculate the total distance for every possible route 
-				and then select the shortest one. 
-				This may not be the most efficient in reality as you add constraints.
-	
-			Hashing gives us constant time access O(1) to insert and get an element. So many solutions can be worked upon using "Hash" objects.
+		
+		Traveling salesman problem (TSP). 
+		A salesman needs to visit 10 cities across the country. 
+		How does one determine the order in which those cities should be visited 
+			such that the total distance traveled is minimized?
+
+		The brute force solution is simply to calculate the total distance for every possible route 
+			and then select the shortest one. 
+			This may not be the most efficient in reality as you add constraints.
+
+		Hashing gives us constant time access O(1) to insert and get an element. So many solutions can be worked upon using "Hash" objects.
 			
 		
 		
