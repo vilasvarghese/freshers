@@ -1,0 +1,288 @@
+Deep Dive into code- 
+Understanding of coding structure. 
+	D:\PraiseTheLord\HSBGInfotech\Java\example\Die.java
+	
+	Maven coding conventions
+	https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
+	
+	Keep classes small
+	Name methods carefully
+	Keep methods small
+	Use comments
+	Use a consistent style
+	Use built-in logging
+	
+Exposure to real world code and develop ability to read the code.
+	Controllers
+	Services
+	DAO
+		
+		Dependency Injection
+		Inversion of Control
+		
+	
+Intro into Git + GitHub (source control systems), 
+
+	learn on how to commit a change in another person’s code, 
+		raise a pull request
+		
+	
+	Fork friend's repo.
+	git clone
+	git checkout -b raisepr #raisepr is the name of a branch
+	make changes
+	git add *
+	git commit -m "message"
+	git push origin raisepr
+	
+	#This would automatically create an option to raise a PR from the github account.
+	
+	
+	
+	
+	
+	http://swcarpentry.github.io/git-novice/
+
+Basic concepts of IOC (Inversion of Control) and DI (Dependency Injection)
+	https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
+	https://www.tutorialsteacher.com/ioc/introduction
+
+Fundamentals of Spring/Spring Boot/Micronaut
+	https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x
+	https://www.youtube.com/watch?v=24rGqtxuLhc&list=PLBBog2r6uMCRgkxM4xQeUV2A3A35_s9J3
+	https://www.youtube.com/watch?v=PSP1-2cN7vM&list=PLBBog2r6uMCRzaJqr-uUC8gakwSxkPSBh
+
+	Micronaut
+		Fast
+			Load the configuration and it's classes at compile time.
+		Reduce memory footprint
+			To manage bean lifecycle spring uses reflection.
+		Easy unit testing
+			Generate unit test cases automatically.
+				
+
+	Download from the "BINARY" link in https://micronaut.io/download/
+	
+	
+	
+	
+------------------------------------------------------------------------------------	
+	Databases follow ACID properties
+		Automicity
+		Consistency
+		Isolation
+		Durability
+
+
+
+
+CAP theorem 
+	Also called brewer's theorem. 
+	It is impossible for a distributed data store to offer more than two out of three guarantees
+		Consistency
+		Availability
+		Partition Tolerance
+
+
+	Consistency:
+	------------
+		The data should remain consistent even after the execution of an operation. 
+		Once written, any future read request should contain that data. 
+		
+	Availability:
+	------------
+		The database should always be available and responsive. 
+		It should not have any downtime.
+
+	Partition Tolerance:
+	--------------------
+		System should continue to function 
+			even if the communication among the servers is not stable. 
+		For example, the servers can be partitioned into multiple groups which may not communicate with each other. 
+		Here, if part of the database is unavailable, other parts are always unaffected.
+
+
+
+Eventual Consistency
+---------------------
+	Have copies of data on multiple machines to get high availability and scalability. 
+	Changes made to any data item on one machine has to be propagated to other replicas.
+
+	Data replication may not be instantaneous 
+	Some copies will be updated immediately while others in due course of time. 
+	
+
+
+Fundamentals of NoSQL
+---------------------
+	NoSQL follows BASE properties (unlike ACID)
+		Basically available
+			Data will be always available once reached.
+			DB is available all the time as per CAP theorem
+		Soft State
+			Data can continue to vary over a period of time
+			If data can be eventuall consistent then there can be soft states
+		Eventual consistency
+			May not be consistent always.
+				Only emp data comes
+				then address comes
+				then dept comes 
+			
+		
+	Databases can be divided in 3 types:
+		RDBMS (Relational Database Management System)
+		OLAP (Online Analytical Processing)
+		NoSQL (recently developed database)
+	
+	NoSQL Database
+		NoSQL Database or non-SQL or non relational database.
+		Non-relational
+			NoSQL database doesn't use tables for storing data. 
+			NoSQL databases never follow the relational model
+			Never provide tables with flat fixed-column records
+			Work with self-contained aggregates or BLOBs
+			Doesn't require object-relational mapping and data normalization
+			No complex features like 
+				query languages, 
+				query planners,
+				referential integrity joins, 
+				ACID
+		Schema-free
+			Either schema-free or have relaxed schemas
+			Definition of the schema of the data not required
+			Offers heterogeneous structures of data in the same domain
+		Simple API
+			Easy to use interfaces for 
+				storage and 
+				querying data provided
+			APIs allow low-level data manipulation & selection methods
+			Text-based protocols mostly used with HTTP REST with JSON
+			Mostly used no standard based NoSQL query language
+			Web-enabled databases running as internet-facing services	
+		Distributed
+			Multiple NoSQL databases can be executed in a distributed fashion
+			Offers auto-scaling and fail-over capabilities
+			Often quality of ACID can be sacrificed for scalability and throughput
+			Mostly no synchronous replication between distributed nodes Asynchronous Multi-Master Replication, peer-to-peer, HDFS Replication
+			Providing eventual consistency
+			Shared Nothing Architecture. 
+				Less coordination and higher distribution.	
+			
+		Can store unlimited size data.
+
+
+	
+	Advantages of NoSQL
+		Supports 
+			query language.
+			Fast performance.
+			Horizontal scalability.
+
+	Internet giants like Google, Facebook, Amazon are so successful due to using alternatives
+	
+	Types of NoSQL Databases
+		Mainly categorized into four types: 
+			Key-value Pair Based
+			Column-oriented Graph
+			Graphs based
+			Document-oriented
+
+		Key Value Pair Based
+		--------------------
+			https://en.wikipedia.org/wiki/Key%E2%80%93value_database
+			Data stored in key/value pairs. 
+			Designed to handle lots of data.
+				Stored in hash table 
+					key is unique
+					value can be 
+						JSON, 
+						BLOB(Binary Large Objects), 
+						string, 
+						etc.
+			Most basic NoSQL database 
+		Example
+			Redis, 
+			Dynamo, 
+			Riak 
+		Based on Amazon's Dynamo paper.
+
+		Column-based
+		------------
+		Refer images in 	https://www.kdnuggets.com/2021/02/understanding-nosql-database-types-column-oriented-databases.html
+			Work on columns 
+			Based on BigTable paper by Google. 
+			Every column is treated separately. 
+			Values of single column databases are stored contiguously.
+
+			High performance on aggregation queries like 
+				SUM, 
+				COUNT, 
+				AVG, 
+				MIN etc. 
+			Data is readily available in a column.
+
+			Widely used in 
+				data warehouses, 
+				business intelligence, 
+				CRM, 
+				Library card catalogs
+		Examples
+			HBase, 
+			Cassandra, 
+			Hypertable.
+			
+		
+		Document-Oriented:
+		-----------------
+		Refer image in https://www.alachisoft.com/nosdb/document-databases.html
+		
+			Stores and retrieves data as a key value pair within the document
+				Value part is stored as a document. 
+				Value 
+					is JSON or XML formats. 
+					Understood by the DB 
+					Can be queried.
+
+			Used for 
+				blogging platforms, 
+				real-time analytics & 
+				e-commerce applications. 
+			
+			No multiple operations complex transactions 
+			No aggregate structures.
+		Example
+			Amazon SimpleDB, 
+			CouchDB, 
+			MongoDB, 
+			Riak, 
+			Lotus Notes, 
+			
+			
+			
+		Graph-Based
+		------------
+		Refer diagram in https://www.sqlshack.com/understanding-graph-databases-in-sql-server/
+		
+			A graph type database stores entities as well the relations amongst those entities. The entity is stored as a node with the relationship as edges. An edge gives a relationship between nodes. Every node and edge has a unique identifier.
+			
+			Compared to a relational database where tables are loosely connected, a Graph database is a multi-relational in nature. Traversing relationship is fast as they are already captured into the DB, and there is no need to calculate them.
+
+			Graph base database mostly used for social networks, logistics, spatial data.
+
+			
+	Demo of Amazon Dynamo DB
+	
+
+Introduction to cloud (compute, persistence and storage) 
+
+
+	https://github.com/vilasvarghese/aws/blob/master/Notes/AWSTOC	
+
+Intro to Containers, container orchestration etc.
+	Detailed discussion on 
+		Docker
+			https://github.com/vilasvarghese/docker-k8s/tree/master/notes/day1
+			https://github.com/vilasvarghese/docker-k8s/tree/master/notes/day2	
+				
+		Kubernetes
+			https://github.com/vilasvarghese/docker-k8s/tree/master/notes/day4
