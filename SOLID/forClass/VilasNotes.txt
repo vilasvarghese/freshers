@@ -1,0 +1,391 @@
+Examples: 
+
+	D:\PraiseTheLord\HSBGInfotech\Others\vilas\designbasics\solid\
+
+################################################################
+SOLID (more details to follow)
+	Single responsibility principle
+	Open-closed principle
+	Liskov substitution principle
+	Interface segregation principle
+	Dependency inversion principle
+		(This is a principle while Dependency Injection is a pattern)
+######################################		
+		SOLID principles
+
+######################################		
+
+Introduced by Robert Martin(Uncle Bob)
+It avoids code smells.
+Quickly refractor code.
+Can do adaptive or agile software development.
+
+ S: Single responsibility principle
+ ----------------------------------
+ Class should have only one and only one responsibility.
+ There should be only one reason due to which a class has to be change
+
+ What is the responsibility of this class?
+ What if we had multiple responsibility?
+ 
+
+Why SRP
+ testing is easier	
+ the class will have fewer test cases.
+ better code organization
+ easy to maintain
+ less cost
+ easy to understand
+ 
+public class UserSettingService
+{
+	public void changeEmail(User user)
+	{
+	if(checkAccess(user))
+	{
+	//Grant option to change
+	}
+	}
+	public boolean checkAccess(User user)
+	{
+	//Verify if the user is valid.
+	}
+}
+
+#when the logic of checkAccess changes, we may have to modify the same class.
+
+
+******************************************
+Single Responsibility Principle
+	- A class should have only single responsibility. A single reason to change.
+	e.g. ScoreRecorder
+	- Based on separation of concerns.
+	- Vary each concern independently of other concern.
+	- Each class should be designed to do one thing and it should do it well.
+	- Smaller classes. 
+		easily understandable and maintable
+********************************************************
+
+*****************************************
+1.	Review MVC to understand SRP.
+2.	Reading from a database and writing into file.
+	What are the classes you would design?
+		Need one DAO, FileManagement, Entity and Management classes.
+	What are the methods you would define?
+	What are the unit test cases and integration test cases you would define?
+Make a change
+	Change the db. What is the impact to functionalities? What are the impacts on test cases?
+	Any additional testing required?
+
+	Question: Business logic layer connected to a database
+		Read some data from database tables
+		Finally, write it to a file.
+
+	What are the classes you would design?
+		Need one DAO, FileManagement, Entity and Management classes.
+	What are the methods you would define?
+	What are the unit test cases and integration test cases you would define?
+
+	Make a change
+	Change the db. What is the impact to functionalities? What are the impacts on test cases?
+	What if we need to read from more than one db?
+Any additional testing required?
+
+Have you imagined the scenario? 
+	Here the class has multiple reasons to change
+		e.g. 
+			modification of file output
+			new data base adoption. 
+		
+
+ O: Open-closed principle
+ ----------------------------------
+Bertrand Mayer, in his 1988 book, Object-Oriented Software Construction: 
+
+Software entities should be open for extension, but closed for modification.
+
+  Extension can be through 
+	composition or 
+	inheritance.
+  Jenkins plugin, Browser plugin ect.
+  
+  why OCP?
+  --------
+  classes may come to us through third-party libraries.
+  e.g. 
+	calculate areas of various shapes. 
+	Rectangle 
+		length & width.
+
+public double Area(object[] shapes) {
+	double area = 0;
+	forEach (Shape shape in shapes){
+		if (shape.TYPE.equals("Rectangle")){
+			Rectangle rectangle = (Rectangle)shape;
+			area += rectangle.width * rectangle.height;
+		}else{
+			Circle circle (Circle)shape;
+			area += circle.radius * circle.radius * Math.PI;
+		}
+	}
+	return area;
+}
+
+  
+  Open for extension – 
+	Behavior of the module can be extended. 
+	As the requirements of the application change, we are able to extend the module with new behaviors that satisfy those changes. In other words, we are able to change what the module does.
+
+  Closed for modification – Extending the behavior of a module does not result in changes to the source or binary code of the module. The binary executable version of the module, whether in a linkable library, a DLL, or a Java .jar, remains untouched.
+  
+  Pick any interface - identify how would you design it closed for modification.
+  
+***********************************
+
+Refer Shape.css and ShapeFixed.css
+
+Open Closed Principle
+
+	- Writing something very specific to solve some specific problem 
+		can lead to writing same code multiple time 
+			code duplication
+
+	- Code duplication leads to maintainability problem.
+
+	- Reused abstraction principle – 
+		if we have multiple abstractions which are not being used by the concrete class 
+			then it is a sign of poor designing and abstractions.
+
+	- Interfaces are not designed but they are discovered. 
+		You don't need design for interfaces instead you just need to discover it.
+
+	- Start with the concrete behaviour and discover the abstraction as commonality emerges.
+
+	- Rule of three – 
+		Unless and until we have three places where we think that the code is same
+			it is generally not advised to abstract out the functionality.
+		Open for extensibility but closed for modification. If we have a class which is being used by other clients, that class should be open for extensibility. The only reason to change the class should be to fix a bug in the class.
+		We should favor Composition over inheritance which I will discuss in next principles.
+		We can make a class open for extensible is by adding virtual keyword to the methods of the class.
+
+
+
+***********************************
+A calculator program without OCP and with OCP
+	https://howtodoinjava.com/design-patterns/open-closed-principle/
+
+***********************************  
+ L: Liskov substitution principle
+ ----------------------------------
+ The only thing is that every subclass or derived class should be substitutable for their parent or base class.
+ avoids misusing inheritance.
+ “is-a” relationship.
+ 
+Liskov Substitution Principle
+-----------------------------
+	Applicable only for polymorphism (inheritance). 
+	Named after Barbara liskov, in 70’s
+	Derived types must be substituted for base types.
+	-------------------------------------------------
+	Client can consume any implementation without changing the correctness of the system
+	We can change the behaviour of the system because polymorphism is all about changing the behaviour.
+	Correctness of the system can be said as the implementation of the interface A should not crash the application. Similarly implementation of the interface B should also not crash the application (compile time error or a new call itself fails). 
+
+Breaking the LSP:
+
+	When we get the NotSupportedException.
+	One interesting implementation which violates LSP in C# is ReadOnlyCollection. Once the collection is created it cannot be changed. We cannot add or remove the items from the collection.
+	So Add , clear and Remove methods in ReadOnlyCollection throw the NotSupportedExceptions. It can break the correctness of the system because suppose if one part of the client is accepting only the ICollection and it was working fine with List implementation . But if we substitute it with ReadOnlyCollection, it will break for Add, Clear and Remove methods and thus putting the correctness of the system in jeopardy.
+	
+ 
+public class Rectangle
+{
+	private int length;
+	private int breadth;
+	public int getLength()
+	{
+		return length;
+	}
+	public void setLength(int length)
+	{
+		this.length = length;
+	}
+	public int getBreadth()
+	{
+		return breadth;
+	}
+	public void setBreadth(int breadth)
+	{
+		this.breadth = breadth;
+	}
+	public int getArea()
+	{
+		return this.length * this.breadth;
+	}
+}
+
+public class Square extends Rectangle
+{
+	public void setSide(int side)
+	{
+		super.setBreadth(side);
+		super.setLength(side);
+	}
+	
+	public setLength(int length){
+		throw new NotSupportedException
+	}
+	
+	public setBreadth(int breadth){
+		setSide(breadth);
+	}
+}
+
+Above code breaks LSP - how?
+ 
+o	What is "is a" relationship?
+o	What is "has a" relationship?
+o	Typical cases where "is a" and "has a" can be confusing.
+
+
+	
+
+•	Lab2: Identify 10 objects in “is a” and “has a” relationship.
+•	Lab3: Multiple questions like below?
+o	Identify the relation between Cashier, deposit, withdraw, BankManager, Bank
+
+What is the relation between TV, micky mouse, donald duck, parle G advertisement.
+
+*********************************** 
+Vehicle - Car - AmbassidorCar relationship
+What is "is a" relationship?
+What is "has a" relationship?
+Typical cases where "is a" and "has a" can be confusing.
+	Confusing cases of is-a and has-a
+		ApplianceManufacturer Vs FanManufacturer
+a.	Students should Identify 10 objects in “is a”, “has a” relationship each
+
+
+***********************************  
+
+ I: Interface segregation principle
+ ----------------------------------
+ Clients should not be forced to implement unnecessary methods which they will not use.
+ Why is that this principle is required?
+
+ISP
+---
+	- ISP is a SOLID design principle 
+		help us achieve the LSP 
+			by having more granularity.
+	- Clients should not depend on methods they do not use. 
+	- Interface are introduced to achieve loose coupling 
+		classes doesn't use the interfaces 
+		clients use interfaces.
+	- Clients define the interface 
+		client doesn't need to define a method in the interface 
+			if the client doesn’t need it.
+	- Prefer role based interfaces over header interfaces. 
+		Header interfaces are created by abstracting out of the existing classes 
+	- If client need to define the interface 
+		define very few methods in the interface. 
+		These are role interface.
+	Many ways to extend the functionality of the class 
+		e.g. 
+			inheritance
+			generics 
+			extension methods.
+	Very less way to reduce the methods in the class. 
+	Indeed there is only one way and that is ISP.
+
+
+interface Bird{
+	public void fly();
+}
+
+Penguine implements Bird{
+	fly?
+}
+ 
+How to solve?
+	Flying Bird extends Bird
+ 
+ 
+Refer ShapeLSP.css : This is a violation of LSP and ISP 
+***********************************
+ Bird 
+	fly?
+ Penguine extends Bird
+ How do you solve this?
+a.	Students should identify 10 interfaces. 
+	Classes implementing them. 
+Vilas should find out cases where a change or a different type of class can violate this principle. How do you solve this?
+ ***********************************  
+  D: Dependency inversion principle
+
+DIP
+---
+	High-level modules should not depend on low-level modules. 
+	Both should depend on abstractions.
+	Abstractions should not depend on details. 
+	Details should depend on abstractions.
+
+	Interaction between high level and low level module should be abstract.
+
+ ----------------------------------
+ Selenium working with different browsers.
+ 
+***********************************  
+Something like in the link below would be discussed.
+https://www.intertech.com/Blog/the-dependency-inversion-principle-with-c-examples/
+https://www.tutorialsteacher.com/ioc/dependency-inversion-principle
+
+•	Lab2: Design an AreaCalculator. 
+The design should scale to calculate area of a 
+	circle, 
+	square 
+	rectangle, 
+	polygon, 
+	hexagon ect…. Design should work for new shapes that can come up tomorrow.
+
+
+How SOLID principles Solves read world Application Problems
+Some of the design smell I which I want to discuss here are.
+
+	Rigidity – The design is difficult to change. Without proper use of abstraction and interface the design becomes very rigid. For each and every small change in the functionality we have to test whole logic from start.
+	
+	Fragility – Design is easy to break. As discussed with a small change there are very high 	chances of the whole design going for a toss.
+
+	Immobility – The design is difficult to reuse. Or rather we cannot easily extend the current design.
+	
+	Viscosity – It is difficult to do the right thing.
+
+	Needless Complexity – Over design.
+***********************************   
+######################################		
+
+
+		Lab for SOLID principles 
+		
+***********************************
+Lab for solid principle
+e.g. https://blog.scottlogic.com/2018/06/26/solid-principles.html
+Implement all the cases.
+
+o	Discuss 5/6 case studies..
+o	Implement all the cases in POJO’s or POCO’s.
+
+https://www.geeksforgeeks.org/solid-principle-in-programming-understand-with-real-life-examples/
+https://howtodoinjava.com/best-practices/5	-class-design-principles-solid-in-java/
+https://www.codeproject.com/Tips/1033646/SOLID-Principle-with-Csharp-Example
+https://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/
+########################################################################
+Reference: SOLID Principle Practical implementation
+
+Java
+D:\PraiseTheLord\HSBGInfotech\Others\solid\src\com\github\bsferreira\solid\
+
+D:\PraiseTheLord\HSBGInfote	ch\Others\solid\SolidPrinciplesTutorial
+C#
+https://github.com/harrymt/SOLID-principles
+########################################################################

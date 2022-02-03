@@ -1,0 +1,2976 @@
+Product Engineer Vs Software Engineer
+	Difference :  Product Engineers vs  Traditional Application Software Engineers – what makes one a product engineer
+		Who is a product engineer?		
+		Who is a traditional software engineer?
+		Evolution of product engineer.
+		Difference between product engineer and software engineer.
+########################################################################
+		
+https://medium.com/mindorks/no-more-software-engineers-product-engineers-is-the-new-cool-bb14f1c657c5#:~:text=Core%20difference%20between%20Software%20Engineer,'Robin'%20for%20Product%20Manager.
+
+https://swi.cs.vsb.cz/RUPLarge/core.base_rup/guidances/concepts/usability_engineering_1037E52.html
+
+Difference
+----------
+
+1. Keeps self in users shoes 
+	beyond coding
+2. First understands the feature from users perspective
+	before jumping into development
+3. Comes up with pain points 
+	OR features which pops up in their mind and discusses them with team (specially product manager)
+	Analyze better value for customers.
+4. Cares equally about user experience 
+	as he/she is into technology behind the product
+5. Understands the users need and business plan of employer 
+	AND convinces team to have a balance
+6. More confident and opinonated - Believes in healthy discussions 
+	and never keeps heavy heart
+7. Becomes the Change agent
+	Instead of complaining [about say architecture]; He/She understands why did they do and improves on with time
+8. Works on communication skills
+
+########################################################################
+		
+****************************************
+Requirement from Customer: I need a banking solution. I need to transact.
+	Let the students do this.
+	What would be the various listing pages?
+	What would be the reports available to management?
+	Identify the Non-Functional requirements which they missed.
+	Think through and re-design.
+	What if this was a product and not for a single bank? Multitenancy.
+	Explain advantages of Multitenancy and Issues it creates. What could be the unique id of user (should not be emaild).
+	Identify the design changes.
+	Now make functional breaking changes. Like a user can have multiple accounts. So, should we have something like customerID apart from account number? How would you manage joint accounts?
+	How does this imact design. 
+	Watch the design most likely it should still be Monolith.
+	Teach them Microservices. And explain how the design can scale with microservices.
+
+*********************************************************
+Rewrite my lab based on micro services.
+*********************************************************
+
+Lab 2: for students. The hope is that they would incorporate most of the learning above into the following design. This would help us to evaluate the students.
+	Design a simple restaurant which serve food.
+	End of the day, ensure the design scales on both functional and non-functional requirements.
+
+****************************************
+Product Design/ Engineering	
+	Usability Engineering – customer Experience
+		What is usability engineering?
+		Embed usability into UI 
+		Embed usability into API
+		Backend design to support usability in UI.
+		Practical lab : Logical design (No UI development) of UI and API.
+
+
+########################################################################
+Usability
+	Going back to the example of designing a bank
+	
+	My bank should look like
+		hdfcbank.com
+		reliancemoney.com
+	
+	Please design something like that for me.
+
+
+https://www.youtube.com/watch?v=Is2O666qDPs
+
+
+	dig a compatitor of reddit
+		dig was very famous. reddit was not even known
+		10 times more famous
+		dig did a design of UI.
+		there was an exodus to reddit
+		
+	People don't like change
+	
+	ebay
+		old design: pale yellow color in the background
+		changed it to white
+			1000's of feedback/bugs/
+		wrote an algorithm 
+			changed to pale yellow
+			gradually changed from pale yellow to white
+	User's like cases where they can judge easily
+		Sugar Box, Salt box, 
+	But likes it more if you can make Users feel smart
+	
+	Four steps to building a good UI/UX
+		Narrow
+		Build
+		Test/Collect
+		Simplify
+		
+	Narrow the scope
+		1. Identify and possibly find a narrow band of target users
+			(specifically your first adopters)
+		2. Speeds up development time
+		3. Guides testing
+		4. Gives marketing individuals early insight into user acquisition strategies
+		5. Narrows down number of variables for testing
+		6. Saves money
+		 
+	For e.g. don't identify all young people between 20 and 30 of age.
+		That's very huge
+	all mom's between 40 - 45 in Redwood city in California. 
+		If it works in California we will roll out to the world. That is fine.
+		
+	e.g. 
+		Amazon
+			started selling new books
+				- Very specific.
+		
+		Google
+			Only search engine
+			Now has gmail, youtube, android.
+		Twitter
+			sms platform
+				put announcement on screen and send it as sms.
+			
+		Identify 2/3 things that identify your company.
+	
+		Design the Persona
+			Taking target users and put a (a few names) name to it.
+			e.g. Mary
+				43 years
+				has a daughter and son
+				Stays in Redwood city
+				Earns ...............
+				
+		How do you collect the data
+			You need to be quantitative
+			log usage and measure who used what.
+			There are tools do that e.g. heap.
+			
+			Don't assume the features user would like. It can be weired.
+	
+	Build 
+		Build a prototype
+		Agile development
+		
+	Test/Collect
+		Put it across to the customer. Get feedback.
+		
+	
+	Simplify
+		
+
+########################################################################
+
+The topic discussed below is based on 
+	Usability Engineering
+	Jakob Nielsen, 1993
+
+Usability Slogans
+https://nikhilmachcha.wordpress.com/2015/09/24/usability-engineering/
+edureka/hexaware/usability_intro.pdf
+
+Why think or learn about Usability
+
+	• Making everyday life easier for people
+	• Usability is increasingly becoming a competetive factor (vs.
+	functionality)
+	• Cost savings
+	• Example
+		A study showed that 63% of large software projects significantly overran their estimates.
+		The four reasons that were rated as having the highest	responsibility were all related to usability engineering:
+			
+			• frequent requests for changes by users
+			• overlooked tasks
+			• users’ lack of understanding of their own requirements
+			• insufficient user-analyst communication and understanding
+
+	Can you name a software which became successfully simply because it was more usable than it's rivals?
+	
+		Windows!!
+
+1.1 Cost Savings
+	The cost savings from increased usability 
+		Many times not directly visible.
+		However reduced usability is easily visible.
+
+1.2 Usability Now! 
+	Providing better usability is important 
+		otherwise it frustrates users
+		Especially when they have a comparison.
+		
+Imagine driving a car without mechanical support. You have to run around turning the wheels. How would you feel.		
+		
+	A generic design of usability may frustrate a user whose common purpose is simple.
+	
+1.3 Usability Slogans  
+	10 slogans which sound ironical. But makes sense.
+	
+	1.Your Best Guess is not good enough
+		• its impossible to design an optimal interface just by giving it your best try
+	
+	2.The user is always right
+		• The designer must acquire a certain degree of humility and acknowledge the need to modify his design
+		• Example:
+			A company once tested the usability of a manual, and found that users nearly always made a mistake at a certain point. Their solution was to frame the difficult item in a box and add a note saying “Read these instructions carefully” (Nielsen p.11)
+			
+	3.The user is not always right
+		Unfortunately, user interface designs cannot be derived just by asking users what they like.
+		• Users often do not know what they want
+		• They might change their minds
+		• Users often have diverging opinions
+		• Example
+		• a study showed that the probability of two persons apply the same name to an object is between 7% and 18%. This means it is not feasible to name commands just by asking some user(s)
+		
+		
+	4.Users are not designers
+		• The ideal solution to the usability question might be to leave the design to the individual users by providing extended customisation flexibility
+		• novice users do not customize (experienced do)
+		• needs good design anyway
+		• Example
+		• a study compared users abbreviations with systems’ built-in
+			found that users made about twice as
+		many spelling errors.
+	
+	5.Designers are not Users
+		Designers are not users
+		• Systems designers are different from users in several respects
+			General computer experience, 
+			understanding of the underlying system
+		• When you have deep understanding of some system, 
+			easy to understand meaning of any feature. 
+			This might distort the designers view on system complexity
+		• You cannot go back from knowing ‘more’ to knowing ‘less’
+	
+		My story : Ondu soura rupaya kodi.
+	
+	6.Vice Presidents are not users
+		Vice Presidents may have a strong view. But they also may not represent users.
+		Engineers needs to have strong opinion.
+			Backed by data
+			Confirmed through various sources (customers after giving options).
+		
+	7.Less is More
+		• Every piece of information presented 
+			adds to the cognitive load of using the system
+		• Example:
+		A study of experienced telephone company directory
+		assistants showed that finding a target in the top quarter of
+		the screen took 5.3 seconds when the screen was half full of
+		information and 6.2 when the screen was full.
+		- cutting the 0.9 seconds saved the company 40 million $ per
+		year
+
+
+	8.Details Matter
+		• Usability often depends on (seemingly) minor details
+		• Example
+		An indicator in a microwave oven turned gradually from
+		white to blue to display the state. Tests showed that the
+		phrase “turns blue” was much poorer than “white
+		disappears” in the manual, because users became confused
+		about “how much blue is blue”
+		
+	9.Help doesn’t
+		• It is not always that users are able to find the help they need in
+		e.g. online manuals, or they might misinterpret it
+		• Providing a brilliant help system will not change a user-hostile
+		interface to a user-friendly one
+		• Designers may be tempted to include e.g. online help to cover
+		up for a bad design instead of redesigning the interface
+
+	10. Usability Engineering is a process
+		More so in Agile world.
+		
+Usability Test Methods
+	• The Different tests during the stages of development
+	Exploratory Test
+	Heuristic Evaluation
+	Assessment Test
+	Validation Test
+	Comparison Test
+Exercise: Heuristic evaluation of Travel Weather GUI
+	
+Usability Testing
+• A process that employs participants who are representative of the target population to evaluate the degree to which a product meets specific criteria
+	• Goals
+	• to create a history of benchmarks
+	• minimizing costs
+	• increasing sales
+	• competition
+	• minimizing risks
+
+Limitations to Usability Tests
+	• Testing is always an artificial situation
+	• Test results do not prove that a product works
+	• Participants are rarely fully representative of the target
+	population
+	• Testing is not always the best/only technique to use	
+
+Test Methodology for Scientific Experiments
+A usability test is formally a controlled scientific experiment. This
+signifies that:
+	• A specific hypothesis must be formulated.
+	• Participants must be randomly chosen
+	• The experiment must be tightly controlled (including the role of
+	the experimenter)
+	• A control group must be employed to validate the results
+	• The number of test users must be of sufficient size to ensure
+	statistically valid results
+
+	Real-life test situations
+	A formal scientific experiment will often be impossible 
+	Customers may not sign up
+	Due to time pressures, 
+	costs, 
+	recruitement of test users, etc. 
+		
+	Research show	
+	• To achieve statistically significant results, 10-15 test users per
+	condition/variable must be employed
+	• The classical scientific theory is aimed at providing proof for a
+	hypothesis. In usability engineering our goal might often be a
+	more qualitative evaluation
+	As an alternative to the classical approach, a series of quick, pointed
+	experiments can be employed.
+
+	The cost of such a testing may be significantly more than the benefit.
+
+Adopted Test Methodology
+	Instead of the formal scientific approach, the following methodology can be employed:
+	• Formulate problem statements or test objectives instead of a
+	formal hypothesis
+	• Use a representative sample of end users (not necessarily random)
+	• Representation of the work environment
+	• Observe end users, who either use or review a representation of
+	the product. Extensive interviews of the [test] users.
+	• Collect quantitative and qualitative measurements
+	• Recommendation of improvements
+
+
+Image from p21 of pdf
+Context of Usability from p 5 of pdf
+
+Exploratory test in usability
+	When
+		• early in the development cycle
+	Objectives
+		• to evaluate/explore/investigate the effectsiveness of
+	preliminary design concepts
+		• gain knowledge of the intended end users (expertise, expectations, goals, etc.)
+	Methodology
+		• Close interaction between the test users and the experimentor
+
+
+
+Exploratory Test Methodology:
+	• Use prototype, simulation or mockup of the intended system
+		Informal test
+		• Paper drawings
+		• “shell” GUI
+		• Concentrate only on the functionality needed for the
+		experiment (e.g. described in a test scenario)
+		• “Walk through”
+		• Essential uncover the users reactions and thoughts about
+		the interaction
+		• Focus on why instead of how
+		• Often comparative test
+
+Heuristic Evaluation
+	When
+		• Most often early in the development, i.e. an exploratory test
+	Objective
+		• Discount Usability Engineering
+		• Obtain a list of usability problems (it does note produce a list
+	of suggested “bug fixes”
+	Methodology
+		• non-systematic approach
+		• Close interaction with experimentor
+		• debriefing/interview test users/evaluators
+
+Assessment Test
+	When
+	• Either early or midway during the development process, after
+	the high-level design has been established
+	Objective
+	• To continue the process from the explorative test with more
+	details of lower-level functions.
+	• The assessment test is essentially a test of the implementation
+	of the intended design
+	Methodology
+	• The user actually performs the tasks
+	• Less intervention -action from the experimentor
+	• Quantitative measures are collected
+
+
+Validation Test
+
+	When
+	• Late in the development
+	Objective
+	• To validate the usability, against some predefined performance
+	criteria or benchmark, competing products, etc.
+	• Integrated test
+	• Insurance against overlooked flaws/problems
+	Methodology
+	• Formulate criteria (what and how well)
+	• Very little or no interaction with the experimentor
+	• Focus on quantitative data
+	• Rigorous/tightly controlled test conditions
+	
+	Comparison Test
+
+	When
+	• No specific point in the development cycle
+	Objective
+	• combined with the other tests. The goal is to compare two or
+	more designs
+	Methodology
+	• Often as a classical scientific test
+	• Forces designers (and test users) to contemplate why one
+	design is preferred over another
+
+1.4 Discount Usability Engineering
+The “discount usability engineering” method is based on the use of the following four techniques:
+	• User and task observation
+		Simply to observe users, keep quiet, and let the users work as they normally would without interference.
+
+	• Scenarios
+	Scenarios are an especially cheap kind of prototype.The entire idea behind prototyping is to cut down on the complexity of implementation by eliminating parts of the full system.Scenarios are the ultimate reduction of both the level of functionality and of the number of features: They can only simulate the
+	user interface as long as a test user follows a previously planned path.
+
+	• Simplified thinking aloud
+	Basically, it involves having one test user at a time use the system for a given set of tasks while being asked to “think out loud.” By verbalizing their thoughts, users allow an observer to determine not just what they are doing with the interface, but also why they are doing it. This additional insight into a user’s thought process can help pinpoint concrete interface elements that cause misunderstandings,
+	so that they can be redesigned.
+
+	• Heuristic evaluation :Usability Heuristics  / Universal Usability Principles (chapter 5)
+
+	• Simple and natural dialogue: Dialogues should not contain information that is irrelevant or rarely needed. Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility. All information should appear in a natural and logical order.
+
+	• Speak the users’ language: The dialogue should be expressed clearly in words, phrases, and concepts familiar to the user, rather than in system-oriented terms.
+
+	• Minimize the users’ memory load: The user should not have to remember information from one part of the dialogue to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate.
+
+	• Consistency: Users should not have to wonder whether different words, situations, or actions mean the same thing.
+
+	• Feedback: The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.
+
+	• Clearly marked exits: Users often choose system functions by mistake and will need a clearly marked “emergency exit” to leave the unwanted state without having to go through an extended dialogue.
+
+	• Shortcuts: Accelerators-unseen by the novice user-may often speed up the interaction for the expert user such that the system can cater to both inexperienced and experienced users.
+
+	• Good error messages: They should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution.
+
+	• Prevent errors: Even better than good error messages is a careful design that prevents a problem from occurring in the first place.
+
+	• Help and documentation: Even though it is better if the system can be used without documentation, it may be necessary to provide help and documentation. Any such information should be easy to search, be focused on the user’s task, list concrete steps to be carried out, and not be too large.
+
+	• Heuristic Evaluation:
+	Heuristic evaluation is done by looking at an interface and trying to come up with an opinion about what is good and bad about the interface. Most people probably perform some kind of heuristic evaluation on the basis of their own intuition and common sense instead.
+
+Usability is the ease of use and learnability of a human-made object.
+
+Usability is the effectiveness, efficiency and satisfaction with which users achieve specific goals in particular environments; where
+
+Effectiveness is the accuracy and completeness with which specified users can achieve specified goals in particular environments;
+
+Efficiency is the resources expended in relation to the accuracy and completeness of goals achieved; and
+
+Satisfaction is the comfort and acceptability of the work system to its users and other people affected by its use.
+
+2.2 Definition of Usability
+
+Usability has multiple components and· is traditionally associated with these five usability attributes:
+
+• Learnability: The system should be easy to learn so that the user can rapidly start getting some work done with the system.
+
+• Efficiency: The system should be efficient to use, so that once the user has learned the system, a high level of productivity is possible.
+
+• Memorability: The system should be easy to remember, so that the casual user is able to return to the system after some period of not having used it, without having to learn everything all over
+again.
+
+• Errors: The system should have a low error rate, so that users make few errors during the use of the system, and so that if they do make errors they can easily recover from them. Further, catastrophic
+errors must not occur.
+
+• Satisfaction: The system should be pleasant to use,so that users are subjectively satisfied when using it; they like it.
+
+E.g dark whatsapp - but generally people don't like dark website.
+
+Usability engineering is a process
+	Design
+	Implement
+	Evaluate
+	
+2.4 Usability Trade-Offs
+The typical way to achieve this “best-of-both-worlds” effect is to include accelerators in the user interface. Accelerators are user interface elements that allow the user to perform frequent tasks quickly, even though the same tasks can also be performed in a more general, and possibly slower, way.
+
+Typical examples of accelerators include function keys, command name abbreviations, and the use of double-clicking to activate an object.
+
+This means providing better ways to do a set of routine tasks for user maybe ability to customize it,
+Ex. Copy & Paste in Wordpad, can be done via Right click of mouse but experts can do with Ctrl +C  & Ctrl + V.
+2.5 Categories of Users and Individual User Differences
+
+Three basic categories:
+1. Naive
+2. Intermediate
+3. Expert
+
+
+The three main dimensions on which users’ experience differs:
+1. Knowledge about computers in general,
+2. Expertise in using the specific system
+3. Understanding of the task domain.
+Chapter 3. Generations of User Interfaces 
+3.1 Batch Systems
+3.2 Line-Oriented Interfaces
+3.3 Full-Screen Interfaces
+3.4 Graphical User Interfaces
+3.5 Next-Generation Interfaces
+3.6 Long-Term Trends in Usability
+
+Chapter 4. The Usability Engineering Lifecycle
+1. Know the user:
+The first step in the usability process is to study the intended users and use of the product.
+The concept of “user” should be defined to include everybody whose work is affected by the product in some way, including the users of the system’s end product or output even if they never see a single screen.
+
+a. Individual user characteristics
+It is necessary to know the class of people who will be using the system. By knowing the users’ work experience, educational level, age, previous computer experience, and so on, it is possible to anticipate
+their learning difficulties to some extent and to better set appropriate limits for the complexity of the user interface.
+For example, very young children have no reading ability, so an entirely nontextual interface is required.
+
+b. The user’s current and desired tasks
+The users’ overall goals should be studied as well as how they currently approach the task, their information needs, and how they deal with exceptional circumstances or emergencies.
+c. Functional analysis
+d. The evolution of the user and the job
+
+2. Competitive analysis
+It is desirable to analyze existing products heuristically according to established usability guidelines and to perform empirical user tests with these products. A competing product is already fully implemented and can therefore be tested very easily.
+Note that a competitive analysis does not imply stealing other people’s copyrighted user interface designs.
+
+3. Setting usability goals
+Normally, not all usability aspects can be given equal weight in a given design project, so you will have to make your priorities clear on the basis of your analysis of the users and their tasks.
+
+a. Financial impact analysis
+Such an analysis involves estimating the number of users who will be using the system, their loaded salaries or other costs, and the approximate time they will be using the system.
+ex. Usability activities that might improve the learnability of the user interface sufficiently to cut down learning-time by one day would be worth $600,000, corresponding to a present value of $500,000
+
+4. Parallel design
+The goal of parallel design is to explore different design alternatives before one settles on a single approach that can then be developed in further detail and subjected to more detailed usability activities.
+Typically, one can have three or four designers involved in parallel design.In parallel design, it is important to have the designers (or the design teams) work independently, since the goal is to generate as much diversity as possible. Therefore, the designers should not discuss their designs with each other until after they have produced their draft interface designs.
+
+5. Participatory design
+Even though the advice to “know the user” may have been followed before the start of the design phase, one still cannot know the user sufficiently well to answer all issues that come up in doing the design.
+Instead of guessing, designers should have access to a pool of representative users after the start of the design phase. It is important to have access to the people who will actually be using the system, and not just to their managers or union representatives.
+
+6. Coordinated design of the total interface
+Consistency is one of the most important usability characteristics
+Consistency is not just measured at a single point in time but should apply over successive releases of a product so that new releases are consistent with their predecessors.
+To achieve consistency of the total interface it is necessary to have some centralized authority for each development project to coordinate the various aspects of the interface.
+
+7. Apply guidelines and heuristic analysis
+Guidelines list well-known principles for user interface design which should be followed in the development project. In any given project, several different levels of guidelines should be used:
+general guidelines applicable to all user interfaces, category-specific guidelines for the kind of system being developed.
+
+8. Prototyping
+The entire idea behind prototyping is to cut down on the complexity of implementation by eliminating parts of the full system.Scenarios are the ultimate reduction of both the level of functionality and of the number of features: They can only simulate the user interface as long as a test user follows a previously planned path.
+
+9. Empirical testing (Interface Evaluation)
+A classification of evaluation methods on two dimensions:
+– whether or not real users are involved and
+– whether or not the interface
+has actually been implemented.
+– Severity Ratings is one of the technique used here.
+
+10. Iterative design
+Creating “whole” solution, using Waterfall model is a time consuming task,  there is risk of detecting issue in the end, “Late-risk assessment”. Fixing usability issue at that stage costs more than early stage.
+Therefore, Iterative design is preferred.
+
+a. Capture design rationale
+The rationale for the various user interface design decisions can be made explicit and recorded for later reference.
+Since changes to the interface will often have to be made, it is helpful to know the reasons underlying the original design so that important usability principles are not sacrificed to attain a minor objective.
+
+11. Collect feedback from field use
+The main objective of usability work after the release of a product is to gather usability data for the next version and for new, future products.
+Basically, the same methods can be used for this kind of field study as for other field studies and task analysis, especially including interviews, questionnaires, and observational studies.
+Furthermore, since follow-up studies are addressing the usability of an existing system, logging data from instrumented versions of the software becomes especially valuable for its ability to indicate how the software is being used across a variety of tasks
+
+*********************************************************************
+	Think and discuss what is important for user?
+	How do you determine what is important for user?
+	Should we make some data Bold/ in color or on the top. If yes, how do you determine what data should be presented like that. (How about accessibility of that text).
+	On a mobile – we have less real estate and we may present more focused data. You may have 200 columns in the table – how do you determine what to be presented?
+	This can be an open debate. Where every one particpates.
+	How much of data is required?
+**********************************************************************
+
+################################################################
+Refer the below while creating slides.
+https://www.cs.cmu.edu/afs/cs/user/bam/www/uicourse/1997spring/lecture04process.html
+
+###############################################################
+api design
+
+https://restfulapi.net/rest-api-design-tutorial-with-example/
+
+Rest API design is a process. Following steps are to be followed.
+
+	- Identify Object Model
+		- Identify the objects which will be presented as resources.
+		- e.g to list employees - employees would be the object.
+		- Lets consider Devices and Configurations as two e.g. 
+		- Configurations are sub resource of Devices.
+		
+	- Create Model URIs
+		- Design the basic URI's
+		- Endpoints for RESTful services
+		- URI: Don't use verbs. Use only nouns
+		
+		- Since configurations are sub resources for devices. Following could be the design
+		/devices #multiple devices
+		/devices/{id} #single device
+		
+		/configurations
+		/configurations/{id}
+		
+		/devices/{id}/configurations
+		/devices/{id}/configurations/{id}
+		
+		
+	- Determine Representations
+		- Designed generally in xml or json format. YAML?
+
+		
+		* Collection of Device Resource
+		- Include most used information. Design this intelligently.
+		
+<devices size="2"> 
+ 
+    <link rel="self" href="/devices"/>
+ 
+    <device id="12345"> 
+        <link rel="self" href="/devices/12345"/>
+        <deviceFamily>apple-es</deviceFamily> 
+        <OSVersion>10.3R2.11</OSVersion> 
+        <platform>SRX100B</platform> 
+        <serialNumber>32423457</serialNumber> 
+        <connectionStatus>up</connectionStatus> 
+        <ipAddr>192.168.21.9</ipAddr> 
+        <name>apple-srx_200</name> 
+        <status>active</status>
+    </device> 
+ 
+    <device id="556677"> 
+        <link rel="self" href="/devices/556677"/>
+        <deviceFamily>apple-es</deviceFamily> 
+        <OSVersion>10.3R2.11</OSVersion> 
+        <platform>SRX100B</platform> 
+        <serialNumber>6453534</serialNumber> 
+        <connectionStatus>up</connectionStatus> 
+        <ipAddr>192.168.20.23</ipAddr> 
+        <name>apple-srx_200</name> 
+        <status>active</status>
+    </device>  
+</devices>
+	
+		* Single Device Resource
+			- Include all information.
+<device id="12345"> 
+    <link rel="self" href="/devices/12345"/>
+ 
+    <id>12345</id> 
+    <deviceFamily>apple-es</deviceFamily> 
+    <OSVersion>10.0R2.10</OSVersion> 
+    <platform>SRX100-LM</platform> 
+    <serialNumber>32423457</serialNumber> 
+    <name>apple-srx_100_lehar</name> 
+    <hostName>apple-srx_100_lehar</hostName> 
+    <ipAddr>192.168.21.9</ipAddr> 
+    <status>active</status>
+ 
+    <configurations size="2">
+        <link rel="self" href="/configurations" />
+ 
+        <configuration id="42342">
+            <link rel="self" href="/configurations/42342" />
+        </configuration>
+ 
+        <configuration id="675675">
+            <link rel="self" href="/configurations/675675" />
+        </configuration>
+    </configurations>
+ 
+    <method href="/devices/12345/exec-rpc" rel="rpc"/> 
+    <method href="/devices/12345/synch-config"rel="synch device configuration"/> 
+</device>			
+		
+		* Configuration Resource Collection
+			- Similar to device collection.
+			- Include most used information intelligently.
+			
+		* Single Configuration Resource
+			- Include complete information
+		
+		* Important observations
+		
+		- Resource URIs are all nouns.
+		- URIs are usually in two forms – collection of resources and singular resource.
+		- Collection may be in two forms primary collection and secondary collection. Secondary collection is sub-collection from a primary collection only.
+		- Each resource/collection contain at least one link i.e. to itself.
+		- Collections contain only most important information about resources.
+		- To get complete information about a resource, you need to access through its specific resource URI only.
+		- Representations can have extra links (i.e. methods in single device). Here method represent a POST method. You can have more attributes or form links in altogether new way also.
+	
+	- Assign HTTP Methods
+		- Http Actions are used to map to operations to actions
+		HTTP GET /devices
+		HTTP GET /configurations
+		
+		- For large collections always apply pagination
+		HTTP GET /devices?startIndex=0&size=20
+		HTTP GET /configurations?startIndex=0&size=20
+	
+		- Create a device and configuration
+		HTTP POST /devices
+		HTTP POST /configurations
+		#generally id is not included in create
+		
+		Response would be something like
+
+HTTP/1.1 201 Created
+Content-Type: application/xml
+Location: http://example.com/network-app/configurations/678678
+ 
+<configuration id="678678">
+    <link rel="self" href="/configurations/678678" />
+    <content><![CDATA[...]]></content>
+    <status>active</status>
+    <link  rel="raw configuration content" href="/configurations/678678/raw" /> 
+</configuration>
+		
+		- Update a device or configuration
+		HTTP PUT /devices/{id}
+		HTTP PUT /configurations/{id}
+
+		Response would be like
+		HTTP/1.1 200 OK
+Content-Type: application/xml
+ 
+<configuration id="678678">
+    <link rel="self" href="/configurations/678678" />
+    <content><![CDATA[. updated content here .]]></content>
+    <status>active</status>
+    <link  rel="raw configuration content" href="/configurations/678678/raw" /> 
+</configuration>
+
+		- Remove a device or configuration
+		HTTP DELETE /devices/{id}
+		HTTP DELETE /configurations/{id}
+
+	A successful response SHOULD be 202 (Accepted) if resource has been queues for deletion (async operation), or 200 (OK) / 204 (No Content) if resource has been deleted permanently (sync operation).
+
+		Think whether your delete should be soft or hard delete based on your business use cases.
+
+###############################################################
+*****************************************
+Design both api and UI for both the above systems. 
+*****************************************
+
+	Web Accessibility 
+		What is accessibility?
+		Why do we need accessibility?
+		Components to build an accessible webpage.
+####################################################################
+https://developers.google.com/web/fundamentals/accessibility
+https://www.w3.org/standards/webdesign/accessibility
+https://www.w3.org/WAI/tips/
+https://www.whoishostingthis.com/resources/website-accessibility/
+https://www.dreamhost.com/blog/make-your-website-accessible/
+
+https://www.levelaccess.com/aria-widget-checklist-screen-reader-testing/
+http://whatsock.com/training/matrices/#button
+https://www.w3.org/WAI/standards-guidelines/aria/
+https://www.w3.org/TR/wai-aria-practices-1.1/
+-	Show some classic examples.
+-	How do you test accessibility?
+
+
+"Accessibility" 
+	can be difficult to spell, 
+	but it doesn't have to be difficult to accomplish.
+
+What is accessibility?
+
+	When we say a site is accessible, 
+	site's content - means - literally for anyone
+		its available, 
+		its functionality can be operated, 
+	
+	It's easy to assume that all users 
+		can see 
+		use a keyboard, mouse, or touch screen, 
+		can interact with your page content the same way you do. 
+	This can be simple annoyances to show-stoppers for others.
+	
+	So Accessibility, 
+		is experience of users who might be outside the narrow range of the "typical" user
+		who might access or interact with things differently than you expect. 
+	Specifically, it concerns users who are experiencing some type of impairment or disability — and bear in mind that that experience might be non-physical or temporary.
+
+----------------------------------------------------------------
+https://www.youtube.com/watch?v=eSHZHQ5los4
+
+Statistics
+	- More than 1 billion people globally have some form of disability
+	- 15% of worlds population
+	- Between 110-190 million people have significant difficulty in functioning.
+	- 12.6% of people in US suffers from some kind of disability
+	
+	Types of disabilities
+		- Visual impairment
+			- Blindness
+			- Partial blindness
+			- Low vision
+			- Color blindness ect..
+		- Lack of motor skills
+			- Unable to interact with website.
+		- Hearing impairment
+			- Full audio loss
+			- partial audio loss
+			- Low audio 
+		- Congnitive disability
+			- Mental or behavioural disabilities.
+			- Reading difficulties
+			- Memory loss
+			- Various diseases.
+
+
+What can really be done?
+	understand and implement accessibility guidelines and standards
+		- WCAG 2.0 section 508
+	Understand accessibility from usage standpoint
+		- Usability experts, end-user connect program
+	Manual and automated accessibility quality checks
+		Right balance, test tools (W3C linkd checker, color contrast analyser tools etc), templates-VPAT
+	Third party testing firms which specialize on accessibility.
+
+
+Mobile Focus
+	Functionality
+	Mobile Context
+	Different devices
+	Data entry methods
+	Multimodality
+	
+Different interaction styles
+	Mobiles, tabs, laptop, any other devices.
+	
+
+Content - Treasure of knowledge
+	- Correct size
+	- Correct color contrast
+	- Minimal flash content
+	- Proper alt-text, label
+	- Complete coverage
+	- Accessiblity through keyboard.
+		
+	For e.g. a cat with an alt-text=tiger is a bug.
+	or a dynamic image which would be loaded based on context.
+	
+	Guidelines
+		Color contrast should be atleast 4.5:1 for foreground:background.
+		Large text: 3:1.
+		
+Key Questions from Usability/Accessibility 
+	- Who are your users?
+	- What are their tasks
+	- env. where they operated
+	- type of devices they use?
+	- users level of tech-saviness?
+	- is lot of reading involved?
+	- Govt. regulations.
+	
+Compliance Stadard - WCAG 2.0 levels of compliance
+	Ensures the content is 
+	- Perceivable
+	- Operable
+	- Understandable
+	- Robust
+	
+Levels of Compliance
+	- Level A: Min. accessibility requirement
+	- Level AA: More involved 
+	- Level AAA: Most comprehensive 
+	
+WCAG offers 12 guidelines each with 3 levels. These guidelines explain how to test and ensure the standards of accessibility.
+
+Quality
+	Early testing
+	Perform with an iterative approach - automation
+	Understand guidelines and use accessibility testing checklist.
+	Leverage tools - JAWS, NVDA, Color Contrast Analyzer, VoiceOver/Talkback
+	
+	Paired Testing
+		A expert QA engineer works very closely with a differently abled person.
+		From expert experience
+		Accessibility test engineer : 40% coverage
+		Visually challenged: 70%
+		Together : 100%
+		
+Tools Used
+	- Screen Readers (JAWS, NVDA, Talkback, VoiceOver, Window Eyes).
+	- Screen Magnifiers - ZoomText
+	- Keyboard - Only Testing
+	- Color Contrast analyzer
+	- Browser Zoom upto 200%
+	- High contrast settings
+	- Accessibility inspector on iOS.
+	- Accessibilitometer
+	- Automated Tools (aXe, WAVE)
+	
+Handy Checklist
+	- Meaningful Alt text: Appropriate equivalent alternative text for all images
+	- Keyboard Accessible: Page functionality accessible via keyboard
+	- Focus Order: Navigation order of links, for elements to be logically correct.
+	- Use of Color: Should not be the only mode to communicate
+	- Bypass blocks: Direct access to web page's primary content
+	- Semantic Markup: Heading, structure, list, blockquote etc.
+	
+---------------------------------------------------------------
+e.g. of accessibility testing
+https://www.youtube.com/watch?v=_B1o6DyLCVY
+
+D:\PraiseTheLord\corporateTrainer\Companies\Edureka\HexawareTraining.pdf
+	
+	There is no metrics on who comes to our site with disability.
+		So we need to assume 20% is always disable.
+	
+	WCAG 2.0 (Web content accessibility guidelines)
+		govt. wcag aa
+		3 levels
+		4 principles
+		12 guidelines
+		61 success criteria
+		lots of techniques
+		
+		wcag 2.1: adding 15-20 success criteria
+		
+		4 principles
+			p: perceivable
+				Able to perceive info. through their senses
+				Either browser or through assistive technologies
+			o: operable		
+				Able to interact with controls or dynamic elements with mouse, keyboards, ect
+			u: understandable
+				Able to understand info. and how to use the interfaces
+			r: robust
+				Content can be accessed by old and new user agents and assistive technology
+	Compliance WCAG 
+	But totally not: will take you a long way.
+	accessible. So be careful.
+	
+	Automated testing
+		- best can find < 38% accessibility issues.
+		- can find if there is a alt text. But is alt text sensible, can it have a null attribute.
+		- Can look at forms, but can't judge whether forms should be there or not.
+		- Can't do a good job with colors, scripting, dynamic content ect.
+	Human testing
+		human judgement
+		slower
+		tester's skills
+		repeating can be a problem
+	User Testing
+		9 times of 10 and User's finds things that you never thought of.
+		Cost of fixing is very high.
+		
+	Automated testing tools 
+		Refer pdf
+		tenon.io
+			best
+			found 38% of issues
+			free
+			can buy commercial services (for automation)
+		type http://google.com in tenon.io
+
+		Wave toolbar
+			it's a toolbar (plugin) you can install and it will show you the number of accessibility issues with a website.
+	Other automated tools		
+		opquast desktop
+		tota11y
+	
+	Colour Contrast Analyser
+		Many tools 
+			e.g. WebAIM contrast analyser	https://webaim.org/resources/contrastchecker/
+			Enter foregound:background
+			
+			ColorZilla can be used to find the color on the screen.
+			
+	Code Inspection 
+		There are many code inspection tools
+			e.g. Web developer toolbar (browser plugin)
+	
+	Screen readers
+		Complex software
+		Experience mission critical
+		Good indication but can lead to false positives.
+		
+			JAWS (Windows): 
+			Grand daddy of all screen readers.
+			first screen reader
+			trial mode for 40 min.
+			exclusively stop you to demo their products.
+			Charge Rs. 1200$/month.
+			
+			NVDA (Windows)
+			
+			VoiceOver (OS X)
+			
+			Orca: Linux
+			
+		JAWS (Windows) - IE / Edge
+		NVDA (Windows) - Firefox
+			Webaim - NVDA documentation
+		VoiceOver (OS X) - Safari
+		
+		Demo Screen reader in windows
+		Don't use "Read More>>" or "Click here>>" links.
+		
+	Keyboard
+		Navigate forward - TAB
+		Navigate backward - SHIFT + TAB
+		Activate with Spacebar or enter
+		
+		Skip link
+		---------
+		Skip to main content options when ever required. TAB for everything may be a bad idea.
+		
+	Focus visible?
+		linux.conf.au - about ect not accessible to users. Focus is not visible.
+		
+	Keyboard traps?
+		Can tab to element and you are blocked. You can neither go past or go back.
+		
+	Images
+		alt attribute
+		
+		Decorative Vs informative
+			Screen reader can ignore decorative and they may lo
+	Forms
+		Should have labels
+			Screen reader uses the labels of Form to understand and announce what is happening with elements
+			
+		it is associated using the for attribute.
+		<label class="hidden" for="fieldId">
+		<input id="fieldId" name="fieldId" required="" type="search">
+		
+		Error messages
+			Error messages should be accessible.
+			Also about inline error messages. Error messages user gets as we type into a text field. These error messages may not be accessible. If they are accessible also, the users may get to hear that multiple times as they type and so cannot understand what it means.
+			Best way to fix it.
+			Error messages can be loaded in the begining of the form. As the user makes a mistake make it visible and focus on that. So user would get to see/hear that.
+			
+		Inline validation
+		Focus managment
+		aria-describedby
+		
+		Timeout: Need to be accessible.
+		Notify users session about to expire: Need to be accessible.
+		
+	Document Structure
+		Heading Hierarchy
+		Skipped headings
+		Missing headings
+		Empty headings 
+		
+	Language
+		Document language declared?
+			Declare in the html header: what is the language.  Changes in language defined?
+		
+		Changes in language.
+			Change in language in any section should be clearly visible/announced to the user
+			
+	Text Resize
+		Text Resize to 200%. Accessibility impact.
+		
+	Windows high contrast
+		How does it look?
+		Can you see all elements.
+		
+		Disable people work with high contrast.
+		Windows - Settings - Search "High contrast" settings.
+			Suddenly https://linux.conf.au becomes accessible.
+		But if we use svg icons or background images they would not be present in high contrast.
+		
+		Color Contrast
+			Refer other notes
+			4.5:1 and 3:1
+			
+		Tables
+			Don't use it for layout.
+			Use it only for tabular data.
+			
+			Ensure tables are easily passible by Screen Readers.
+			
+			Ensure Tables have TH and TH are associated with Table rows using scope attribute.
+			<th scope col>
+			Associate table cells with headers. So when it reads the cell data, it will also say for what it is.
+			
+		Tables - layout
+			Don't use tables for layout. If it is required (e.g. tables in email), use role="presentation". It will skip reading, there is a table with x column and y rows ect.
+			
+		Audio & Video
+			Should have captions and transcripts.
+			Don't rely on automated captions in youtube.
+			Controls should be accessible through keyboard.
+			Volume up/down. Space for pause and play should all work.
+		
+			
+----------------------------	
+A site with lot of contrast and accessibility issues
+
+https://linux.conf.au
+----------------------------
+	
+	Manual testing tools
+		Most effective accessibility testing
+			keyboard testing
+	
+
+
+N.B. : Accessibility testing is not just html
+	It is also
+		JavaScript, 
+		ARIA, 
+		HTML5
+		CSS
+		Captioning
+		AJAX
+		ect.
+		
+	It can be also like 
+		creating accessible documents in word, powerpoint, excel.
+----------------------------------------------------------------
+	Following discussion is centered around Web Content Accessibility Guidelines (WCAG) 2.0 - The details can be found below 
+	https://www.w3.org/TR/WCAG20/
+	
+	WCAG is organized around four principles often called by the acronym POUR:
+
+		Perceivable: Can users perceive the content? This helps us keep in mind that just because something is perceivable with one sense, such as sight, that doesn't mean that all users can perceive it.
+		Like pass in green is not perceivable to a color blind.
+		
+		Operable: Can users use UI components and navigate the content? For example, something that requires a hover interaction cannot be operated by someone who can't use a mouse or touch screen.
+
+		Understandable: Can users understand the content? Can users understand the interface and is it consistent enough to avoid confusion?
+
+		Robust: Can the content be consumed by a wide variety of user agents (browsers)? Does it work with assistive technology?
+
+	While WCAG provides a comprehensive overview 
+	It can be overwhelming for most.
+	So WebAIM (Web Accessibility in Mind) group has distilled the WCAG guidelines into an easy-to-follow checklist...
+	
+	https://webaim.org/standards/wcag/checklist
+
+
+
+*****************************************************
+Demo an accessibility testing.
+https://www.youtube.com/watch?v=Vx1vSd5uYS8
+https://www.youtube.com/watch?v=cOmehxAU_4s
+https://www.youtube.com/watch?v=b0Q5Zp_yKaU
+
+*****************************************************
+
+*****************************************************
+9 points to take care while designing a website for accessibility.
+
+https://mashable.com/2014/04/22/website-disability-friendly/
+*****************************************************
+
+	
+	Laws in some countries.
+
+
+*****************************************
+Make both the above UI’s accessible 
+*****************************************
+		
+	Bank
+		Name, Id, Address, City, State, pin, no of emp., totalDeposit, totalWithdrawal, dailyDeposit, dailyWithdrawal, 
+	Account
+	Id, Name, joint, address, SSN ect.., 
+
+	What will you display on the screen?
+	What will you display on a mobile?
+	What will you display on a Kindle?
+	
+	
+	
+•	Product Architecture – self-contained, State – SOLID principles etc. Microservices, API
+o	Introduction to software product architecture.
+	- Product architecture is the scheme by which the functional elements of the products are arranged into physical chunks and by which the chunks interact.
+	- These chunk become the building blocks of the product.
+	- The definition links architecture to system-level design and the principles of system engineering.
+	- Architecture also has profound implications for how the product is designed, made, sold, used, repaired etc..
+	- Architecture makes its influence felt during assembly.
+
+o	What is product architecture
+	Arechitecture's influences
+	- During product development
+		- How families and platforms are structured
+		- How functions are realized
+		- How reuse and standadization are accomplished
+		- How development work is divided up
+		- Where subassembly and module boundaries are
+		- Where DFC's (Distributed feature composition) go?
+			- In the product
+			- In the organization
+			- Along the supply chain
+	During proudction system design
+		- Assembly sequences
+		- Reuse of facilities and knowledge
+		- Planning for flexibility
+		- Sharing of facilities to match capacity to demand
+	During manufacturing and assembly
+		- Where production happens
+		- How customer orders are fulfilled
+		- How unpredictable demand ptterns are method
+	During use
+		- How services are delivered
+		- How the product is updated
+		- How the product is recycled
+	
+	Architecture should 
+	- At planning: Decide platform.
+	- Concept development: Decide concept
+	- System level design: Decide decomposition. Make architectural decision (e.g. should we support diognosability. If yes, how can be differed to detail design)
+	- Detail design: clear understanding of decomposition and how they interact. How it will be tested. How it will be delivered? How it can be orchestrated (how api's interact and how it can scale)? How it can be updated? Processes to be followed? 
+	
+	Product architecture is determined early in the development process. Latter you follow the architecture. Compare this with a building architecture.
+	
+	Development: Implementation of architectural decisions.
+	- Testing and Refinement: Implementation of test strategy. 
+	- Production Ramp-up: Implementation of the deployment and rollout strategy.
+o	Why do we need architecture?
+	Without an architecture we are clueless on what to build? Imagine building a house without an architecture.
+o	Principles of Product architecture
+o	Self contained architecture
+
+
+	Importance of Product Architecture
+		- Decided early and drives design
+		- Impacts manufacturing cost
+		- Impacts product evolution
+	
+	Impact of Architecture
+		1. Product changes
+			- Upgrade 
+			- add-ons
+			- Adaptation
+			- Consumption
+			- Flexibility in use
+			- Reuse
+		2. Product Variety
+		3. Component Standardization
+		4. Product Performance
+		5. Manufacturability
+		6. Product development management
+		
+	Architecture are of two types
+	- Modular Architecture
+	- Integral Architecture
+
+	Modular Product Architecture
+		- Each physical chunk implements one or a few functional elements in their entirety
+		- The interactions between chunks are well defined.
+	Integral Product Architecture
+		- Functional elements are implemented by multiple chunks 
+			or
+		- A chunk may implement many functions
+		- Interactions between chunks may be poorly defined.
+		- Integral architecture generally increases performance and reduces costs for any specific model.
+		
+	e.g. integral model
+		mouse embedded inside a laptop.
+
+
+		
+		Principles of Product architecture
+		Self contained architecture
+		https://www.youtube.com/watch?v=fz2ddCZC8rQ
+		
+################################################################
+SOLID (more details to follow)
+	Single responsibility principle
+	Open-closed principle
+	Liskov substitution principle
+	Interface segregation principle
+	Dependency inversion principle
+		(This is a principle while Dependency Injection is a pattern)
+################################################################	
+		Lab for SCS
+######################################
+Self-contained System (SCS)
+	architecture that focuses on a separation of the functionality into many independent systems
+	making the complete logical system a collaboration of many smaller software systems.
+	SCS includes UI and everything else which can make it complete.
+	Hence they are different from Microservices
+######################################		
+		SOLID principles
+
+######################################		
+
+Introduced by Robert Martin(Uncle Bob)
+It avoids code smells.
+Quickly refractor code.
+Can do adaptive or agile software development.
+
+ S: Single responsibility principle
+ ----------------------------------
+ 
+ What is the responsibility of this class?
+ What if we had multiple responsibility?
+ 
+ Class should have only one and only responsibility.
+ There should be only one reason due to which a class has to be change
+
+ The principle can be well understood with an example. Imagine there is a class which performs following operations.
+
+	Review MVC to understand SRP
+	
+
+	Connected to a database
+	Read some data from database tables
+	Finally, write it to a file.
+
+	What are the classes you would design?
+		Need one DAO, FileManagement, Entity and Management classes.
+	What are the methods you would define?
+	What are the unit test cases and integration test cases you would define?
+
+	Make a change
+	Change the db. What is the impact to functionalities? What are the impacts on test cases?
+	What if we need to read from more than one db?
+Any additional testing required?
+
+Have you imagined the scenario? Here the class has multiple reasons to change, and few of them are the modification of file output, new data base adoption. When we are talking about single principle responsibility, we would say, there are too many reasons for the class to change; hence, it doesn’t fit properly in the single responsibility principle.
+
+
+Why SRP
+ testing is easier	
+ the class will have fewer test cases.
+ better code organization
+ easy to maintain
+ less cost
+ easy to understand
+ 
+public class UserSettingService
+{
+	public void changeEmail(User user)
+	{
+	if(checkAccess(user))
+	{
+	//Grant option to change
+	}
+	}
+	public boolean checkAccess(User user)
+	{
+	//Verify if the user is valid.
+	}
+}
+
+#when the logic of checkAccess changes, we may have to modify the same class.
+
+*****************************************
+1.	Review MVC to understand SRP.
+2.	Reading from a database and writing into file.
+	What are the classes you would design?
+		Need one DAO, FileManagement, Entity and Management classes.
+	What are the methods you would define?
+	What are the unit test cases and integration test cases you would define?
+Make a change
+	Change the db. What is the impact to functionalities? What are the impacts on test cases?
+	Any additional testing required?
+******************************************
+Single Responsibility Principle
+	- A class should have only single responsibility. A single reason to change.
+	e.g. ScoreRecorder
+	
+	- Based on separation of concerns.
+	
+	- Vary each concern independently of other concern.
+
+	- Each class should be designed to do one thing and it should do it well.
+
+	- The size of the classes become shorter. This makes code easily understandable
+
+********************************************************
+
+
+ O: Open-closed principle
+ ----------------------------------
+Bertrand Mayer, in his 1988 book, Object-Oriented Software Construction: Software entities should be open for extension, but closed for modification.
+  open for extension, but closed for modification
+  Extension can be through composition or inheritance.
+  Jenkins plugin, Browser plugin ect.
+  why OCP?
+  classes may come to us through third-party libraries.
+  Lets say we need to calculate areas of various shapes. We start with creating a class for our first shape Rectangle which has 2 attributes length & width.
+  
+  Open for extension – This means that the behavior of the module can be extended. As the requirements of the application change, we are able to extend the module with new behaviors that satisfy those changes. In other words, we are able to change what the module does.
+
+  Closed for modification – Extending the behavior of a module does not result in changes to the source or binary code of the module. The binary executable version of the module, whether in a linkable library, a DLL, or a Java .jar, remains untouched.
+  
+  public class Rectangle
+{
+public double length;
+public double width;
+}
+***********************************
+
+Refer Shape.css and ShapeFixed.css
+
+Open Closed Principle
+
+	- Writing something very specific to solve some specific problem can lead to writing same code multiple time which in turn results in code duplication
+
+	- Code duplication leads to maintainability problem.
+
+	- Reused abstraction principle – if we have multiple abstractions which are not being used by the concrete class then it is a sign of poor designing and abstractions.
+
+	- Interfaces are not designed but they are discovered. You don't need design for interfaces instead you just need to discover it.
+
+	- Start with the concrete behaviour and discover the abstraction as commonality emerges.
+
+	- Rule of three – Unless and until we have three places where we think that the code is same, it is generally not advised to abstract out the functionality.
+Open for extensibility but closed for modification. If we have a class which is being used by other clients, that class should be open for extensibility. The only reason to change the class should be to fix a bug in the class.
+We should favor Composition over inheritance which I will discuss in next principles.
+We can make a class open for extensible is by adding virtual keyword to the methods of the class.
+
+
+
+***********************************
+A calculator program without OCP and with OCP
+	https://howtodoinjava.com/design-patterns/open-closed-principle/
+
+***********************************  
+ L: Liskov substitution principle
+ ----------------------------------
+ The only thing is that every subclass or derived class should be substitutable for their parent or base class.
+ avoids misusing inheritance.
+ “is-a” relationship.
+ 
+Liskov Substitution Principle
+-----------------------------
+	Applicable only for about polymorphism (inheritance). 
+	Named after barbara liskov, in 70’s
+	Derived types must be substituted for base types.
+	Client can consume any implementation without changing the correctness of the system
+	We can change the behaviour of the system because polymorphism is all about changing the behaviour.
+	Correctness of the system can be said as the implementation of the interface A should not crash the application. Similarly implementation of the interface B should also not crash the application (compile time error or a new call itself fails). 
+
+Breaking the LSP:
+
+	When we get the NotSupportedException.
+	One interesting implementation which violates LSP in C# is ReadOnlyCollection. Once the collection is created it cannot be changed. We cannot add or remove the items from the collection.
+	So Add , clear and Remove methods in ReadOnlyCollection throw the NotSupportedExceptions. It can break the correctness of the system because suppose if one part of the client is accepting only the ICollection and it was working fine with List implementation . But if we substitute it with ReadOnlyCollection, it will break for Add, Clear and Remove methods and thus putting the correctness of the system in jeopardy.
+	
+ 
+public class Rectangle
+{
+	private int length;
+	private int breadth;
+	public int getLength()
+	{
+		return length;
+	}
+	public void setLength(int length)
+	{
+		this.length = length;
+	}
+	public int getBreadth()
+	{
+		return breadth;
+	}
+	public void setBreadth(int breadth)
+	{
+		this.breadth = breadth;
+	}
+	public int getArea()
+	{
+		return this.length * this.breadth;
+	}
+}
+
+public class Square extends Rectangle
+{
+	public void setSide(int side)
+	{
+		super.setBreadth(side);
+		super.setLength(side);
+	}
+}
+ 
+o	What is "is a" relationship?
+o	What is "has a" relationship?
+o	Typical cases where "is a" and "has a" can be confusing.
+
+Confusing cases of is-a and has-a
+	ApplianceManufacturer Vs FanManufacturere
+	
+	
+
+•	Lab2: Identify 10 objects in “is a” and “has a” relationship.
+•	Lab3: Multiple questions like below?
+o	Identify the relation between Cashier, deposit, withdraw, BankManager, Bank
+
+What is the relation between TV, micky mouse, donald duck, parle G advertisement.
+
+*********************************** 
+Vehicle - Car - AmbassidorCar relationship
+What is "is a" relationship?
+What is "has a" relationship?
+Typical cases where "is a" and "has a" can be confusing.
+a.	Students should Identify 10 objects in “is a”, “has a” relationship each
+
+
+***********************************  
+
+ I: Interface segregation principle
+ ----------------------------------
+ Clients should not be forced to implement unnecessary methods which they will not use.
+ Why is that this principle is required?
+
+ISP
+---
+	- ISP is  SOLID design principle which is used to help us achieve the LSP by having more granularity.
+	- Clients should not depend on methods they do not use. As we have see in the previous code example. VolumeCalculator should not depend on the GetVolume methods of the classes.
+	- Interface are introduced to achieve loose coupling and its not the classes that use the interfaces but clients are the one who use interfaces.
+	- Clients define the interface and there is no need for a client to define a method in the interface if the client doesn’t need the method in the interface.
+	- Prefer role based interfaces over header interfaces. Header interfaces are created by abstracting out of the existing classes as we have done in designing previous system.
+	- If client need to define the interface it only need to define a very few methods in the interface. These are role interface.
+	There are many ways by which we can extend the functionality of the class e.g. by inheritance, by using generics or by using extension methods.
+	But there are very less way by which we can reduce the methods in the class. Indeed there is only one way and that is ISP.
+
+
+interface Bird{
+	public void fly();
+}
+
+Penguine implements Bird{
+	fly?
+}
+ 
+ How to solve?
+	Flying Bird extends Bird
+ 
+ 
+Refer ShapeLSP.css : This is a violation of LSP and ISP 
+***********************************
+ Bird 
+	fly?
+ Penguine extends Bird
+ How do you solve this?
+a.	Students should identify 10 interfaces. Classes implementing them. Vilas should find out cases where a change or a different type of class can violate this principle. How do you solve this?
+ ***********************************  
+  D: Dependency inversion principle
+
+DIP
+---
+	High-level modules should not depend on low-level modules. Both should depend on abstractions.
+	Abstractions should not depend on details. Details should depend on abstractions.
+
+	Interaction between high level and low level module should be abstract.
+
+ ----------------------------------
+ Selenium working with different browsers.
+ 
+***********************************  
+ Something like in the link below would be discussed.
+https://www.intertech.com/Blog/the-dependency-inversion-principle-with-c-examples/
+https://www.tutorialsteacher.com/ioc/dependency-inversion-principle
+
+•	Lab2: Design an AreaCalculator. The design should scale to calculate area of a circle, square rectangle, polygon, hexagon ect…. Design should work for new shapes that can come up tomorrow.
+
+
+How SOLID principles Solves read world Application Problems
+Some of the design smell I which I want to discuss here are.
+
+	Rigidity – The design is difficult to change. Without proper use of abstraction and interface the design becomes very rigid. For each and every small change in the functionality we have to test whole logic from start.
+	
+	Fragility – Design is easy to break. As discussed with a small change there are very high 	chances of the whole design going for a toss.
+
+	Immobility – The design is difficult to reuse. Or rather we cannot easily extend the current design.
+	
+	Viscosity – It is difficult to do the right thing.
+
+	Needless Complexity – Over design.
+***********************************   
+######################################		
+
+
+		Lab for SOLID principles 
+		
+***********************************
+Lab for solid principle
+e.g. https://blog.scottlogic.com/2018/06/26/solid-principles.html
+Implement all the cases.
+
+o	Discuss 5/6 case studies..
+o	Implement all the cases in POJO’s or POCO’s.
+
+https://www.geeksforgeeks.org/solid-principle-in-programming-understand-with-real-life-examples/
+https://howtodoinjava.com/best-practices/5	-class-design-principles-solid-in-java/
+https://www.codeproject.com/Tips/1033646/SOLID-Principle-with-Csharp-Example
+https://www.c-sharpcorner.com/UploadFile/damubetha/solid-principles-in-C-Sharp/
+########################################################################
+Reference: SOLID Principle Practical implementation
+
+Java
+D:\PraiseTheLord\HSBGInfotech\Others\solid\src\com\github\bsferreira\solid\
+
+D:\PraiseTheLord\HSBGInfote	ch\Others\solid\SolidPrinciplesTutorial
+C#
+https://github.com/harrymt/SOLID-principles
+########################################################################
+
+***********************************		
+######################################	
+		Dry (Don’t repeat yourself)
+######################################	
+Don’t write duplicate code
+Use Abstraction to abstract common things in one place
+
+**********************************************
+Students may have a method called learn
+	Employees also may have a method called learn
+	Are they duplicate?
+	How do you solve this?
+
+**********************************************
+######################################			
+			Design for changes
+	Encapsulate what changes.
+	Pick up Strategy and explain.		
+######################################			
+		
+		Composition over Inheritance
+		Composition, Inheritance, Association, Aggregation
+
+
+*******************************************
+Excercise on Composition, Inheritance, Aggregation
+https://javarevisited.blogspot.com/2014/02/ifference-between-association-vs-composition-vs-aggregation.html
+Association
+	Composition 
+		•	Lab1: Animal and heart, heart don’t exist separate of an Animal.
+	Aggregation
+		•	Lab1: Employees in bank. Employees can exist outside bank.
+			Bank can decide to automate some work which employees did
+			Employees can change their profession.
+	
+	Composition is a tight binding. 
+		Relationship where the child cannot exist independent of the parent. 
+		e.g. Animal and heart, heart don’t exist separate to a Animal.
+		Has-a relationship.
+		Heart was born inside Animal. Delete animal and heart also gets deleted. Heart can be transplanted before Burial. So burial should be delete of animal not death.
+	Aggregation 
+		Relationship where the child can exist independently of the parent.
+		Loosely coupled.
+		(Currently) Part-of relationship.
+		e.g. Employees in bank.
+		Employees were born outside bank.
+		They joined the bank.
+		They can quit the bank.
+		Bank get closed - employees still exist
+	
+
+	In the interest of time following would be covered theoretically.
+	Design for changes
+	Program for interface
+	Delegation
+	Lab for various principles
+	High level overview of Microservices
+	
+Write test cases. See the impact of changes. Make changes to the model. See the impact to changes.
+
+https://www.geeksforgeeks.org/association-composition-aggregation-java/
+
+Excercise
+	Design a company onboarding process.
+	Company has divisions like HR, product dev, service dev., teachers, sales, marketing.
+	What is company to division relationship.
+	Employees are part of company. They join a division.
+	How about CEO's? CFO's ect.
+	Executive also can be a division.
+	What is the people to division relationship?
+	People can switch divisions. How do you manage?
+	How would we code onboarding?
+	What if we want to add a new process to onboarding?
+	Where do we code the switch division?
+
+*******************************************
+######################################			
+		Program for interface
+		 
+######################################			
+		Delegation
+		delegation design principle is equals() and hashCode() method in Java.
+
+######################################			
+		Lab for various principles
+######################################			
+		High level overview of Microservices
+######################################			
+		Design Pattern
+######################################			
+	•	Introduction to Design patterns
+	•	Types of Design patterns
+
+	•	Only the following patterns would be covered.
+	•	(Following are selected based on my experience that they are the patterns most used). However if there is a demand we can add more.
+		o	Creational Pattern
+				Factory, Abstract Factory, Singletone
+		o	Behavioral Pattern
+				Strategy, Observer
+		o	Structural Pattern
+				Proxy (In the context also discuss about Reverse Proxy)
+############################################
+
+Lab1: Apart from the case study discussed about each pattern while teaching, following questions would be asked to them.
+	PropertyFile loaded into the memory. How would you do that?
+	
+	How would you design for creating various types of computers? Remember we can have new type of computers tomorrow. Abstract Factory
+https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial
+
+	Lab2: Design a system to accept payment in any forms. Credit Card, Paytm, NEFT, Google pay, Cash or some new form that may evolve tomorrow. Strategy
+https://howtodoinjava.com/design-patterns/behavioral/strategy-design-pattern/
+
+	Lab3: I want to design a social media application which allows me to connect to my friends on all social platforms i.e. Facebook, Google Plus, Twitter and Orkut (for example sake) or something new that can come tomorrow
+
+	Lab4: A light should glow when ever there is a chance of Natural calamity.
+
+###########################################
+********************************************
+Design Pattern 1: Factory method
+
+Factory method pattern defines an interface for creating an object but lets  subclasses decide which class to instantiate (and how to instantiate it and what to pass to it) it.
+
+Refer notebook.
+********************************************
+  
+  
+  
+********************************************
+You have a bakery. You need to prepare a cake. How would you do that?
+
+Class orderCake(){
+	Cake cake = new Cake();
+	
+	cake.prepare();//mix, spread, put ingrediants ect..
+	cake.bake();//put into own/otg
+	cake.cut();
+	cake.box();
+	return cake;
+}
+
+https://github.com/iluwatar/java-design-patterns/tree/master/factory-method
+
+But you need to prepare different types of cake.. ButterScotch, Vanilla ect..
+
+Class Bakery{
+	public Cake orderCake(String type){
+		Cake cake;
+			
+		if ("ButterScotch".equals(type)){
+			cake = new ButterScotchCake();
+		}else if ("Vanilla".equals(type)){
+			cake = new VanillaCake();		
+		}else if ("Pineapple".equals(type)){
+			cake = new PineappleCake();		
+		}//Each Cake has to implement the cake interface
+		
+		cake.prepare();//mix, spread, put ingrediants ect..
+		cake.bake();//put into own/otg
+		cake.cut();
+		cake.box();
+		return cake;
+	}
+}
+####################################
+Very good references
+https://github.com/iluwatar/java-design-patterns/tree/master/factory-method
+https://github.com/kamranahmedse/design-patterns-for-humans
+https://github.com/bethrobson/Head-First-Design-Patterns
+#####################################
+
+Your competitors decide to add couple of new cake types. You see that Butterscotch is not selling. You want to take it out.
+How will code look like?
+
+This violates the closed for modification principle.
+
+Let's encapsulate what changes
+
+public class CakeFactory{
+	public Cake createCake(String type){
+		if ("Vanilla".equals(type)){
+			cake = new VanillaCake();		
+		}else if ("Pineapple".equals(type)){
+			cake = new PineappleCake();		
+		}
+	}
+}
+
+Let's rewrite our Bakery class
+
+Class Bakery{
+
+	CakeFactory factory;
+	public Bakery(CakeFactory factory){
+		this.factory = factory;
+	}
+	
+	public Cake orderCake(String type){
+		Cake cake;
+		cake = factory.createCake(type);//Here new is replaced. No more concrete instantiation here.
+		
+		cake.prepare();//mix, spread, put ingrediants ect..
+		cake.bake();//put into own/otg
+		cake.cut();
+		cake.box();
+		return cake;
+	}
+}
+
+This is not factory pattern
+Class diagram for what we did can be found in Page9	
+
+
+Now many people like our cake. So we want to open lot of franchises across the city.
+Say 
+	one in Chennai, 
+	one in Ahmedabad //like everything sweet.
+	one in Culcutta //like everything with more Ghee
+	one in Mumbai //likes a different souce flavour in everything
+	one in Delhi //likes less sweet.
+	
+But the taste of the people in these areas differ..
+
+Let's get the createCake back into Bakery.
+
+Class Bakery{
+	public Cake orderCake(String type){
+		Cake cake;
+		cake = this.createCake(type);//createCake is a local method.		
+		cake.prepare();//mix, spread, put ingrediants ect..
+/*
+How to prepare Cake?
+	Beat egg and add sugar.
+	Add Vanilla esence and veg oil
+	Add pineapple or strawberry purie
+	Add Maida and Baking powder
+	Depending on the flavour can be pine apple cake or orange.
+*/		
+		cake.bake();//put into own/otg
+		cake.cut();
+		cake.box();
+		return cake;
+	}
+	
+	public abstract Cake createCake(String type);
+}
+
+public class AhmedabadCake{
+	public Cake createCake(String type){
+		Cake cake = new Cake();	
+		if(type.equals("Pineapple"){
+			cake = new AhmedabadStylePineappleCake();
+		}else if(type.equals("ButterScotch"){
+			cake = new AhmedabadStyleButterScothCake();
+		}...
+	}
+}
+
+New type of Cake comes, where are the changes restricted to?
+
+Similarly do it for Culcutta
+
+
+There is still lot happening in your Bakery. It doesn't need to bother which cake it is, the baking, cutting, boxing ect are independent of that.
+
+abstract Product factoryMethod(String type)
+
+abstract: A factory method is abstract so the subclasses can handle the object creation.
+
+Product: factory method returns a product that is typically used within methods defined in the superclass
+
+factoryMethod: factory method isolates the client from what kind of concrete class is getting created. (e.g. for them it would be a Cake type).
+
+String type: factory methods may be parameterized to select among several variation of a product.
+
+Now if Ram and Rahim are ordering a Cake. If Ram wants Chennai Cake and Rahim wants Culcutta cake.
+Ram
+	Bakery bakery = ChennaiBakery();
+	bakery.orderCake("Pineapple");
+	
+
+Rahim
+	Bakery bakery = CulcuttaBakery();
+	bakery.orderCake("Pineapple");
+	
+	
+Code the cakes...	
+p-130
+Excercise - do it for Songs from different part of country.
+
+Factory: defines an interface for creating an object, but lets subclass decide which class to instantiate. Factory method lets a class defer instantiation to subclasses.
+
+
+Refer class diagram in p 134
+
+Advantage of Factory Pattern
+	Factory Pattern is useful when you need to create only a single product. 
+	If you need to create multiple products or a group of products - Factory cannot help.
+
+Is SimpleBakery (move encapsulation of first create to a different class. Although it looks similar SimpleBakery doesn't extend a class creating 
+
+Are factory method and creatory always abstract	
+	No, you can define a default factory method to produce some cocnrete product
+	
+CulcuttaBakery creates 2 or more deferent type of Cakes. Do they always needs to create n number of Cakes?
+	We implemented a parameterized factory. You can do a default factory too (with no parameter) and decide to create just one type of product.
+	
+Our factory is not type safe. It takes a String as type and that can take any value.
+	Good observation. There are various ways to solve this. One being enumerator.
+	
+I'm still a bit confused between factory and SimpleBakery. They look very similar.
+	You are right - the subclasses looks a lot like SimpleBakery. In Factory however we are creating a framework where the subclass decide what to be created. 
+	
+	imagine if we need to create this without factory in the old method.
+	
+************************************************************
+Design pattern 2: Abstract Factory
+************************************************************
+Abstract Factory is a group of Factories.
+
+Provides an interface for creating a families of dependent objects without specifying their concrete classes.
+
+Refer notebook
+
+************************************************************
+
+
+
+There had been report of some quality compromise in some bakeries which you don't like.
+Clearly we need to manage createCake from a centralized place.
+But the definition of quality in each place is different. So how do we do this?
+
+public interface CakeIngrediantFactory{
+	/*
+How to prepare Cake?
+	Beat egg and add sugar.
+	Add Vanilla esence and veg oil
+	Add pineapple or strawberry purie
+	Add Maida and Baking powder
+	Depending on the flavour can be pine apple cake or orange.
+*/		
+//All these should be like create methods because we are making these in our factories.
+	public Sugar createSugar();
+	public Egg createEgg();
+	public Vanilla creteVanilla();
+	public VegOil createVegOil();
+	public Maida createMaida();
+	public BakingPowder createBakingPowder();
+}
+
+Here is what we will now do.
+1. Create a Factory for each region.
+	Create a sub class of CakeIngrediantFactory that implements each create method.
+2. Implement a set of ingrediant classes to be used.
+3. Hook up by working wih our new ingrediant factories.
+
+public class HyderbadIngrediantFactory implements CakeIngrediantFactory{
+	public Sugar createSugar(){
+		return new SweetLessSugar();
+	}
+	public Egg createEgg(){
+		return new LargeEgg();
+	}
+	public Vanilla creteVanilla(){
+		return new FlavouredVanilla();
+	}
+	public VegOil createVegOil(){
+		return new nonVegOil();
+	}
+	public Maida createMaida(){
+		return new HardMaida();
+	}
+	public BakingPowder createBakingPowder(){
+		return new ExtraBakingPowder();
+	}
+}
+
+---------------------------------------------
+From https://www.youtube.com/watch?v=z47aJGe7jR4
+
+Abstract Factory
+------------------
+GOF
+Abstract Factory pattern provides a way to encapsulate a group of indvidual factories that have a common theme without specifying their concrete classes.
+
+Provides an interface for creating families of related or dependent objects without specifying their concrete classes
+	
+Refer to the classdia images
+https://www.uml-diagrams.org/design-pattern-abstract-factory-uml-class-diagram-example.html
+
+	
+###########################################
+https://www.youtube.com/watch?v=v9ejT8FO-7I&list=PLMygBPoOe_IV_42YFkuAECr3g7HhBXBTN&index=1
+Strategy Design pattern
+	Using composition than inheritance
+	
+	Defines a family of algorithms and encapsulates each one and makes them interchangeble
+	
+	Lets the algorithm vary independently from the clients that use it.
+	
+	i.e. make algorith plug and play. Sometimes use algorith A and sometimes algorith B.
+	
+	Consider that you are creating a voting website.
+	Based on the country you may have different algorith to allow a person to vote. If Indian, you may check Aadhar or voting card and allow to vote. If a different country it may just if your name is present in the list and if your face match.
+	
+	or 
+	If you have a collection which has a sorting functionality, at runtime you can decide the sorting should be based on which algorithm.
+	
+ 
+Refer to my book on Design pattern
+Observer Pattern
+----------------
+https://www.youtube.com/watch?v=_BpmfnqjgzQ&list=PLMygBPoOe_IV_42YFkuAECr3g7HhBXBTN&index=2
+
+
+Story of a movie
+Heroine walk in wearing a colorful dress with background
+Boys are all interested.
+They keeps checking with her every min. and she shouts back.
+Then they start subscribing.                   
+
+
+Newspaper - subscription
+          
+Weather station. Measure the weather data.
+
+	A client wants to know when ever the wheather data changes.
+	This client is a subscriber.
+	
+	Push Vs Pull
+	Move from Pull to Push
+	
+	Keeps checking every min.
+	
+	Pulling is a very inefficient bad idea.
+	
+	For pushing the subject (here wheather measurement system) should know all the subscribers.
+	Observable: Subject is called Observable.
+	And clients are called Observers.
+	Observers observe the observable.
+	
+Observer Pattern
+----------------
+	defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notidied and updated automatically. 
+	
+	
+Chatroom is a good usecase where you can use Observer pattern
+
+
+###########################################
+
+Explain what is a Proxy and Reverse Proxy.
+
+----------------------------------------------------
+Definition
+----------
+Provides a place holder for another object in order to control access to it.
+
+
+You call a object which intern calls the object which you need to call.
+
+A -> B -> C
+
+3 styles of Proxy pattern
+	Remote proxy
+		In a different machine/cluster ect.
+		This proxy is responsible to interact with the remote system.
+		For the client proxy is the remote object.
+	Virtual proxy
+		Controls access to a resource that is expensive to create (like caching or pooling?).
+		
+	Protection proxy
+		Access management.
+		Controls access to a resource using access rights.
+		
+	
+e.g. of Virtual Proxy
+	String book = "<Entire book>";
+	BookParser bp = new BookParser();//heavy instantiation which does lot of computation.
+	bp.getWordCount();//simple getter
+	bp.getSentenceCount();
+	
+	But what if bp.getXX method may not be accessible always. So instead of creating it always, I would like to differ it to the first method call.
+	
+	Client -> Proxy -> instantiate BookParser on the first method call.
+	
+	Refer note Book for class dia.
+	Proxy always extends the same interface as the subject.
+	
+	
+
+---------------------------------------------------
+Singleton Pattern
+-----------------
+Ensures a class has only one instance and provides a global access to it.
+	
+----------------------------------------------------
+		Lab for design pattern.
+		
+PropertyFile loaded into the memory. How would you do that?
+How would design for creating various types of computers. Remember we can have new type of computers tomorrow. Abstract Factory
+https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial
+Design a system to accept payment in any forms. Credit Card, Paytm, NEFT, Google pay, Cash or some new form that may evolve tomorrow. Strategy
+https://howtodoinjava.com/design-patterns/behavioral/strategy-design-pattern/
+I want to design a social media application which allows me to connect to my friends on all social platforms i.e. Facebook, Google Plus, Twitter and Orkut (for example sake) or something new that can come tomorrow.
+
+A light should glow when ever there is a chance of Natural calamity.
+Chance for earth quake, ect.
+		
+######################################			
+	Reusability Engineering – Functional and Technical (accelerators, dependency engineering)
+	https://dzone.com/articles/reusable-components-in-java
+	https://code-boxx.com/simple-reusable-javascript-components/
+######################################
+		What is reusability engineering?
+		
+**********************************
+Reusable components
+	Identify and design reusable components in FileManagement
+		After the design, will it work on all O/s?
+		
+Excercise		
+	Identify and design reusable components for managing Running race.
+		Race track
+		Gun shot
+		Timer ect are some of them
+		Depending on what students identify we can ask them to design that.
+Can we use some of these for other races? What if the requirement for some of those changes seperately?
+
+
+**********************************
+
+######################################
+		Why do we need reusability engineering?
+######################################
+		Various scope of reusability engineering?
+######################################
+		How to build reusable components?
+######################################
+		What is functional reusability?
+######################################
+		How to build functionally reusable components?
+######################################
+		What is technical reusability?
+######################################
+		How to build technically reusable components?
+######################################
+		How to build pluggable solutions?
+######################################
+		Components of reusability engineering
+######################################
+		Lab on Reusability engineering	
+
+	Lab1: 	Identify and design reusable components in FileManagement
+	Verify that the design can scale to work on all O/s?
+	Identify and design reusable components for managing Running race.
+		Students may identify entities like below and some behaviors related to the same.
+
+		Race track
+		Gun shot
+		Timer ect are some of them
+		Depending on what students identify we can ask them to design that.
+
+	Can we use some of these for other races? If yes, how would you design that?
+
+	What if the requirement for some of those changes seperately? Can your design scale? If not, how do you design to scale?
+	
+		In the context also discuss about the following.
+		How to design for ZDU
+		Monolith Vs Microservices
+		Lab on Reusability engineering	
+	
+Lab1: Design a Add generator which can work for any website. Based on the content in the web site, we should suggest relavant advertisement.
+Lab2: How to design for tinyURL
+	What would be the different api’s you would identify?
+ 	DB design?
+	System design?
+	Non-functional requirement?
+	After the entire design is done, now I want to design analytics on top of this. How will do that?
+	An organization wants to get tinyURL starting with a specific ID from you. What is the impact in your design now?
+	
+######################################
+	Orchestration – Integration  , API etc. Adaptability , Extensibility
+	 Localization
+######################################
+		What is application orchestration?
+		
+Ref: https://dzone.com/articles/orchestrating-microservices-a-guide-for-architects
+https://stackoverflow.com/questions/29117570/orchestrating-microservices
+
+https://medium.com/capital-one-tech/microservices-when-to-react-vs-orchestrate-c6b18308a14c
+
+Saga pattern, 
+routing slips, 
+stateful workflows
+Circuit breaker pattern
+Side-car pattern
+
+****************************************
+
+Orchestration: 
+	Getting a bunch of services to work nicely together in order to get some real work done. 
+	
+	Most cases try to reduce the coupling using RESTful api design.
+	
+Following are some tips of Orchestration
+	1. Be Clear As Crystal
+		Services should include information like diagnosability, logging, ect.
+		Many times our service may be just a service in the middle, yet may get blamed for failures. 
+		When there is a failure we should be able diagnose the root cause of failure easily. For e.g. include information like the api which failed. provide a link to the api and how we can contact them.
+		Provide support when customer needs it.
+	
+	2. Don't be a transformer
+		Orchestrator should not try to transform. Orchestrator is not a transformer.
+		If you own the underlying services, avoid tight coupling with the services.
+	
+		Define the standards (for e.g. diagnosability support) required for you to orchestrate them.
+		If you have to transform, then follow a standard pattern like Facade, Adapter, Decorater ect with proper diagnosability.
+	
+	3. Keep it small
+		a. Ensure the surface area of coupling between you and the services you orchestrate is small. Keep it to a few fields. 
+		Ensure the rules to each schema are relatively simple. If possible, keep the interfaces consistent across all services, both in the requests and in the responses. The more you are coupled to the surfaces of these services, the more painful and frequent the changes will be to your code.
+
+		b. Ensure you keep chattiness to a minimum between services. That means a small, infrequent surface area of network calls. The more network calls that go back and forth between two services or between you and a service, the more pain you'll have to deal with. You also will have highly latent communication. This is usually a sign that the team or teams have badly designed the services.
+
+	4. Be Fault tolerant
+		As the fallacies of distributed computing point out, working with distributed systems is unreliable at best. You have to be prepared for their failure and respond accordingly. This often means retrying intermittent failures and circuit breaking permanent ones. You can cache slowly changing data and skip bad services if coordinating a chain of them. If you think not only about the happy paths in your orchestration, but also about the paths of failure you will have a system that costs much less to maintain.
+
+	5. Use known patterns
+		There are so many patterns which have been used widely. Use them to solve 
+		
+		List of patterns 
+			Saga pattern
+			Routing slips
+			Stateful workflow
+			
+			Side-car
+			Adapter
+			Facade
+			Client-side Discovery and Server-side Discovery
+			Messaging and Remote Procedure Invocation patterns
+	
+
+
+	6. Make your orchestration observable
+		Already discussed in Observer pattern.
+		
+	7. Find places where you need to orchestrate.
+		Utilize various design patterns discussed to keep your surface low. 
+*************************************
+From https://www.amazon.com/dp/1491950358/
+
+There are two styles. 
+	1. The orchestration style corresponds more to the SOA idea of orchestration/task services, 
+	2. Choreography style corresponds to the dumb pipes and smart endpoints 		
+
+https://medium.com/capital-one-tech/microservices-when-to-react-vs-orchestrate-c6b18308a14c
+
+Orchestration is the traditional way of handling interactions between different services in Service-Oriented Architecture (SOA). With orchestration, there is typically one controller that acts as the “orchestrator” of the overall service interactions. This typically follows a request/response type pattern.
+
+Look at the image in the above link.
+
+Benefits
+Provides a good way for controlling the flow of the application when there is synchronous processing. For example, if Service A needs to complete successfully before Service B is invoked.
+Tradeoffs
+Couples the services together creating dependencies. If service A is down, service B and C will never be called.
+If there is a central shared instance of the orchestrator for all requests, then the orchestrator is a single point of failure. If it goes down, all processing stops.
+Leverages synchronous processing that blocks requests. In this example, the total end-to-end processing time is the sum of time it takes for Service A + Service B + Service C to be called.
+
+Reactive 
+--------
+	Event driven.
+	
+Hybrid
+------
+	Combination of both.
+	
+	To know more about the above. When to use Hybrid Vs Reactive Vs Orchestration ect. read the above medium.com link.
+		
+*************************************
+	How to design for tinyURL
+	What would be the different api’s you would identify?
+ 	DB design?
+	System design?
+	Non-functional requirement?
+	After the entire design is done, now I want to design analytics on top of this. How will do that?
+	An organization wants to get tinyURL starting with a specific ID from you. What is the impact in your design now?
+
+Discuss Facade design pattern - Explain how Facade helps in orchestration
+
+Facade 
+	Also called
+	Principle of least knowledge
+	Law of [Demeter]
+
+Provides a unified interface to a set of interfaces in a subsystem. 
+Defines higher level interface that makes subsystem easier to use.
+
+Refer note book.
+
+Many times because of SRP, you will end up having lot of classes. You may have to create so many classes
+
+Referring to the note book drawing
+
+Client -> Facade -> A, M, X
+A -> B -> C
+ect...
+
+some classes may be with dependency injection. Say if A is created with B's depency injected.
+
+A a = new A (new B(new C, new N)))))
+	Things can become more complex than this.
+	
+
+Facade is like a driver of a car. 
+You want to 
+	- increase speed
+	- stop somewhere
+	- turn left
+	- turn right
+	- put on light
+	- on A/c
+	- turn on wiper
+	
+For all these we just need to talk to a driver. He will inturn do it for us.
+
+Excercise:
+	A self service shopping complex. You need buy X, Y, A, B, C .. it's really tough you have no clue how to solve it. How would you solve it.
+
+	
+
+*************************************		
+######################################
+	why do we need to consider orchestration during design?
+
+------------------------------------------------------------
+Let's look at a couple of micro services
+	- Shopping cart management
+	- Order placed
+	
+	Should above 2 be different service or sing service
+	
+	Now I want the report of how many orders got confirmed after people started adding items to cart. 
+	Is it a single db query?
+	
+	How do we solve this?
+	So do you see a need to design microservices properly.
+	
+------------------------------------------------------------
+		
+	https://specify.io/concepts/microservices
+	
+	Microservice architecture : good for building scalable applications. 
+	i.e.
+		Microservices design can scale horizontally.
+		It should
+			technically scale with load
+			functionally scale as requirement changes
+				it is easy to introduce new functions and qualities at any stage of the product. 
+	We have to carefully design it that way.
+	
+	purposes and risks of microservice architectures. 
+
+	Purpose 1: Minimize Costs of Change
+	Purpose
+	Microservices are intended to scale according to new requirements.
+	Minimizing the costs for new or changed requirements is the major purpose of the microservice architecture style. This benefit comes directly from the “single responsibility principle”. 
+	
+To prevent that code is added where it doesn’t belong to and to ensure changeability, the microservice pattern recommends that:
+
+	
+	- different responsibilities are placed in different services
+	- each service has its own code repository
+	- each instance of a microservice is executed as a dedicated process
+	- inter service communication is only allowed through a network connection. 
+		- Services must use its official API to talk to each other: 
+		- A service doesn't access the db of another servie directly.
+	- the protocol used for communication must be technology agnostic 
+		- i.e. a service should NOT assume another service is written in a technology in anyway.
+	- choreography should be preferred over orchestration
+		In Orchestration, there is a centralized orchestrator which controls.
+		In Choreography, every microservice performs their actions independently. It does not require any instructions.
+		
+Each microservice architecture is a service oriented architecture, but not the other way around. There are some discussions whether microservices are SOA done right.
+
+Difference between service oriented architecture and microservice architecture 
+	smaller services size and lightweight protocols. 
+	The smaller service size is a result of applying the first principle from the list above: place different responsibilities into different services.
+
+Enforced cohesion because of hard system boundaries
+---------------------------------------------------
+	Cohesion in software architecture is a measure how related the responsibilities of a module are. When a module has responsibilities that are strongly related to each other, this module has a high cohesion.
+
+	Attention: Don’t fall into the trap and put related responsibilities into different services!
+
+	Because different responsibilities are placed in different code repositories, it is much harder to place new code into modules to which they don’t belong to by design. This is a common problem in traditional applications:
+
+	Developers will eventually ignore or oversee boundaries of subsystems due to time pressure or insufficient understanding of the larger code base. As a consequence of that, related logic is distributed across system boundaries and it is much harder to maintain and extend the software. Subsequently the test suite gets also more complex and this is another reason why it's harder to ensure that everything is still working after a code change.
+
+Lower coupling because of high cohesion
+---------------------------------------
+	"Low coupling often correlates with high cohesion, and vice versa" [SADCW]. In a good designed microservice architecture the dependencies between services are minimized. 
+	One reason for that is the same as for the enforced cohesion:
+
+	It is hard for developers to introduce new communication paths without to talk to the developers of the other services. Even if there is only one developer involved, he will be more thoughtful in introducing new dependencies between two services then between modules within the same code base.
+
+Lower coupling because of choreography
+--------------------------------------
+	Another driver for lower coupling is that in a microservice architecture choreography is preferred over orchestration. 
+	Refer to the image in https://specify.io/concepts/microservices#cohesion-system-boundaries
+	kubernetes may be considered under choreography and not orchestration.
+	When a service oriented architecture uses an orchestration pattern for communication, there are point-to-point connection between the services. Point-to-point means that one service calls the API of another service which results in a web of communication paths between all services. Integrating, changing or removing services from this web is hard since you have to be aware of each connection between the services.
+
+	Comparison between the orchestration pattern and the choreography pattern
+	Orchestration vs. Choreography, Source: www.thoughtworks.com
+	Applying a choreography pattern means that one service doesn’t talk to another service in order to instruct an action. Instead each service is observing its environment and acts on events autonomous.
+
+	Orchestration
+	-------------
+	(Refer image) Services are connected to a message bus and subscribe channels they are interested in. Once an event series occurs that matters of the service, the service performs the appropriate action. Now it is easy to add new services to the architecture; You simply have to connect them to the message bus. In the worst case you must ensure that the other services emit the events that 
+	
+	the new service requires. But adding addional events or extending the payload of existing events won’t break existing logic.
+
+A more concreate example of orchestration vs choreography.
+microservices orchestration vs choreography examples
+Orchestration vs. Choreography Examples, Original examples published in:
+Building Microservices by Sam Newman, O'Reilly
+Note: When it comes to create/read/update/delete entities the REST protocol should still be a consideration. The service that handles the REST call could then trigger an event that a new entity was created/updated/deleted.
+
+Applying another rule from the list above will result in an even lower coupling: When technology agnostic protocols are used, different services can be developed in different technologies. So it is possible to pick the best suited technologies for each service/team.
+
+In the end a lower coupling allows to replace, remove or add new services when requirements change without having the fear that some communication paths have been oversee. So, a lower coupling allows to make changes to the architecture at a later state with less effort.
+
+Smaller and cleaner code bases because of separated services
+Each service has a small code base and so it is easier for developers to extend or modify a service. Even when a developer hasn’t worked on a service for a while or when a developer is new in the project, the smaller code bases makes it possible to be productive right from the beginning.
+
+More source code causes much more errors
+Source: twitter.com/mmrichards/..
+In addition, removing dead code to clean up the code base is much simpler in smaller code bases. In traditional applications developers are worried about removing unused code because they fear site effects. Furthermore, because of the simplicity the likelihood to introduce errors is also reduced.
+
+The final point of smaller code bases is that the IDE loads faster :)
+
+Smaller teams because of smaller code bases
+The people which develop and maintain a service can be organized in a small team where each team maintains and/or operates one service (or a small set of services). Smaller teams minimize management overhead within the teams and will increase productivity dramatically.
+
+Interim conclusion
+Because a microservice architecture is made for adding requirements at any time this architecture style is very good fit for agile development processes. It is possible to implement a minimum viable product, deliver it to the user and than extend the system over time.
+
+"Applying a microservice architecture is not about building the perfect system instead it is about to build a framework in which a good system can emerge over time as the understanding grows." [bms, S. 15]
+
+However, a still existing problem is that responsibilities are assigned to the wrong service by design. When it comes to design a microservice architecture many people don’t know how to divide a monolithic problem into multiple (micro)services. And in fact, when the services are too big or to small, the advantages are gone and problems arise. This then bothers developers and also the managers who decided to invest into this architecture style.
+
+Hint: Making services too small is common pitfall. This antipattern is called “nanoservices”.
+
+So, lets have a look at the most asked question in discussions about microservices: How small a service should be? The following section " encourage Generalization, Replaceability and Reuse " should give you an idea on how to approach this problem.
+
+Purpose 2: Encourage Generalization, Replaceability and Reuse
+Purpose
+In microservices the lesson learned from SOA are applied to fulfil the promise of reuse.
+Reusing services is an old idea and in service oriented architecture (SOA) this is a fundamental goal. The microservice architecture style promotes the following principle to reach the best reusability for a single service:
+
+Build smaller services doing one thing well. This is similar to the rule from the section above: Different responsibilities should be placed in different services.
+A typical show stopper in discussion about reusing an existing service is its complexity and that the existing solution does much more then actual required. Often you hear statements like “this is a simple problem we better build our own solution instead of learning how to use an existing one”. To make things worse a complex software goes along with a complex documentation. How often did you hear a colleague complaining about a documentation?
+
+There are some rules of thumb out there how small a microservice should be:
+
+" The service can be rewritten and redeployed in 2 weeks. " , Jon Eaves
+" It must be possible to feed a team that maintains a service with two pizzas. " , Werner Vogels
+These are good rules of thumb and one could argue that these are extreme examples. Two weeks two rewrite a service is a desirable time range but according to the pizza example I must always work in a one-man team.
+
+To get a well designed microservice architecture we should not ask how big a service should be, instead we should ask: which responsibilities should go into the same service?
+
+My opinionated answer to this is that responsibilities should be grouped in a way so that the amount and size of domain specific services is minimized. Domain specific services, in this context, are services that are specific to the problem domain and that it's unlikely to find a scenario for reusing them in other projects.
+
+Conversely this means: The amount of reused or reusable services should be maximized.
+
+In order master that challenge, I like to think of two dimensions of decomposition.
+
+Decomposition Dimension 1: Actions on entities
+Actions that requires access to the same database records should go into the API of same service. For example, creating, reading, updating and deleting an entity (e.g. a user) should be provided by the API of the same service.
+
+Recap: It’s a no-go that more then one service accesses the same database since it breaks up cohesion (see section ‘Purpose 1: Minimize Costs of Change’). When a services A requires information of service B, service A must use the API of service B.
+
+Furthermore, entities that have a strong relation to each other are good candidates to be managed by the same services. From the perspective of reusing a service: When you can’t think of a scenario where you use an entity without the other, it’s an indication that those entities should be better managed by the same service.
+
+Decomposition Dimension 2: Aspects of an action
+Just because an action is provided by the API of one service it doesn’t mean that every aspect of that action must be executed by that service. It is often possible to decompose a domain specific action into one or more generic actions. In such cases we should think to leave those aspects of an action to other services.
+
+A simple example: When a new user signs up at an online shop, an email to this user should be send. It is a good idea to use an email service to send out those emails. Why? In case the layout of all emails should be changed each service that sends emails must be changed. Sending emails is such a generic problem that there are tons of services out there that can be reused.
+
+A more complex example: When a customer of an online shops views a product the shop system should remember this in order to generate user specific advertisements. In this example, we have a service that manages products. Putting the logic to generate user specific advertisements would blow up the complexity of the product service. Instead we should make a research which off-the shelf software can perform such user specific advertisements and use this system along with the product service. Whenever product information gets requested by an user the product service will notify the advertisement system. FYI: When an user opens a page on amazon about 200 services are called to perform this action (see [WV]).
+
+Another example: Imagine a fitness tracker wristband that records and analyzes your vitality. Because of the limited disk space and computation power, it sends your vitality data (and maybe your current position) to a microservice architecture. One service acts as an endpoint and is responsible for receiving the data records from the wristbands. To keep the first service simple, this service is just responsible to receive and dispatch the data records. To store and analyze the heart rate we need something like a “heart rate service” that is able to calculate the average heart rate of a given time period in the past (because we want to display this information to the user). Making a generalization step before implementing a heart rate service can save us a lot of work. The heart rate service is actually a time series database that can be used off the shelf.
+
+Purpose 3: Increase Operations Efficiency
+Purpose
+Only scale the bottlenecks.
+In sum the footprint of an microservice architecture is usually bigger then the footprint of a monolithic application. This is because in a microservice architecture each service must run as a separated process. This means each instance of a service requires its own runtime (e.g. JVM, Ruby interpreter, etc.).
+
+Hint: The serverless architecture pattern mitigates this costs by using the same runtime for different services.
+
+But there is a break-even point when it comes to horizontal scaling. When scaling a monolithic application horizontally you must install the whole monolith multiple times. This is a kind of waste because often only a small part of the application becomes the bottleneck. With a microservice architecture you can only scale those part that actually have performance issues. For systems under constant high load the hardware resources are cheaper when a microservice architecture is in place.
+
+Risk 1: Increase Operations Complexity
+Risk
+One disadvantage of the microservice architecture is obvious: It is necessary to operate much more applications than just one or two. Mature organizations use container (e.g. Docker), PaaS (e.g. Cloud Foundry) technologies and continuous delivery methodologies to mitigate this drawback.
+
+Risk 2: Distributed Monolith
+In case your architecture has a bad cohesion you will multiply all problems by distributing your application across different microservices (see [JS]).
+	
+######################################
+		Synchronous Vs Asynchronous orchestration
+######################################
+		How to make a synchronous integration.
+######################################
+		Introduction to asynchronous orchestration
+######################################
+			Messaging
+######################################
+			API
+######################################
+			On-premises orchestration Vs Cloud orchestration
+######################################
+			Components of Cloud orchestration
+######################################		
+		How to design for Adaptability
+		
+Discuss Façade design pattern –Explain how Façade pattern helps in orchestration		
+######################################
+		How to design for Extensibility
+	Lab for reusability design
+
+######################################
+	
+	What is Localization?
+######################################
+	
+	
+	Data Engineering
+	
+	Develop data pipelines
+	Manage tables and data sets for analysts and data scientists.
+	Design with the product in mind.
+	
+*********************************************
+Data engineering is a very huge topic and it unfair to expect freshers to master this in few days. The expectation should be to understand basics.
+When they get into projects, they should know in which area they should concentrate and research.
+
+Excercise
+	What table you would design?
+	What relationships would you establish?
+	Which db would you pick?
+	Design a college onboarding schema
+
+Say this is a solution on cloud. Colleges can enroll with your product.
+Now what changes would you make?
+What data would go to relational db?
+Would you pick a no-sql solution?
+What data would go to no-sql solutions?
+What caching would you think about? More on this to follow….
+Would you design for a data lake?
+
+*********************************************	
+######################################
+		What is data engineering?
+######################################
+		
+		Why do we need to do data engineering?
+######################################
+		Difference between data engineer and data scientist
+######################################
+		Tools of data engineer
+######################################
+		Kinds of databases
+######################################
+			SQL Vs NoSQL
+			How would you determine what to use?
+######################################
+		
+		Types of NoSQL databases
+######################################
+		Processing tasks
+######################################
+		Scheduling tools
+######################################
+		Cloud providers
+######################################
+		Star schema diagram
+######################################
+		Parallel computing
+######################################
+		
+	Deployment Engineering  (DevOps & Dev SecOps)
+######################################
+		Introduction to DevOps
+************************************
+Give a demo for CI/CD. Don’t expect engineers to do that.
+	If engineers need to do this, then DevOps itself would be a week long session. We would be training them on git, jenkins, maven, docker and kubernetes.
+Exercise
+	Design a CI/CD pipeline for your project in java
+DevSecOps
+	Logical explanation.
+
+************************************		
+######################################
+		Introduction to DevSecOps
+######################################
+		What is DevOps
+######################################
+		Why DevOps
+######################################
+		Success and failure stories of DevOps
+######################################
+		Phases of DevOps
+######################################
+		Components and Tools in DevOps
+######################################
+		What is containerization and orchestration
+######################################
+		Principles of DevOps
+######################################
+		Introduction to DevSecOps
+######################################
+		Purpose and benefits of DevSecOps
+######################################
+		Difference between DevSecOps and traditional security practices
+######################################
+		Business driven security strategy
+######################################
+		Integrating security into Continous delivery workflows.
+######################################
+	Security
+######################################
+*********************************************
+Security concepts
+https://owasp.org/www-project-top-ten/
+a.	Injection
+9 Different types of injection
+https://www.acunetix.com/blog/articles/injection-attacks/
+
+Fix injection Sql injection attacks in the following
+# Define POST variables
+uname = request.POST['username']
+passwd = request.POST['password']
+
+# SQL query vulnerable to SQLi
+sql = “SELECT id FROM users WHERE username=’” + uname + “’ AND password=’” + passwd + “’”
+
+# Execute the SQL statement
+database.execute(sql)
+
+Similar simple exercises would be identified for all Top 10 vulnerabilities discussed below
+https://owasp.org/www-project-top-ten/
+
+*********************************************
+		Introduction to security
+######################################
+		why security?
+######################################
+		Product security
+######################################
+		Cyber security 
+			
+######################################
+		Information security 
+######################################
+		API security
+######################################
+		Hacking
+######################################		
+		Malware, Virus, Trojans, Ransomware 
+######################################		
+		Authentication Vs Authorization
+######################################		
+		Anti Virus, Encryptions, Firewalls, Biometrics, Factor Authentication, Honey Pots, DMZ, Password Management
+######################################		
+		Introduction to security attacks
+######################################		
+		Various types of cyber attacks.
+######################################
+
+
+https://owasp.org/www-project-top-ten/
+
+
+
+References: 
+Clean Code By Robert Martin
+SOLID Principles of Object-Oriented Design
+SOLID Principles of Object-Oriented Design and Architecture
+Refactoring by Martin Fowler
+
+		
+Other topics students should understand
+-----------------------------------------
+1. Scale up, Scale Down Vs Scale in, Scale out
+2. Horizontal Scaling
+3. Advantages and issues with horizontal scaling
+4. How to solve the issues created by Horizontal scaling.
+5. CAP theorem
+Consistency Availability and Partition Tolerance.
+6. Load Balancer overview
+7. Caching
+###########################################################
+	The process of storing data in a cache.
+	a temporary storage area
+	Deliver data quickly.
+	
+	Caching works on locality of reference principle: recently requested data is likely to be requested again.
+	
+	Can be used across
+		hardware
+		OS
+		Web browsers
+		Applications
+		Often found nearest to the front end.
+		
+	Types of Cache
+		Application Server Cache
+		Distributed Cache
+		Global Cache
+		CDN
+	Application Server Cache
+		Placing cache on request layer node enables local storage.
+		But when you've load balancer, it can be send request to any node which increase cache miss.
+		Solution
+			Distributed Cache
+			Global Cache
+	Distrubuted Cache
+		Each of it's node own part of cached data
+		The cache is divided up using a consistent hashing function, such that if a request node is looking for a certain piece of data, it can quickly know where to look within distrubuted cache to check if data is available.
+		Increase cache space is easy - add nodes.
+	Global Cache
+		All nodes using a single cache space.
+		Two types of global cache
+			When cached response not found in cache 
+				1. Cache itself is responsible for retrieving the missing piece of data.
+				2. Request node should retrieve the data.
+	CDN
+		Details to follow
+	
+Cache Invalidation
+	When data is modified at source (say db), cache should be invalidated.
+	Types
+		Write-through Cache
+			Data is written into the cache and db at the same time.
+			Adv: Consistency of data.
+			Dis adv: Latency (delay)
+		Write Around Cache
+			Write bypassing the cache.
+			Adv: Reduces flooded write on cache.
+			Disadv: Chances of consistency issue. Additional step required to solve that.
+		Write Back Cache
+			Data written to cache and transaction confirmed. Data is synced to storage at specific interval.
+			Adv: speed.
+			Dis adv: In consistency. Probablity of loosing data. 
+###########################################################
+8. Hashing
+###########################################################
+	Transformation of a string of characters 
+	into usually shorter fixed-length value or key 
+	that represents the original string.
+	
+	
+	used to index and retrieve items in db, objects ect.
+	
+
+Hashing
+	Hash function : generate a number based on input
+	
+
+Some use cases of Hashing
+	Used  
+		To index data
+			Hash and store the data.
+			When searched, hash and search for it.
+		In cryptographic application
+			Plain text communication is risky. 
+			Instead hash and communicate over the wire.
+		Sharding the keys
+			When there are multiple servers and a data need to be available on all of them.
+			Distribute the keys.
+		Finding duplicate Records
+
+Simple example of Hash function
+Hashing function H(x) = x mod 10
+	21, 59, 34, 48, 83, 42, 69
+	
+Where will get stored in a table like below	
+	0
+	1
+	2
+	
+	https://searchsqlserver.techtarget.com/definition/hashing
+
+	Uses
+	Finding duplicate/similar records as similar records/strings will produce similar hash
+	Protecting data as when the data is modified the calculated hash also changes
+	Cryptography to check message integrity, data corruption detection, digital signature, authentication, etc…
+	Hash tables to quickly locate records
+	Message Digest
+	Password Verification
+	Data Structures(Programming Languages)
+	Compiler Operation
+	Rabin-Karp Algortithm
+	Linking File name and path together
+	Git type file saving
+	Many more..
+###########################################################
+9. CDN
+###########################################################
+content delivery network (CDN) 
+	geographically distributed group of servers 
+	work together to provide fast delivery of Internet content.
+	Helps for the quick transfer of assets. Assets can be 
+		HTML pages, javascript files, stylesheets, images, and videos
+	CDN does not host content
+	Can't replace web hosting
+	It cache content at the network edge
+	improves website performance.
+	
+	Adv. of CDN's
+	1. Improving website load times
+	2. Reducing bandwidth costs
+	3. Increasing content availability and redundancy
+	4. Improving website security
+	
+	More information: https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
+	
+	How to choose a CDN
+	https://www.limelight.com/ps/cdn-b/?gclid=EAIaIQobChMIkPr0v_rZ5wIVgquWCh2wIAM4EAAYAyAAEgJMuPD_BwE&gclsrc=aw.ds
+		
+		
+###########################################################
+
+REST API design
+Get some good images
+https://store.com/api/v1/user/7
+{
+	"id":"7"
+	"name": "Vilas"
+	"City": "Bangalore"
+}
+	
+bookmyshow application
+	name of movies keep changing
+	time keeps changing
+	ect..
+	These data are coming from a webserver
+	There can be a valid reason why you don't want this data in html format. 
+	Instead you may want to get this data in json or yaml or something similar.
+
+What is REST (Representational State Transfer) API?
+https://www.youtube.com/watch?v=rtWH70_MMHM
+	Say we want to see the list of theaters where a movie is playing in my city.
+	Request is made in REST format.
+		Architectural style and an approach for communications purpose that is often used in various web services development.
+	Features of REST api
+		Simpler than SOAP.
+		Simpler documentation
+		Better logging and error messaging tracking.
+	6 principles of REST api as defined by Dr. Granter
+		1. Stateless
+			Request contain all information.
+			url : identify the resource requested.
+			body: identifies the resource 
+		2. Client Server
+			Uniform interface that separates the client from server.
+		3. Unform Interface	
+			across multiple platforms. It is portable across them too.
+			Enhances scala 
+			REST defines 4 constraints to ensure uniform interface.
+				a. Resource identification
+				b. Resource manupulation
+				c. Self descriptive messages
+				d. Hypermedia.
+		4. Cacheable
+		5. Layered System
+		6. Code on Demand
+		
+		
+From https://www.youtube.com/watch?v=qVTAB8Z2VmA&t=14s
+		
+		
+###########################################################
+Excercise
+	Design Instagram. This should be an exercise which would evaluate how much they understood. 
+Time permitting, if we can do couple of more such assignments the concepts would sync in better.
+		
+		
+		
+###########################################################
+From https://www.educative.io/courses/grokking-the-object-oriented-design-interview
+
+Design a Library Management System
+Design a Parking Lot
+Design Amazon - Online Shopping System
+Design Stack Overflow
+Design an Airline Management System
+Design Blackjack and a Deck of Cards
+Design a Hotel Management System
+Design Chess
+Design an Online Stock Brokerage System
+Design a Car Rental System
+Design LinkedIn
+Design Cricinfo
+Design Facebook - a social network.
+
+From 
+https://www.educative.io/courses/grokking-the-system-design-interview?affiliate_id=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=grokking-manual&gclid=EAIaIQobChMI4uaJ5rCH6AIVBpSPCh2MHwlFEAAYASAAEgJ4IvD_BwE
+Design a URL shortening service like TinyURL
+Designing Pastebin
+Designing Instagram
+Designing Dropbox
+Designing Facebook Messenger
+Designing Twitter
+Designing Youtube or Netflix
+Designing Typeahead Suggestion
+Designing an API Rate Limiter
+Designing Twitter Search
+Desinging a Web Crawler
+Designing Facebook's Newfeed
+Designing Uber backend
+Design Ticketmaster
+
+----------------------
+System design basics
+Key characteristics of Distributed Systems
+Load Balancing
+Caching
+Data Partioning
+Indexes
+Proxies
+Redundancy and Replication
+SQL Vs NoSQL
+CAP Theorem
+Consistent Hashing
+Long-Polling Vs WebSockets Vs Server-Sent Events
+
+-------------------------------
+Consider when you teach coding
+https://www.educative.io/courses/coderust-hacking-the-coding-interview
+
+Binary SearchFinx Maximum in Sliding Window
+Search Rotated Array
