@@ -177,7 +177,9 @@ A calculator program without OCP and with OCP
 ***********************************  
  L: Liskov substitution principle
  ----------------------------------
- The only thing is that every subclass or derived class should be substitutable for their parent or base class.
+ every 
+	subclass or derived class 
+	should be substitutable for their parent or base class.
  avoids misusing inheritance.
  “is-a” relationship.
  
@@ -189,13 +191,16 @@ Liskov Substitution Principle
 	-------------------------------------------------
 	Client can consume any implementation without changing the correctness of the system
 	We can change the behaviour of the system because polymorphism is all about changing the behaviour.
-	Correctness of the system can be said as the implementation of the interface A should not crash the application. Similarly implementation of the interface B should also not crash the application (compile time error or a new call itself fails). 
-
+	
 Breaking the LSP:
 
-	When we get the NotSupportedException.
-	One interesting implementation which violates LSP in C# is ReadOnlyCollection. Once the collection is created it cannot be changed. We cannot add or remove the items from the collection.
-	So Add , clear and Remove methods in ReadOnlyCollection throw the NotSupportedExceptions. It can break the correctness of the system because suppose if one part of the client is accepting only the ICollection and it was working fine with List implementation . But if we substitute it with ReadOnlyCollection, it will break for Add, Clear and Remove methods and thus putting the correctness of the system in jeopardy.
+	Design for NotSupportedException.
+	One interesting implementation which violates LSP in C# is ReadOnlyCollection. 
+	Once the collection is created it cannot be changed. 
+	We cannot add or remove the items from the collection.
+	So Add , clear and Remove methods in ReadOnlyCollection throw the NotSupportedExceptions. 
+	It can break the correctness of the system because suppose if one part of the client is accepting only the ICollection and it was working fine with List implementation . 
+	But if we substitute it with ReadOnlyCollection, it will break for Add, Clear and Remove methods and thus putting the correctness of the system in jeopardy.
 	
  
 public class Rectangle

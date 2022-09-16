@@ -88,7 +88,7 @@ static class SendMessage {
 
 ```
 
-As you will see below, we seperate futures to different classes ( write, print, send ) and each class just do it's job for appling single responsibility principle.
+As you will see below, we seperate features to different classes ( write, print, send ) and each class just do it's job for appling single responsibility principle.
 ```java
 public class SRPSolution {
     static class WriteMessage {

@@ -93,7 +93,7 @@ Requirement from Customer: I need a banking solution. I need to transact.
 			User friendliness
 			Reliability
 			Accessibility
-			ZDU - Zero downtime upgrad
+			ZDU - Zero downtime upgrade
 				rolling update
 				blue/green
 				canary deployment
@@ -402,10 +402,52 @@ Microservices cons:
 	Apply various theory that we learned just now.
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Design Pattern
+			Proven solution to common problems
+			Composition over inheritance
+			Code to interface and not to classes
+			1994
+			GoF
+
+
+			
+			
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		•	Introduction to Design patterns
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		•	Types of Design patterns
+			
+			Creational patterns
+				how to create object
+				hide logic of creation
+					Factory method
+					Abstract Factory
+					Prototype
+					Singleton
+					Builder
+			Structural patterns
+				composition of objects
+				how to use an object in another object
+					Adapter
+					Bridge
+					Composite
+					Facade
+					Flyweight
+					Proxy
+					
+			Behavioural patterns
+				communication between design patterns
+					Strategy
+					Chain of Resposibility
+					Command
+					Interpreter
+					Iterator
+					Mediator
+					Observer
+					State
+					Strategy
+					Template
+					Visitor
+					
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		•	Only the following patterns would be covered.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -414,39 +456,76 @@ Microservices cons:
 	o	Creational Pattern
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Factory, Abstract Factory, Singleton
+			"Define an interface for creating an object, but let subclasses decide which class to instantiate.
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	o	Behavioural Pattern
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Strategy, Observer
+			Strategy, 
+			D:\PraiseTheLord\HSBGInfotech\Others\designpattern\Head-First-Design-Patterns\src\headfirst\designpatterns\strategy
+			Strategy
+				Strategy lets the algorithm vary independently from clients that use it.
+				e.g. sorting in list
+			
+			Observer			
+				Pub-sub model
+				D:\PraiseTheLord\HSBGInfotech\Others\designpattern\Head-First-Design-Patterns\src\headfirst\designpatterns\observer\simple
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	o	Structural Pattern
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Proxy, Facade (In the context also discuss about Reverse Proxy)
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	•	
+	•		Proxy: 
+					https://www.geeksforgeeks.org/proxy-design-pattern/
+				D:\PraiseTheLord\HSBGInfotech\Others\designpattern\java-design-patterns\proxy\src\main\java\com\iluwatar\proxy
+			Facade:
+				D:\PraiseTheLord\HSBGInfotech\Others\designpattern\Head-First-Design-Patterns\src\headfirst\designpatterns\facade	
+					
 •	Orchestration – Integration, API etc. Adaptability, Extensibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		What is application orchestration?
+		Application or service orchestration is the process of integrating two or more applications and/or services together to automate a process, or synchronize data in real-time. Often, point-to-point integration may be used as the path of least resistance.
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		why do we need to consider orchestration during design?
+		
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Synchronous Vs Asynchronous orchestration
+		
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		How to make a synchronous integration.
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Introduction to asynchronous orchestration
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	•	Messaging
+		
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	API
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	On-premises orchestration Vs Cloud orchestration
+	
+		An orchestration process might include starting servers correctly, making sure they are highly available, following compliance regulations, using auto-scaling, backup, and failure recovery, and terminating the process once it's finished.
+	
+	
+		Cloud Orchestration is the process of automating the tasks needed to manage connections and operations of workloads on private and public clouds. Cloud orchestration technologies integrate automated tasks and processes into a workflow to perform specific business functions.
+		
+		Adv. of cloud
+			Improving efficiency of resource utilization, eliminate over-provisioning.
+			Monitor, alert, and report on unexpected conditions to diagnose root cause.
+			Simplify data integrations and automatically apply policies for governance and security.
+			Manage dependencies across clouds to ensure proper execution of tasks.
+			Integrate existing identity and access management systems as part of organization-wide security to ensure only authorized users and applications can access or modify automations.
+			Eliminate need to build ad-hoc tools when new automations are required.
+			Deliver workflow tools for managing and scheduling for IT and line of business users.
+			Provide the bridge between clouds or between private and public environments.
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	Components of Cloud orchestration
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	•	Instantiation
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	•	Dependency injection
+		Types of cloud
+			SaaS
+				get software. gmail
+			PaaS
+				get a platform - to configure and then expose it to the customer
+			IaaS
+				get complete infrastructure
+			
+		Services in cloud	
+		
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	Introduction to Design Patterns
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -463,13 +542,58 @@ Microservices cons:
 	o	Adapter	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Adapting to an Interface 
+				
+		e.g. 
+			Application Form for college
+			Degree certificate 
+			Search over mail
+			Search for appartment to buy
+				e.g. appartment closer to school/shoping complex/hospital
+					cheap appartments
+					
+			Car 
+				some car's return speed in Kmh while others in mph.
+					https://www.baeldung.com/java-adapter-pattern
+				
+				Adapter to convert json and xml to yml
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					
+	N.B: Some patterns while implemeting can look very similar. But they would differ in their intend.
+	The intend would define the pattern.
+		e.g. facade, proxy, adapter can look similar/different in their implementation.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	Identifying Adapters
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		o	Facade
+			Facade for a machine.
+			https://en.wikipedia.org/wiki/Facade_pattern#:~:text=The%20facade%20pattern%20(also%20spelled,complex%20underlying%20or%20structural%20code.
+			https://www.geeksforgeeks.org/facade-design-pattern-introduction/
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		o	Facades and Utilities
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	•	Proxy
+		Acts as a proxy for another object. Why?
+			e.g. 
+				make remote call
+					can cache on local
+				security 
+					e.g. proxy in a company may also interact with firewall.
+					
+			
+			
+		e.g. 
+			download a big file and parse certain data from.
+				download can happen at a schedule - let us say a once in a week.
+					Admin can change the schedule and download can happen more/less frequently
+				generally you would return the data from the cache.
+			
+			N.B: Futher we may use observer pattern to update the cache for breaking changes happening in the server side.
+				
+				
+				
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	Bridge	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		o	From Abstraction to Bridge
@@ -490,41 +614,374 @@ Microservices cons:
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	•	Factory
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Already covered
 		o	Problems you solve with Factory
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Already covered
+		
 		o	Abstract Factory
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Already covered
+		
 		o	Problems you solve with Abstract Factory	
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	•	Observer
+	•	
+	Observer
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	•	Proxy
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			How to design for Adaptability
-		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			How to design for Extensibility
-		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+		Already covered	
 •	Localization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		What is Localization?
+	
+	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Lab for reusability design
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Identify and design reusable components for managing Running race.
+
+	100 
+	200 
+	400
+	relay
+	
+		1. Stop watch
+		2. Track
+		3. Score board - time 
+		4. Gun - 
+		5. InitialCommands
+		
+		Stop watch
+			Digital
+			Analog
+			
+			Reset - button - voice based 
+			stand 
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		Students may identify entities like below and some behaviors related to the same.
+		Race track
+		Gun shot
+		Timer ect are some of them
+		Depending on what students identify we can ask them to design that.
+
 
 •	Data Engineering overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		What is data engineering?
+	
+	The Role Of Data Engineering:
+		Data Engineering 
+			field associated 
+				analysis and tasks 
+					get and store data from other sources. 
+				process those data 
+				convert them into clean data 
+				processes data like 
+					Data Visualisations
+					Business Analytics
+					Data Science solutions
+					
+		Data Engineering brings structured approach to Data Science and make it more productive. 
+		Data Engineering 
+			complete understanding 
+				technologies, 
+				tools, 
+				faster execution 
+					of complex datasets with reliability.
+	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Why do we need to do data engineering?
+		Data Engineering 
+			provide 
+				organized, 
+				standard 
+					data flow to 
+				enable 
+					data-driven models such as 
+						ML models, 
+						data analysis. 
+			data flow 
+				can get through several organizations and teams. 
+				To achieve the data flow
+					use the method called data pipeline. 
+			has independent programs 
+				make several operations on stored data.
+		Data Engineering 
+			responsible for the 
+				design, 
+				maintenance, 
+				extension
+				construction 
+					support of data pipelines. 
+			Many data engineering teams are building data platforms. 
+			organizations cannot manage with just one pipeline to save data in an SQL database. 
+			Hence, they have many teams with several kinds of techniques to access data.
+
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Difference between data engineer and data scientist
+	
+	data engineer 
+		store
+		extract
+		transform
+		load
+		aggregate
+		validate data. 
+		
+		So they have to:
+			Build data pipelines 
+			efficiently storing data for tools 
+				design and implement tools to query the data. 
+			Analyzing the data
+			ensuring it adheres to data governance rules and regulations.
+			Understanding the pros and cons of data storage and query options.
+			
+		https://www.phdata.io/blog/what-is-data-engineering/	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Kinds of databases
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		•	SQL Vs NoSQL (Detailed session latter)
+		•	SQL Vs NoSQL 
+		
+		
+		emp
+		{
+			
+			{
+			empId: 1,
+			empName: Aby,
+			empAddress: asd,
+			salary: 23,
+			{
+				deptId: 1,
+				deptName: Mechanical
+			}
+			},
+			{
+			studentId: 2,
+			empName: Bose,
+			empAddress: asd,
+			salary: 23234,
+			mothertongue: 
+			{
+				deptId: 1,
+				deptName: Mechanical
+			}
+			}
+		}
+		
+		select avg(salary) from emp
+		
+		{
+			{
+			deptId: 1,
+			avgSalary: 12343
+			},
+			{
+			deptId: 2,
+			avgSalary: 12343
+			}
+		}
+		
+		NoSQL
+		Adv.
+			1. Insert and query is super fast
+			2. No schema or schema can be modified very easily.
+			3. Build for scale
+				sharding - shared based on hashing.
+				with each partion having a secondary and teritiary backup
+			4. Build for huge data, analytics, metrics and aggregation.
+
+			More adv?
+			--------
+			The pace of development with NoSQL databases can be much faster than with a SQL database.
+			The structure of many different forms of data is more easily handled and evolved with a NoSQL database.
+			The amount of data in many applications cannot be served affordably by a SQL database.
+			The scale of traffic and need for zero downtime cannot be handled by SQL.
+			New application paradigms can be more easily supported.
+			
+			
+		Disadv.
+			1. Not built for updates
+				imagine: update address of a family in a citizens table.
+				data consistency
+				acid properties may be compromised at least temporarily.
+			2. Not optimized. 
+			3. Not read optimized for unplanned queries.
+			4. No foreign keys. attempts can be made to form joins and if you are lucky you would succeed.
+		
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Types of NoSQL databases
+
+		Types of NoSQL Databases
+		------------------------
+			Document databases
+			Key-value stores
+			Column-oriented databases
+			Graph databases
+
+		Key-value stores
+		----------------
+		Simplest type of NoSQL database 
+		Every data element in the database stored as a key value pair 
+			attribute name (or "key") and a value. 
+			like a relational database with only two columns: 
+				Value could be a json
+					with objects a part of that.
+		
+		Key
+			unique 
+			accepts only strings
+			indexed and hashed
+		value 
+			accept 
+				String, 
+				JSON, 
+				XML
+		capable of dealing with massive loads of data. 
+		Yet very fast
+		Some KV (Key-value) stores 
+			allow basic joins 
+		CAP theorem and their configurations of memory v/s storage usage.
+		fast query performance 
+			content caching
+			e.g. a gaming website that constantly updates the top 10 scores & players.
+		
+		
+			e.g.
+			key: 
+				"123"
+			value: 
+			{
+				Account_number: 123
+				Name: Vilas
+				Mobile: 1234
+				balance: 1324324
+				{
+					address: abc
+					pin: 2342
+					state: Karnataka
+					Country: India
+				}
+			}
+		Use cases include shopping carts, user preferences, and user profiles.
+
+			Pros:
+				–  Simple Data model
+				–  Scalable
+				–  Value can include JSON, XML, flexible schemas
+				–  Extremely Fast Owing to it’s simplicity
+				–  Best fit for cases where data is not highly related
+
+			Cons:
+				–  No relationships, create your own foreign keys
+				–  Not suitable for complex data
+				–  Lacks Scanning Capabilities
+				–  Not ideal for operations rather than CRUD (create, read, update Delete )
+
+
+		e.g. Redis
+
+		Document databases
+		------------------
+			Document Stores 
+				No key
+				values stored in structured documents 
+					XML or 
+					JSON. 
+				easy to map Objects in object - oriented software.
+				schema free
+				store complex data in document formats (JSON, XML etc.).
+			No support relations. 
+			Each document is independent 
+			no relational integrity and similarity between different rows.
+			Can be used for all use cases of a KV store database, 
+			no limitation of querying by 
+				querying attributes within a document
+			also data in each document can be in a different format. 
+			E.g. A product review website where zero or many users can review each product and 
+				each review can be commented on by other users and 
+				can be liked or disliked by zero to many users.
+			
+			
+			Pros:
+			–  Simple & Powerful Data model
+			–  Scalable
+			–  Open Formats
+				If schema between rows can't be identified.
+			–  No foreign Keys
+
+			Cons:
+			– Not suitable for relational data
+			– Querying limited to keys & indexes
+			– Map Reduce for more significant queries
+			- Slower than KV store - attributes can't be hashed.		
+
+		Compare row to column database
+		-------------------------------
+		Document db			
+			Read is like read a row and go to next. 
+			Identifying the row takes time. But reading data once row is identified is rally fast.
+			select * from emp where empid = 123
+		
+		Column db
+		---------
+			Single block io read -
+				fetches column with all matching rows.
+			Less IO required to fetch more values of a given column
+			Reading multiple column requires more I/O
+			select sum(salary) from emp
+			
+			e.g.
+		MongoDB, DynamoDB and CosmosDB.	
+			
+		Column-oriented databases
+		-------------------------
+		
+		
+		{empId: 1, empId: 2}
+		{empName: Vilas, empName: Bob}
+			Also called - 
+				Column Family Data stores or 
+				Wide column data stores
+			
+			Totally variables schema of key-value stores. 
+			data tables as sections of columns of data 
+				Not rows of data.
+			Originated in Google’s Bigtable. 
+			
+			multi-dimensional key value store 
+				(map or associative array) 
+				distributed (data is distributed across multiple computing  & storage nodes), 
+				sorted (sorted keys) and 
+				sparse (values for certain dimensions may not be populated, similar to sparsely populated rows in RDBMS).
+			The multi-dimensional aspect of column stores brings in another concept of column families.
+			Column-family databases store data in column families as rows that have many columns associated with a row key. Column families are groups of related data that is often accessed together.
+			There are two types of column families:
+				Standard Column family: 
+					Standard Column family consists of a key-value pair, 
+						key is mapped to a value that is a set of columns. 
+						In analogy with relational databases, a standard column family is as a “table”, each key-value pair being a “row”.
+				Super Column family: 
+					Super Column family consists of a key-value pair, where the key is mapped to a value that are column families. In analogy with relational databases, a super column family is something like a “view” on a number of tables. It can also be seen as a map of tables.
+			e.g.
+			MariaDB, CrateDB, ClickHouse, Greenplum Database, Apache Hbase, Apache Kudu, Apache Parquet, Hypertable, MonetDB
+			
+		Graph databases
+		---------------
+			LinkedIn-Twitter ect.
+		
+		e.g.
+			Instagram, Twitter, Facebook, Amazon	
+	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Processing tasks
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -534,6 +991,28 @@ Microservices cons:
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Star schema diagram
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Facts
+			Data
+		Measures
+			Data itself or Measure of the data  
+		Dimensions
+			Dimension of the measure
+			
+		e.g.
+			DepartmentMeasure
+				deptNo
+				AvgSalary
+				MaxSalary
+				YearStarted
+				
+			Department
+				deptNo
+				deptName
+				Location
+				
+				
+				
+	
 		Parallel computing
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -612,7 +1091,7 @@ How to solve the issues created by Horizontal scaling.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CAP theorem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Consistency Availability and Partition Tolerance.
+	Consistency Availability and Partition Tolerance.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Load Balancer overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

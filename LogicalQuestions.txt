@@ -1,0 +1,62 @@
+Find the character that is repeating the most
+
+Find the sum of numbers repeating in a string
+
+Find the building which is closest to everything that you want
+	https://www.youtube.com/watch?v=rw4s4M3hFfs
+	
+	data = 
+	[
+	{
+		"gym": true,
+		"school": false,
+		"ATM": false
+	},
+	{
+		"gym": true,
+		"school": false,
+		"ATM": false
+
+	},
+	{
+		"gym": false,
+		"school": true,
+		"ATM": false
+
+	},
+	{
+		"gym": true,
+		"school": false,
+		"ATM": false
+
+	},
+	{
+		"gym": false,
+		"school": false,
+		"ATM": true
+
+	}
+	]
+	
+	myRequirement = ["gym","school","ATM"]
+	
+	
+	int optionLength = myRequirement.length
+	int[] lengthArray = new int[optionLength]
+	
+	List myDistranceList = new ArrayList();
+	previousTrue = new int[optionLength]
+	
+	for (int i =0; i < data.length;i++){
+		currentOptions = new int[optionLength];
+		for (in j = 0; j < data[i].length; j++){
+			if (data[i][j]){
+				currentOptions[j] = 0;
+				previousTrue[j] = i
+			}else{
+				
+			}
+		}
+	}
+	
+	
