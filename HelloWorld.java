@@ -5,4 +5,7 @@ public class HelloWorld{
 		
 	}
 
+	public static void sleep(){
+		System.out.println("I am sleepy");
+	}
 }
